@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated k8s -->
+      <package
+            uri="http://k8s.com"
+            class="k8s.K8sPackage"
+            genModel="model/k8s.genmodel"/>
+   </extension>
+
+</plugin>
