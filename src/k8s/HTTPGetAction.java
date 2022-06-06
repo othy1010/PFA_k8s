@@ -33,7 +33,7 @@ public interface HTTPGetAction extends EObject {
 	 * @return the value of the '<em>Path</em>' attribute.
 	 * @see #setPath(String)
 	 * @see k8s.K8sPackage#getHTTPGetAction_Path()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getPath();
@@ -55,7 +55,7 @@ public interface HTTPGetAction extends EObject {
 	 * @return the value of the '<em>Port</em>' attribute.
 	 * @see #setPort(int)
 	 * @see k8s.K8sPackage#getHTTPGetAction_Port()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getPort();
@@ -93,25 +93,15 @@ public interface HTTPGetAction extends EObject {
 	void setScheme(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Http Headers</b></em>' attribute.
+	 * Returns the value of the '<em><b>Http Headers</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Http Headers</em>' attribute.
-	 * @see #setHttpHeaders(EList)
+	 * @return the value of the '<em>Http Headers</em>' attribute list.
 	 * @see k8s.K8sPackage#getHTTPGetAction_HttpHeaders()
-	 * @model many="false" transient="true"
+	 * @model transient="true"
 	 * @generated
 	 */
-	EList<HTTPHeader> getHttpHeaders();
-
-	/**
-	 * Sets the value of the '{@link k8s.HTTPGetAction#getHttpHeaders <em>Http Headers</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Http Headers</em>' attribute.
-	 * @see #getHttpHeaders()
-	 * @generated
-	 */
-	void setHttpHeaders(EList<HTTPHeader> value);
+	EList<String> getHttpHeaders();
 
 } // HTTPGetAction

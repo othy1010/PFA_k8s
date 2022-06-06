@@ -26,26 +26,16 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface NodeSelectorRequirement extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Values</b></em>' attribute.
+	 * Returns the value of the '<em><b>Values</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Values</em>' attribute.
-	 * @see #setValues(EList)
+	 * @return the value of the '<em>Values</em>' attribute list.
 	 * @see k8s.K8sPackage#getNodeSelectorRequirement_Values()
-	 * @model many="false" transient="true"
+	 * @model required="true" transient="true"
 	 * @generated
 	 */
 	EList<String> getValues();
-
-	/**
-	 * Sets the value of the '{@link k8s.NodeSelectorRequirement#getValues <em>Values</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Values</em>' attribute.
-	 * @see #getValues()
-	 * @generated
-	 */
-	void setValues(EList<String> value);
 
 	/**
 	 * Returns the value of the '<em><b>Key</b></em>' attribute.
@@ -54,7 +44,7 @@ public interface NodeSelectorRequirement extends EObject {
 	 * @return the value of the '<em>Key</em>' attribute.
 	 * @see #setKey(String)
 	 * @see k8s.K8sPackage#getNodeSelectorRequirement_Key()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getKey();
@@ -76,7 +66,7 @@ public interface NodeSelectorRequirement extends EObject {
 	 * @return the value of the '<em>Operator</em>' attribute.
 	 * @see #setOperator(String)
 	 * @see k8s.K8sPackage#getNodeSelectorRequirement_Operator()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getOperator();

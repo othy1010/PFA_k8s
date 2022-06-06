@@ -24,25 +24,15 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface ExecAction extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Command</b></em>' attribute.
+	 * Returns the value of the '<em><b>Command</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Command</em>' attribute.
-	 * @see #setCommand(EList)
+	 * @return the value of the '<em>Command</em>' attribute list.
 	 * @see k8s.K8sPackage#getExecAction_Command()
-	 * @model many="false" transient="true"
+	 * @model required="true" transient="true"
 	 * @generated
 	 */
 	EList<String> getCommand();
-
-	/**
-	 * Sets the value of the '{@link k8s.ExecAction#getCommand <em>Command</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Command</em>' attribute.
-	 * @see #getCommand()
-	 * @generated
-	 */
-	void setCommand(EList<String> value);
 
 } // ExecAction

@@ -2,17 +2,14 @@
  */
 package k8s.impl;
 
+import java.util.Collection;
 import k8s.ExecAction;
 import k8s.K8sPackage;
-
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class ExecActionImpl extends MinimalEObjectImpl.Container implements ExecAction {
 	/**
-	 * The cached value of the '{@link #getCommand() <em>Command</em>}' attribute.
+	 * The cached value of the '{@link #getCommand() <em>Command</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCommand()
@@ -63,19 +60,10 @@ public class ExecActionImpl extends MinimalEObjectImpl.Container implements Exec
 	 * @generated
 	 */
 	public EList<String> getCommand() {
+		if (command == null) {
+			command = new EDataTypeUniqueEList<String>(String.class, this, K8sPackage.EXEC_ACTION__COMMAND);
+		}
 		return command;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCommand(EList<String> newCommand) {
-		EList<String> oldCommand = command;
-		command = newCommand;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.EXEC_ACTION__COMMAND, oldCommand, command));
 	}
 
 	/**
@@ -102,7 +90,8 @@ public class ExecActionImpl extends MinimalEObjectImpl.Container implements Exec
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case K8sPackage.EXEC_ACTION__COMMAND:
-				setCommand((EList<String>)newValue);
+				getCommand().clear();
+				getCommand().addAll((Collection<? extends String>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -117,7 +106,7 @@ public class ExecActionImpl extends MinimalEObjectImpl.Container implements Exec
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case K8sPackage.EXEC_ACTION__COMMAND:
-				setCommand((EList<String>)null);
+				getCommand().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -132,7 +121,7 @@ public class ExecActionImpl extends MinimalEObjectImpl.Container implements Exec
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case K8sPackage.EXEC_ACTION__COMMAND:
-				return command != null;
+				return command != null && !command.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

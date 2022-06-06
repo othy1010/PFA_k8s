@@ -28,7 +28,7 @@ public interface HostPathVolumeSource extends EObject {
 	 * @return the value of the '<em>Path</em>' attribute.
 	 * @see #setPath(String)
 	 * @see k8s.K8sPackage#getHostPathVolumeSource_Path()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getPath();

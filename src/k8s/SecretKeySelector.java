@@ -29,7 +29,7 @@ public interface SecretKeySelector extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see k8s.K8sPackage#getSecretKeySelector_Name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
@@ -51,7 +51,7 @@ public interface SecretKeySelector extends EObject {
 	 * @return the value of the '<em>Key</em>' attribute.
 	 * @see #setKey(String)
 	 * @see k8s.K8sPackage#getSecretKeySelector_Key()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getKey();

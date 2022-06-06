@@ -68,12 +68,12 @@ public class K8sAdapterFactory extends AdapterFactoryImpl {
 	protected K8sSwitch<Adapter> modelSwitch =
 		new K8sSwitch<Adapter>() {
 			@Override
-			public Adapter caseMetadata(Metadata object) {
-				return createMetadataAdapter();
-			}
-			@Override
 			public Adapter caseManifest(Manifest object) {
 				return createManifestAdapter();
+			}
+			@Override
+			public Adapter caseMetadata(Metadata object) {
+				return createMetadataAdapter();
 			}
 			@Override
 			public Adapter caseSpecFactory(SpecFactory object) {
@@ -210,6 +210,10 @@ public class K8sAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseNodeSelectorRequirement(NodeSelectorRequirement object) {
 				return createNodeSelectorRequirementAdapter();
+			}
+			@Override
+			public Adapter caseMymap(Mymap object) {
+				return createMymapAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -732,6 +736,20 @@ public class K8sAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNodeSelectorRequirementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link k8s.Mymap <em>Mymap</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see k8s.Mymap
+	 * @generated
+	 */
+	public Adapter createMymapAdapter() {
 		return null;
 	}
 

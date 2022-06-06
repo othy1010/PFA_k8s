@@ -29,7 +29,7 @@ public interface RollingUpdateDeployment extends EObject {
 	 * @return the value of the '<em>Max Unavailable</em>' attribute.
 	 * @see #setMaxUnavailable(int)
 	 * @see k8s.K8sPackage#getRollingUpdateDeployment_MaxUnavailable()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getMaxUnavailable();
@@ -51,7 +51,7 @@ public interface RollingUpdateDeployment extends EObject {
 	 * @return the value of the '<em>Max Surge</em>' attribute.
 	 * @see #setMaxSurge(int)
 	 * @see k8s.K8sPackage#getRollingUpdateDeployment_MaxSurge()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getMaxSurge();

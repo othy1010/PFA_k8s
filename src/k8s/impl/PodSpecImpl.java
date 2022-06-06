@@ -2,6 +2,7 @@
  */
 package k8s.impl;
 
+import java.util.Collection;
 import k8s.Affinity;
 import k8s.Containers;
 import k8s.K8sPackage;
@@ -17,6 +18,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,57 +28,17 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link k8s.impl.PodSpecImpl#getContainers <em>Containers</em>}</li>
- *   <li>{@link k8s.impl.PodSpecImpl#getTopologySpreadConstraints <em>Topology Spread Constraints</em>}</li>
- *   <li>{@link k8s.impl.PodSpecImpl#getInitContainers <em>Init Containers</em>}</li>
- *   <li>{@link k8s.impl.PodSpecImpl#getVolumes <em>Volumes</em>}</li>
  *   <li>{@link k8s.impl.PodSpecImpl#getRestartPolicy <em>Restart Policy</em>}</li>
  *   <li>{@link k8s.impl.PodSpecImpl#getAffinity <em>Affinity</em>}</li>
+ *   <li>{@link k8s.impl.PodSpecImpl#getContainers <em>Containers</em>}</li>
+ *   <li>{@link k8s.impl.PodSpecImpl#getVolumes <em>Volumes</em>}</li>
+ *   <li>{@link k8s.impl.PodSpecImpl#getTopologySpreadConstraints <em>Topology Spread Constraints</em>}</li>
+ *   <li>{@link k8s.impl.PodSpecImpl#getInitContainers <em>Init Containers</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class PodSpecImpl extends SpecFactoryImpl implements PodSpec {
-	/**
-	 * The cached value of the '{@link #getContainers() <em>Containers</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContainers()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Containers> containers;
-
-	/**
-	 * The cached value of the '{@link #getTopologySpreadConstraints() <em>Topology Spread Constraints</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTopologySpreadConstraints()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<TopologySpreadConstraint> topologySpreadConstraints;
-
-	/**
-	 * The cached value of the '{@link #getInitContainers() <em>Init Containers</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInitContainers()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Containers> initContainers;
-
-	/**
-	 * The cached value of the '{@link #getVolumes() <em>Volumes</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVolumes()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Volume> volumes;
-
 	/**
 	 * The default value of the '{@link #getRestartPolicy() <em>Restart Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -108,6 +70,46 @@ public class PodSpecImpl extends SpecFactoryImpl implements PodSpec {
 	protected Affinity affinity;
 
 	/**
+	 * The cached value of the '{@link #getContainers() <em>Containers</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContainers()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Containers> containers;
+
+	/**
+	 * The cached value of the '{@link #getVolumes() <em>Volumes</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVolumes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Volume> volumes;
+
+	/**
+	 * The cached value of the '{@link #getTopologySpreadConstraints() <em>Topology Spread Constraints</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTopologySpreadConstraints()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TopologySpreadConstraint> topologySpreadConstraints;
+
+	/**
+	 * The cached value of the '{@link #getInitContainers() <em>Init Containers</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInitContainers()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Containers> initContainers;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -132,6 +134,9 @@ public class PodSpecImpl extends SpecFactoryImpl implements PodSpec {
 	 * @generated
 	 */
 	public EList<Containers> getContainers() {
+		if (containers == null) {
+			containers = new EObjectResolvingEList<Containers>(Containers.class, this, K8sPackage.POD_SPEC__CONTAINERS);
+		}
 		return containers;
 	}
 
@@ -140,19 +145,10 @@ public class PodSpecImpl extends SpecFactoryImpl implements PodSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setContainers(EList<Containers> newContainers) {
-		EList<Containers> oldContainers = containers;
-		containers = newContainers;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.POD_SPEC__CONTAINERS, oldContainers, containers));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<TopologySpreadConstraint> getTopologySpreadConstraints() {
+		if (topologySpreadConstraints == null) {
+			topologySpreadConstraints = new EObjectResolvingEList<TopologySpreadConstraint>(TopologySpreadConstraint.class, this, K8sPackage.POD_SPEC__TOPOLOGY_SPREAD_CONSTRAINTS);
+		}
 		return topologySpreadConstraints;
 	}
 
@@ -161,19 +157,10 @@ public class PodSpecImpl extends SpecFactoryImpl implements PodSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTopologySpreadConstraints(EList<TopologySpreadConstraint> newTopologySpreadConstraints) {
-		EList<TopologySpreadConstraint> oldTopologySpreadConstraints = topologySpreadConstraints;
-		topologySpreadConstraints = newTopologySpreadConstraints;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.POD_SPEC__TOPOLOGY_SPREAD_CONSTRAINTS, oldTopologySpreadConstraints, topologySpreadConstraints));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Containers> getInitContainers() {
+		if (initContainers == null) {
+			initContainers = new EObjectResolvingEList<Containers>(Containers.class, this, K8sPackage.POD_SPEC__INIT_CONTAINERS);
+		}
 		return initContainers;
 	}
 
@@ -182,32 +169,11 @@ public class PodSpecImpl extends SpecFactoryImpl implements PodSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInitContainers(EList<Containers> newInitContainers) {
-		EList<Containers> oldInitContainers = initContainers;
-		initContainers = newInitContainers;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.POD_SPEC__INIT_CONTAINERS, oldInitContainers, initContainers));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Volume> getVolumes() {
+		if (volumes == null) {
+			volumes = new EObjectResolvingEList<Volume>(Volume.class, this, K8sPackage.POD_SPEC__VOLUMES);
+		}
 		return volumes;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setVolumes(EList<Volume> newVolumes) {
-		EList<Volume> oldVolumes = volumes;
-		volumes = newVolumes;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.POD_SPEC__VOLUMES, oldVolumes, volumes));
 	}
 
 	/**
@@ -277,19 +243,19 @@ public class PodSpecImpl extends SpecFactoryImpl implements PodSpec {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case K8sPackage.POD_SPEC__CONTAINERS:
-				return getContainers();
-			case K8sPackage.POD_SPEC__TOPOLOGY_SPREAD_CONSTRAINTS:
-				return getTopologySpreadConstraints();
-			case K8sPackage.POD_SPEC__INIT_CONTAINERS:
-				return getInitContainers();
-			case K8sPackage.POD_SPEC__VOLUMES:
-				return getVolumes();
 			case K8sPackage.POD_SPEC__RESTART_POLICY:
 				return getRestartPolicy();
 			case K8sPackage.POD_SPEC__AFFINITY:
 				if (resolve) return getAffinity();
 				return basicGetAffinity();
+			case K8sPackage.POD_SPEC__CONTAINERS:
+				return getContainers();
+			case K8sPackage.POD_SPEC__VOLUMES:
+				return getVolumes();
+			case K8sPackage.POD_SPEC__TOPOLOGY_SPREAD_CONSTRAINTS:
+				return getTopologySpreadConstraints();
+			case K8sPackage.POD_SPEC__INIT_CONTAINERS:
+				return getInitContainers();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -303,23 +269,27 @@ public class PodSpecImpl extends SpecFactoryImpl implements PodSpec {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case K8sPackage.POD_SPEC__CONTAINERS:
-				setContainers((EList<Containers>)newValue);
-				return;
-			case K8sPackage.POD_SPEC__TOPOLOGY_SPREAD_CONSTRAINTS:
-				setTopologySpreadConstraints((EList<TopologySpreadConstraint>)newValue);
-				return;
-			case K8sPackage.POD_SPEC__INIT_CONTAINERS:
-				setInitContainers((EList<Containers>)newValue);
-				return;
-			case K8sPackage.POD_SPEC__VOLUMES:
-				setVolumes((EList<Volume>)newValue);
-				return;
 			case K8sPackage.POD_SPEC__RESTART_POLICY:
 				setRestartPolicy((String)newValue);
 				return;
 			case K8sPackage.POD_SPEC__AFFINITY:
 				setAffinity((Affinity)newValue);
+				return;
+			case K8sPackage.POD_SPEC__CONTAINERS:
+				getContainers().clear();
+				getContainers().addAll((Collection<? extends Containers>)newValue);
+				return;
+			case K8sPackage.POD_SPEC__VOLUMES:
+				getVolumes().clear();
+				getVolumes().addAll((Collection<? extends Volume>)newValue);
+				return;
+			case K8sPackage.POD_SPEC__TOPOLOGY_SPREAD_CONSTRAINTS:
+				getTopologySpreadConstraints().clear();
+				getTopologySpreadConstraints().addAll((Collection<? extends TopologySpreadConstraint>)newValue);
+				return;
+			case K8sPackage.POD_SPEC__INIT_CONTAINERS:
+				getInitContainers().clear();
+				getInitContainers().addAll((Collection<? extends Containers>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -333,23 +303,23 @@ public class PodSpecImpl extends SpecFactoryImpl implements PodSpec {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case K8sPackage.POD_SPEC__CONTAINERS:
-				setContainers((EList<Containers>)null);
-				return;
-			case K8sPackage.POD_SPEC__TOPOLOGY_SPREAD_CONSTRAINTS:
-				setTopologySpreadConstraints((EList<TopologySpreadConstraint>)null);
-				return;
-			case K8sPackage.POD_SPEC__INIT_CONTAINERS:
-				setInitContainers((EList<Containers>)null);
-				return;
-			case K8sPackage.POD_SPEC__VOLUMES:
-				setVolumes((EList<Volume>)null);
-				return;
 			case K8sPackage.POD_SPEC__RESTART_POLICY:
 				setRestartPolicy(RESTART_POLICY_EDEFAULT);
 				return;
 			case K8sPackage.POD_SPEC__AFFINITY:
 				setAffinity((Affinity)null);
+				return;
+			case K8sPackage.POD_SPEC__CONTAINERS:
+				getContainers().clear();
+				return;
+			case K8sPackage.POD_SPEC__VOLUMES:
+				getVolumes().clear();
+				return;
+			case K8sPackage.POD_SPEC__TOPOLOGY_SPREAD_CONSTRAINTS:
+				getTopologySpreadConstraints().clear();
+				return;
+			case K8sPackage.POD_SPEC__INIT_CONTAINERS:
+				getInitContainers().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -363,18 +333,18 @@ public class PodSpecImpl extends SpecFactoryImpl implements PodSpec {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case K8sPackage.POD_SPEC__CONTAINERS:
-				return containers != null;
-			case K8sPackage.POD_SPEC__TOPOLOGY_SPREAD_CONSTRAINTS:
-				return topologySpreadConstraints != null;
-			case K8sPackage.POD_SPEC__INIT_CONTAINERS:
-				return initContainers != null;
-			case K8sPackage.POD_SPEC__VOLUMES:
-				return volumes != null;
 			case K8sPackage.POD_SPEC__RESTART_POLICY:
 				return RESTART_POLICY_EDEFAULT == null ? restartPolicy != null : !RESTART_POLICY_EDEFAULT.equals(restartPolicy);
 			case K8sPackage.POD_SPEC__AFFINITY:
 				return affinity != null;
+			case K8sPackage.POD_SPEC__CONTAINERS:
+				return containers != null && !containers.isEmpty();
+			case K8sPackage.POD_SPEC__VOLUMES:
+				return volumes != null && !volumes.isEmpty();
+			case K8sPackage.POD_SPEC__TOPOLOGY_SPREAD_CONSTRAINTS:
+				return topologySpreadConstraints != null && !topologySpreadConstraints.isEmpty();
+			case K8sPackage.POD_SPEC__INIT_CONTAINERS:
+				return initContainers != null && !initContainers.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -389,15 +359,7 @@ public class PodSpecImpl extends SpecFactoryImpl implements PodSpec {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (containers: ");
-		result.append(containers);
-		result.append(", topologySpreadConstraints: ");
-		result.append(topologySpreadConstraints);
-		result.append(", initContainers: ");
-		result.append(initContainers);
-		result.append(", volumes: ");
-		result.append(volumes);
-		result.append(", restartPolicy: ");
+		result.append(" (restartPolicy: ");
 		result.append(restartPolicy);
 		result.append(')');
 		return result.toString();

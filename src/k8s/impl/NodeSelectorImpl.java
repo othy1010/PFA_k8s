@@ -2,18 +2,15 @@
  */
 package k8s.impl;
 
+import java.util.Collection;
 import k8s.K8sPackage;
 import k8s.NodeSelector;
 import k8s.NodeSelectorTerm;
-
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +27,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class NodeSelectorImpl extends MinimalEObjectImpl.Container implements NodeSelector {
 	/**
-	 * The cached value of the '{@link #getNodeSelectorTerms() <em>Node Selector Terms</em>}' attribute.
+	 * The cached value of the '{@link #getNodeSelectorTerms() <em>Node Selector Terms</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getNodeSelectorTerms()
@@ -64,19 +61,10 @@ public class NodeSelectorImpl extends MinimalEObjectImpl.Container implements No
 	 * @generated
 	 */
 	public EList<NodeSelectorTerm> getNodeSelectorTerms() {
+		if (nodeSelectorTerms == null) {
+			nodeSelectorTerms = new EObjectResolvingEList<NodeSelectorTerm>(NodeSelectorTerm.class, this, K8sPackage.NODE_SELECTOR__NODE_SELECTOR_TERMS);
+		}
 		return nodeSelectorTerms;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setNodeSelectorTerms(EList<NodeSelectorTerm> newNodeSelectorTerms) {
-		EList<NodeSelectorTerm> oldNodeSelectorTerms = nodeSelectorTerms;
-		nodeSelectorTerms = newNodeSelectorTerms;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.NODE_SELECTOR__NODE_SELECTOR_TERMS, oldNodeSelectorTerms, nodeSelectorTerms));
 	}
 
 	/**
@@ -103,7 +91,8 @@ public class NodeSelectorImpl extends MinimalEObjectImpl.Container implements No
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case K8sPackage.NODE_SELECTOR__NODE_SELECTOR_TERMS:
-				setNodeSelectorTerms((EList<NodeSelectorTerm>)newValue);
+				getNodeSelectorTerms().clear();
+				getNodeSelectorTerms().addAll((Collection<? extends NodeSelectorTerm>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -118,7 +107,7 @@ public class NodeSelectorImpl extends MinimalEObjectImpl.Container implements No
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case K8sPackage.NODE_SELECTOR__NODE_SELECTOR_TERMS:
-				setNodeSelectorTerms((EList<NodeSelectorTerm>)null);
+				getNodeSelectorTerms().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -133,25 +122,9 @@ public class NodeSelectorImpl extends MinimalEObjectImpl.Container implements No
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case K8sPackage.NODE_SELECTOR__NODE_SELECTOR_TERMS:
-				return nodeSelectorTerms != null;
+				return nodeSelectorTerms != null && !nodeSelectorTerms.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (nodeSelectorTerms: ");
-		result.append(nodeSelectorTerms);
-		result.append(')');
-		return result.toString();
 	}
 
 } //NodeSelectorImpl

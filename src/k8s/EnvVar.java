@@ -30,7 +30,7 @@ public interface EnvVar extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see k8s.K8sPackage#getEnvVar_Name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
@@ -52,7 +52,7 @@ public interface EnvVar extends EObject {
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(int)
 	 * @see k8s.K8sPackage#getEnvVar_Value()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getValue();
@@ -74,7 +74,7 @@ public interface EnvVar extends EObject {
 	 * @return the value of the '<em>Value From</em>' reference.
 	 * @see #setValueFrom(EnvVarSource)
 	 * @see k8s.K8sPackage#getEnvVar_ValueFrom()
-	 * @model required="true" transient="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	EnvVarSource getValueFrom();

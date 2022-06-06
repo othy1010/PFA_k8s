@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link k8s.impl.VolumeMountImpl#getName <em>Name</em>}</li>
  *   <li>{@link k8s.impl.VolumeMountImpl#getMountPath <em>Mount Path</em>}</li>
- *   <li>{@link k8s.impl.VolumeMountImpl#getReadOnly <em>Read Only</em>}</li>
+ *   <li>{@link k8s.impl.VolumeMountImpl#isReadOnly <em>Read Only</em>}</li>
  * </ul>
  *
  * @generated
@@ -69,24 +69,24 @@ public class VolumeMountImpl extends MinimalEObjectImpl.Container implements Vol
 	protected String mountPath = MOUNT_PATH_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getReadOnly() <em>Read Only</em>}' attribute.
+	 * The default value of the '{@link #isReadOnly() <em>Read Only</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReadOnly()
+	 * @see #isReadOnly()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String READ_ONLY_EDEFAULT = null;
+	protected static final boolean READ_ONLY_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #getReadOnly() <em>Read Only</em>}' attribute.
+	 * The cached value of the '{@link #isReadOnly() <em>Read Only</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReadOnly()
+	 * @see #isReadOnly()
 	 * @generated
 	 * @ordered
 	 */
-	protected String readOnly = READ_ONLY_EDEFAULT;
+	protected boolean readOnly = READ_ONLY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,7 +154,7 @@ public class VolumeMountImpl extends MinimalEObjectImpl.Container implements Vol
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getReadOnly() {
+	public boolean isReadOnly() {
 		return readOnly;
 	}
 
@@ -163,8 +163,8 @@ public class VolumeMountImpl extends MinimalEObjectImpl.Container implements Vol
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setReadOnly(String newReadOnly) {
-		String oldReadOnly = readOnly;
+	public void setReadOnly(boolean newReadOnly) {
+		boolean oldReadOnly = readOnly;
 		readOnly = newReadOnly;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.VOLUME_MOUNT__READ_ONLY, oldReadOnly, readOnly));
@@ -183,7 +183,7 @@ public class VolumeMountImpl extends MinimalEObjectImpl.Container implements Vol
 			case K8sPackage.VOLUME_MOUNT__MOUNT_PATH:
 				return getMountPath();
 			case K8sPackage.VOLUME_MOUNT__READ_ONLY:
-				return getReadOnly();
+				return isReadOnly();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -203,7 +203,7 @@ public class VolumeMountImpl extends MinimalEObjectImpl.Container implements Vol
 				setMountPath((String)newValue);
 				return;
 			case K8sPackage.VOLUME_MOUNT__READ_ONLY:
-				setReadOnly((String)newValue);
+				setReadOnly((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -243,7 +243,7 @@ public class VolumeMountImpl extends MinimalEObjectImpl.Container implements Vol
 			case K8sPackage.VOLUME_MOUNT__MOUNT_PATH:
 				return MOUNT_PATH_EDEFAULT == null ? mountPath != null : !MOUNT_PATH_EDEFAULT.equals(mountPath);
 			case K8sPackage.VOLUME_MOUNT__READ_ONLY:
-				return READ_ONLY_EDEFAULT == null ? readOnly != null : !READ_ONLY_EDEFAULT.equals(readOnly);
+				return readOnly != READ_ONLY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

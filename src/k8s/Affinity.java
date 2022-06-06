@@ -28,7 +28,7 @@ public interface Affinity extends EObject {
 	 * @return the value of the '<em>Node Affinity</em>' reference.
 	 * @see #setNodeAffinity(NodeAffinity)
 	 * @see k8s.K8sPackage#getAffinity_NodeAffinity()
-	 * @model required="true" transient="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	NodeAffinity getNodeAffinity();

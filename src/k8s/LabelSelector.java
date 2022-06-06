@@ -33,7 +33,7 @@ public interface LabelSelector extends EObject {
 	 * @return the value of the '<em>Match Labels</em>' attribute.
 	 * @see #setMatchLabels(Map)
 	 * @see k8s.K8sPackage#getLabelSelector_MatchLabels()
-	 * @model transient="true"
+	 * @model required="true" transient="true"
 	 * @generated
 	 */
 	Map<String, String> getMatchLabels();
@@ -49,25 +49,15 @@ public interface LabelSelector extends EObject {
 	void setMatchLabels(Map<String, String> value);
 
 	/**
-	 * Returns the value of the '<em><b>Match Expressions</b></em>' attribute.
+	 * Returns the value of the '<em><b>Match Expressions</b></em>' reference list.
+	 * The list contents are of type {@link k8s.MatchExpressions}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Match Expressions</em>' attribute.
-	 * @see #setMatchExpressions(EList)
+	 * @return the value of the '<em>Match Expressions</em>' reference list.
 	 * @see k8s.K8sPackage#getLabelSelector_MatchExpressions()
-	 * @model many="false" transient="true"
+	 * @model
 	 * @generated
 	 */
 	EList<MatchExpressions> getMatchExpressions();
-
-	/**
-	 * Sets the value of the '{@link k8s.LabelSelector#getMatchExpressions <em>Match Expressions</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Match Expressions</em>' attribute.
-	 * @see #getMatchExpressions()
-	 * @generated
-	 */
-	void setMatchExpressions(EList<MatchExpressions> value);
 
 } // LabelSelector

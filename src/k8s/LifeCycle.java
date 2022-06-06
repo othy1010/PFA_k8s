@@ -29,7 +29,7 @@ public interface LifeCycle extends EObject {
 	 * @return the value of the '<em>Post Start</em>' reference.
 	 * @see #setPostStart(Handler)
 	 * @see k8s.K8sPackage#getLifeCycle_PostStart()
-	 * @model required="true" transient="true"
+	 * @model
 	 * @generated
 	 */
 	Handler getPostStart();
@@ -51,7 +51,7 @@ public interface LifeCycle extends EObject {
 	 * @return the value of the '<em>Pre Stop</em>' reference.
 	 * @see #setPreStop(Handler)
 	 * @see k8s.K8sPackage#getLifeCycle_PreStop()
-	 * @model required="true" transient="true"
+	 * @model
 	 * @generated
 	 */
 	Handler getPreStop();

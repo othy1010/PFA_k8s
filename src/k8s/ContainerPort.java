@@ -14,9 +14,9 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link k8s.ContainerPort#getName <em>Name</em>}</li>
+ *   <li>{@link k8s.ContainerPort#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link k8s.ContainerPort#getHostPort <em>Host Port</em>}</li>
  *   <li>{@link k8s.ContainerPort#getContainerPort <em>Container Port</em>}</li>
- *   <li>{@link k8s.ContainerPort#getProtocol <em>Protocol</em>}</li>
  * </ul>
  *
  * @see k8s.K8sPackage#getContainerPort()
@@ -31,7 +31,7 @@ public interface ContainerPort extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see k8s.K8sPackage#getContainerPort_Name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
@@ -53,7 +53,7 @@ public interface ContainerPort extends EObject {
 	 * @return the value of the '<em>Host Port</em>' attribute.
 	 * @see #setHostPort(int)
 	 * @see k8s.K8sPackage#getContainerPort_HostPort()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getHostPort();
@@ -73,12 +73,12 @@ public interface ContainerPort extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Container Port</em>' attribute.
-	 * @see #setContainerPort(String)
+	 * @see #setContainerPort(int)
 	 * @see k8s.K8sPackage#getContainerPort_ContainerPort()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
-	String getContainerPort();
+	int getContainerPort();
 
 	/**
 	 * Sets the value of the '{@link k8s.ContainerPort#getContainerPort <em>Container Port</em>}' attribute.
@@ -88,19 +88,19 @@ public interface ContainerPort extends EObject {
 	 * @see #getContainerPort()
 	 * @generated
 	 */
-	void setContainerPort(String value);
+	void setContainerPort(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Protocol</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Protocol</em>' attribute.
-	 * @see #setProtocol(int)
+	 * @see #setProtocol(String)
 	 * @see k8s.K8sPackage#getContainerPort_Protocol()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
-	int getProtocol();
+	String getProtocol();
 
 	/**
 	 * Sets the value of the '{@link k8s.ContainerPort#getProtocol <em>Protocol</em>}' attribute.
@@ -110,6 +110,6 @@ public interface ContainerPort extends EObject {
 	 * @see #getProtocol()
 	 * @generated
 	 */
-	void setProtocol(int value);
+	void setProtocol(String value);
 
 } // ContainerPort

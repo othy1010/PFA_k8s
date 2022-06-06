@@ -29,7 +29,7 @@ public interface PodTemplate extends EObject {
 	 * @return the value of the '<em>Metadata</em>' reference.
 	 * @see #setMetadata(Metadata)
 	 * @see k8s.K8sPackage#getPodTemplate_Metadata()
-	 * @model required="true" transient="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	Metadata getMetadata();
@@ -51,7 +51,7 @@ public interface PodTemplate extends EObject {
 	 * @return the value of the '<em>Spec</em>' reference.
 	 * @see #setSpec(PodSpec)
 	 * @see k8s.K8sPackage#getPodTemplate_Spec()
-	 * @model required="true" transient="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	PodSpec getSpec();

@@ -4,6 +4,7 @@ package k8s;
 
 import java.util.Map;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link k8s.Selector#getMatchLabels <em>Match Labels</em>}</li>
+ *   <li>{@link k8s.Selector#getMatchExpressions <em>Match Expressions</em>}</li>
  * </ul>
  *
  * @see k8s.K8sPackage#getSelector()
@@ -30,7 +32,7 @@ public interface Selector extends EObject {
 	 * @return the value of the '<em>Match Labels</em>' attribute.
 	 * @see #setMatchLabels(Map)
 	 * @see k8s.K8sPackage#getSelector_MatchLabels()
-	 * @model transient="true"
+	 * @model required="true" transient="true"
 	 * @generated
 	 */
 	Map<String, String> getMatchLabels();
@@ -44,5 +46,17 @@ public interface Selector extends EObject {
 	 * @generated
 	 */
 	void setMatchLabels(Map<String, String> value);
+
+	/**
+	 * Returns the value of the '<em><b>Match Expressions</b></em>' reference list.
+	 * The list contents are of type {@link k8s.MatchExpressions}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Match Expressions</em>' reference list.
+	 * @see k8s.K8sPackage#getSelector_MatchExpressions()
+	 * @model
+	 * @generated
+	 */
+	EList<MatchExpressions> getMatchExpressions();
 
 } // Selector

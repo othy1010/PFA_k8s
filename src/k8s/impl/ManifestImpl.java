@@ -2,7 +2,6 @@
  */
 package k8s.impl;
 
-import java.util.Collection;
 import k8s.ApiVersion;
 import k8s.K8sPackage;
 import k8s.Kind;
@@ -12,11 +11,11 @@ import k8s.Spec;
 
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -76,24 +75,24 @@ public class ManifestImpl extends MinimalEObjectImpl.Container implements Manife
 	protected Kind kind = KIND_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getMetadata() <em>Metadata</em>}' reference list.
+	 * The cached value of the '{@link #getMetadata() <em>Metadata</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMetadata()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Metadata> metadata;
+	protected Metadata metadata;
 
 	/**
-	 * The cached value of the '{@link #getSpec() <em>Spec</em>}' reference list.
+	 * The cached value of the '{@link #getSpec() <em>Spec</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSpec()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Spec> spec;
+	protected Spec spec;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -161,10 +160,7 @@ public class ManifestImpl extends MinimalEObjectImpl.Container implements Manife
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Metadata> getMetadata() {
-		if (metadata == null) {
-			metadata = new EObjectResolvingEList<Metadata>(Metadata.class, this, K8sPackage.MANIFEST__METADATA);
-		}
+	public Metadata getMetadata() {
 		return metadata;
 	}
 
@@ -173,11 +169,92 @@ public class ManifestImpl extends MinimalEObjectImpl.Container implements Manife
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Spec> getSpec() {
-		if (spec == null) {
-			spec = new EObjectResolvingEList<Spec>(Spec.class, this, K8sPackage.MANIFEST__SPEC);
+	public NotificationChain basicSetMetadata(Metadata newMetadata, NotificationChain msgs) {
+		Metadata oldMetadata = metadata;
+		metadata = newMetadata;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.MANIFEST__METADATA, oldMetadata, newMetadata);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMetadata(Metadata newMetadata) {
+		if (newMetadata != metadata) {
+			NotificationChain msgs = null;
+			if (metadata != null)
+				msgs = ((InternalEObject)metadata).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.MANIFEST__METADATA, null, msgs);
+			if (newMetadata != null)
+				msgs = ((InternalEObject)newMetadata).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.MANIFEST__METADATA, null, msgs);
+			msgs = basicSetMetadata(newMetadata, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.MANIFEST__METADATA, newMetadata, newMetadata));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Spec getSpec() {
 		return spec;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSpec(Spec newSpec, NotificationChain msgs) {
+		Spec oldSpec = spec;
+		spec = newSpec;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.MANIFEST__SPEC, oldSpec, newSpec);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSpec(Spec newSpec) {
+		if (newSpec != spec) {
+			NotificationChain msgs = null;
+			if (spec != null)
+				msgs = ((InternalEObject)spec).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.MANIFEST__SPEC, null, msgs);
+			if (newSpec != null)
+				msgs = ((InternalEObject)newSpec).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.MANIFEST__SPEC, null, msgs);
+			msgs = basicSetSpec(newSpec, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.MANIFEST__SPEC, newSpec, newSpec));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case K8sPackage.MANIFEST__METADATA:
+				return basicSetMetadata(null, msgs);
+			case K8sPackage.MANIFEST__SPEC:
+				return basicSetSpec(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -216,12 +293,10 @@ public class ManifestImpl extends MinimalEObjectImpl.Container implements Manife
 				setKind((Kind)newValue);
 				return;
 			case K8sPackage.MANIFEST__METADATA:
-				getMetadata().clear();
-				getMetadata().addAll((Collection<? extends Metadata>)newValue);
+				setMetadata((Metadata)newValue);
 				return;
 			case K8sPackage.MANIFEST__SPEC:
-				getSpec().clear();
-				getSpec().addAll((Collection<? extends Spec>)newValue);
+				setSpec((Spec)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -242,10 +317,10 @@ public class ManifestImpl extends MinimalEObjectImpl.Container implements Manife
 				setKind(KIND_EDEFAULT);
 				return;
 			case K8sPackage.MANIFEST__METADATA:
-				getMetadata().clear();
+				setMetadata((Metadata)null);
 				return;
 			case K8sPackage.MANIFEST__SPEC:
-				getSpec().clear();
+				setSpec((Spec)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -264,9 +339,9 @@ public class ManifestImpl extends MinimalEObjectImpl.Container implements Manife
 			case K8sPackage.MANIFEST__KIND:
 				return kind != KIND_EDEFAULT;
 			case K8sPackage.MANIFEST__METADATA:
-				return metadata != null && !metadata.isEmpty();
+				return metadata != null;
 			case K8sPackage.MANIFEST__SPEC:
-				return spec != null && !spec.isEmpty();
+				return spec != null;
 		}
 		return super.eIsSet(featureID);
 	}

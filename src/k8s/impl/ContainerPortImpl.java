@@ -21,9 +21,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link k8s.impl.ContainerPortImpl#getName <em>Name</em>}</li>
+ *   <li>{@link k8s.impl.ContainerPortImpl#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link k8s.impl.ContainerPortImpl#getHostPort <em>Host Port</em>}</li>
  *   <li>{@link k8s.impl.ContainerPortImpl#getContainerPort <em>Container Port</em>}</li>
- *   <li>{@link k8s.impl.ContainerPortImpl#getProtocol <em>Protocol</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,6 +48,26 @@ public class ContainerPortImpl extends MinimalEObjectImpl.Container implements C
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getProtocol() <em>Protocol</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProtocol()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PROTOCOL_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getProtocol() <em>Protocol</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProtocol()
+	 * @generated
+	 * @ordered
+	 */
+	protected String protocol = PROTOCOL_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getHostPort() <em>Host Port</em>}' attribute.
@@ -77,7 +97,7 @@ public class ContainerPortImpl extends MinimalEObjectImpl.Container implements C
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CONTAINER_PORT_EDEFAULT = null;
+	protected static final int CONTAINER_PORT_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getContainerPort() <em>Container Port</em>}' attribute.
@@ -87,27 +107,7 @@ public class ContainerPortImpl extends MinimalEObjectImpl.Container implements C
 	 * @generated
 	 * @ordered
 	 */
-	protected String containerPort = CONTAINER_PORT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getProtocol() <em>Protocol</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProtocol()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int PROTOCOL_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getProtocol() <em>Protocol</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProtocol()
-	 * @generated
-	 * @ordered
-	 */
-	protected int protocol = PROTOCOL_EDEFAULT;
+	protected int containerPort = CONTAINER_PORT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -175,7 +175,7 @@ public class ContainerPortImpl extends MinimalEObjectImpl.Container implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getContainerPort() {
+	public int getContainerPort() {
 		return containerPort;
 	}
 
@@ -184,8 +184,8 @@ public class ContainerPortImpl extends MinimalEObjectImpl.Container implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setContainerPort(String newContainerPort) {
-		String oldContainerPort = containerPort;
+	public void setContainerPort(int newContainerPort) {
+		int oldContainerPort = containerPort;
 		containerPort = newContainerPort;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.CONTAINER_PORT__CONTAINER_PORT, oldContainerPort, containerPort));
@@ -196,7 +196,7 @@ public class ContainerPortImpl extends MinimalEObjectImpl.Container implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getProtocol() {
+	public String getProtocol() {
 		return protocol;
 	}
 
@@ -205,8 +205,8 @@ public class ContainerPortImpl extends MinimalEObjectImpl.Container implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setProtocol(int newProtocol) {
-		int oldProtocol = protocol;
+	public void setProtocol(String newProtocol) {
+		String oldProtocol = protocol;
 		protocol = newProtocol;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.CONTAINER_PORT__PROTOCOL, oldProtocol, protocol));
@@ -222,12 +222,12 @@ public class ContainerPortImpl extends MinimalEObjectImpl.Container implements C
 		switch (featureID) {
 			case K8sPackage.CONTAINER_PORT__NAME:
 				return getName();
+			case K8sPackage.CONTAINER_PORT__PROTOCOL:
+				return getProtocol();
 			case K8sPackage.CONTAINER_PORT__HOST_PORT:
 				return getHostPort();
 			case K8sPackage.CONTAINER_PORT__CONTAINER_PORT:
 				return getContainerPort();
-			case K8sPackage.CONTAINER_PORT__PROTOCOL:
-				return getProtocol();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -243,14 +243,14 @@ public class ContainerPortImpl extends MinimalEObjectImpl.Container implements C
 			case K8sPackage.CONTAINER_PORT__NAME:
 				setName((String)newValue);
 				return;
+			case K8sPackage.CONTAINER_PORT__PROTOCOL:
+				setProtocol((String)newValue);
+				return;
 			case K8sPackage.CONTAINER_PORT__HOST_PORT:
 				setHostPort((Integer)newValue);
 				return;
 			case K8sPackage.CONTAINER_PORT__CONTAINER_PORT:
-				setContainerPort((String)newValue);
-				return;
-			case K8sPackage.CONTAINER_PORT__PROTOCOL:
-				setProtocol((Integer)newValue);
+				setContainerPort((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -267,14 +267,14 @@ public class ContainerPortImpl extends MinimalEObjectImpl.Container implements C
 			case K8sPackage.CONTAINER_PORT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case K8sPackage.CONTAINER_PORT__PROTOCOL:
+				setProtocol(PROTOCOL_EDEFAULT);
+				return;
 			case K8sPackage.CONTAINER_PORT__HOST_PORT:
 				setHostPort(HOST_PORT_EDEFAULT);
 				return;
 			case K8sPackage.CONTAINER_PORT__CONTAINER_PORT:
 				setContainerPort(CONTAINER_PORT_EDEFAULT);
-				return;
-			case K8sPackage.CONTAINER_PORT__PROTOCOL:
-				setProtocol(PROTOCOL_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -290,12 +290,12 @@ public class ContainerPortImpl extends MinimalEObjectImpl.Container implements C
 		switch (featureID) {
 			case K8sPackage.CONTAINER_PORT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case K8sPackage.CONTAINER_PORT__PROTOCOL:
+				return PROTOCOL_EDEFAULT == null ? protocol != null : !PROTOCOL_EDEFAULT.equals(protocol);
 			case K8sPackage.CONTAINER_PORT__HOST_PORT:
 				return hostPort != HOST_PORT_EDEFAULT;
 			case K8sPackage.CONTAINER_PORT__CONTAINER_PORT:
-				return CONTAINER_PORT_EDEFAULT == null ? containerPort != null : !CONTAINER_PORT_EDEFAULT.equals(containerPort);
-			case K8sPackage.CONTAINER_PORT__PROTOCOL:
-				return protocol != PROTOCOL_EDEFAULT;
+				return containerPort != CONTAINER_PORT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -312,12 +312,12 @@ public class ContainerPortImpl extends MinimalEObjectImpl.Container implements C
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", protocol: ");
+		result.append(protocol);
 		result.append(", hostPort: ");
 		result.append(hostPort);
 		result.append(", containerPort: ");
 		result.append(containerPort);
-		result.append(", protocol: ");
-		result.append(protocol);
 		result.append(')');
 		return result.toString();
 	}

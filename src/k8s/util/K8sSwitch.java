@@ -66,21 +66,22 @@ public class K8sSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case K8sPackage.METADATA: {
-				Metadata metadata = (Metadata)theEObject;
-				T result = caseMetadata(metadata);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case K8sPackage.MANIFEST: {
 				Manifest manifest = (Manifest)theEObject;
 				T result = caseManifest(manifest);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case K8sPackage.METADATA: {
+				Metadata metadata = (Metadata)theEObject;
+				T result = caseMetadata(metadata);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case K8sPackage.SPEC_FACTORY: {
 				SpecFactory specFactory = (SpecFactory)theEObject;
 				T result = caseSpecFactory(specFactory);
+				if (result == null) result = caseSpec(specFactory);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -108,6 +109,7 @@ public class K8sSwitch<T> extends Switch<T> {
 				PodSpec podSpec = (PodSpec)theEObject;
 				T result = casePodSpec(podSpec);
 				if (result == null) result = caseSpecFactory(podSpec);
+				if (result == null) result = caseSpec(podSpec);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -115,6 +117,7 @@ public class K8sSwitch<T> extends Switch<T> {
 				DeploymentSpec deploymentSpec = (DeploymentSpec)theEObject;
 				T result = caseDeploymentSpec(deploymentSpec);
 				if (result == null) result = caseSpecFactory(deploymentSpec);
+				if (result == null) result = caseSpec(deploymentSpec);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -283,6 +286,12 @@ public class K8sSwitch<T> extends Switch<T> {
 			case K8sPackage.NODE_SELECTOR_REQUIREMENT: {
 				NodeSelectorRequirement nodeSelectorRequirement = (NodeSelectorRequirement)theEObject;
 				T result = caseNodeSelectorRequirement(nodeSelectorRequirement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case K8sPackage.MYMAP: {
+				Mymap mymap = (Mymap)theEObject;
+				T result = caseMymap(mymap);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -827,6 +836,21 @@ public class K8sSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNodeSelectorRequirement(NodeSelectorRequirement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Mymap</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Mymap</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMymap(Mymap object) {
 		return null;
 	}
 

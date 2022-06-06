@@ -2,18 +2,15 @@
  */
 package k8s.impl;
 
+import java.util.Collection;
 import k8s.K8sPackage;
 import k8s.NodeSelectorRequirement;
 import k8s.NodeSelectorTerm;
-
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +27,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class NodeSelectorTermImpl extends MinimalEObjectImpl.Container implements NodeSelectorTerm {
 	/**
-	 * The cached value of the '{@link #getMatchExpressions() <em>Match Expressions</em>}' attribute.
+	 * The cached value of the '{@link #getMatchExpressions() <em>Match Expressions</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMatchExpressions()
@@ -64,19 +61,10 @@ public class NodeSelectorTermImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public EList<NodeSelectorRequirement> getMatchExpressions() {
+		if (matchExpressions == null) {
+			matchExpressions = new EObjectResolvingEList<NodeSelectorRequirement>(NodeSelectorRequirement.class, this, K8sPackage.NODE_SELECTOR_TERM__MATCH_EXPRESSIONS);
+		}
 		return matchExpressions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMatchExpressions(EList<NodeSelectorRequirement> newMatchExpressions) {
-		EList<NodeSelectorRequirement> oldMatchExpressions = matchExpressions;
-		matchExpressions = newMatchExpressions;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.NODE_SELECTOR_TERM__MATCH_EXPRESSIONS, oldMatchExpressions, matchExpressions));
 	}
 
 	/**
@@ -103,7 +91,8 @@ public class NodeSelectorTermImpl extends MinimalEObjectImpl.Container implement
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case K8sPackage.NODE_SELECTOR_TERM__MATCH_EXPRESSIONS:
-				setMatchExpressions((EList<NodeSelectorRequirement>)newValue);
+				getMatchExpressions().clear();
+				getMatchExpressions().addAll((Collection<? extends NodeSelectorRequirement>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -118,7 +107,7 @@ public class NodeSelectorTermImpl extends MinimalEObjectImpl.Container implement
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case K8sPackage.NODE_SELECTOR_TERM__MATCH_EXPRESSIONS:
-				setMatchExpressions((EList<NodeSelectorRequirement>)null);
+				getMatchExpressions().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -133,25 +122,9 @@ public class NodeSelectorTermImpl extends MinimalEObjectImpl.Container implement
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case K8sPackage.NODE_SELECTOR_TERM__MATCH_EXPRESSIONS:
-				return matchExpressions != null;
+				return matchExpressions != null && !matchExpressions.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (matchExpressions: ");
-		result.append(matchExpressions);
-		result.append(')');
-		return result.toString();
 	}
 
 } //NodeSelectorTermImpl

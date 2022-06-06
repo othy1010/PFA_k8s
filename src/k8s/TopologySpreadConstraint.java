@@ -31,7 +31,7 @@ public interface TopologySpreadConstraint extends EObject {
 	 * @return the value of the '<em>Label Selector</em>' reference.
 	 * @see #setLabelSelector(LabelSelector)
 	 * @see k8s.K8sPackage#getTopologySpreadConstraint_LabelSelector()
-	 * @model required="true" transient="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	LabelSelector getLabelSelector();

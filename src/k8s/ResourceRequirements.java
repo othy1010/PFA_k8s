@@ -31,7 +31,7 @@ public interface ResourceRequirements extends EObject {
 	 * @return the value of the '<em>Limits</em>' attribute.
 	 * @see #setLimits(Map)
 	 * @see k8s.K8sPackage#getResourceRequirements_Limits()
-	 * @model transient="true"
+	 * @model required="true" transient="true"
 	 * @generated
 	 */
 	Map<String, String> getLimits();
@@ -53,7 +53,7 @@ public interface ResourceRequirements extends EObject {
 	 * @return the value of the '<em>Requests</em>' attribute.
 	 * @see #setRequests(Map)
 	 * @see k8s.K8sPackage#getResourceRequirements_Requests()
-	 * @model transient="true"
+	 * @model required="true" transient="true"
 	 * @generated
 	 */
 	Map<String, String> getRequests();

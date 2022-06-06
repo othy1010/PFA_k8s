@@ -29,7 +29,7 @@ public interface HTTPHeader extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see k8s.K8sPackage#getHTTPHeader_Name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
@@ -51,7 +51,7 @@ public interface HTTPHeader extends EObject {
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
 	 * @see k8s.K8sPackage#getHTTPHeader_Value()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getValue();

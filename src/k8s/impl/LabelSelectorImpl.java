@@ -2,6 +2,7 @@
  */
 package k8s.impl;
 
+import java.util.Collection;
 import java.util.Map;
 
 import k8s.K8sPackage;
@@ -16,6 +17,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,7 +45,7 @@ public class LabelSelectorImpl extends MinimalEObjectImpl.Container implements L
 	protected Map<String, String> matchLabels;
 
 	/**
-	 * The cached value of the '{@link #getMatchExpressions() <em>Match Expressions</em>}' attribute.
+	 * The cached value of the '{@link #getMatchExpressions() <em>Match Expressions</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMatchExpressions()
@@ -98,19 +100,10 @@ public class LabelSelectorImpl extends MinimalEObjectImpl.Container implements L
 	 * @generated
 	 */
 	public EList<MatchExpressions> getMatchExpressions() {
+		if (matchExpressions == null) {
+			matchExpressions = new EObjectResolvingEList<MatchExpressions>(MatchExpressions.class, this, K8sPackage.LABEL_SELECTOR__MATCH_EXPRESSIONS);
+		}
 		return matchExpressions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMatchExpressions(EList<MatchExpressions> newMatchExpressions) {
-		EList<MatchExpressions> oldMatchExpressions = matchExpressions;
-		matchExpressions = newMatchExpressions;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.LABEL_SELECTOR__MATCH_EXPRESSIONS, oldMatchExpressions, matchExpressions));
 	}
 
 	/**
@@ -142,7 +135,8 @@ public class LabelSelectorImpl extends MinimalEObjectImpl.Container implements L
 				setMatchLabels((Map<String, String>)newValue);
 				return;
 			case K8sPackage.LABEL_SELECTOR__MATCH_EXPRESSIONS:
-				setMatchExpressions((EList<MatchExpressions>)newValue);
+				getMatchExpressions().clear();
+				getMatchExpressions().addAll((Collection<? extends MatchExpressions>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -160,7 +154,7 @@ public class LabelSelectorImpl extends MinimalEObjectImpl.Container implements L
 				setMatchLabels((Map<String, String>)null);
 				return;
 			case K8sPackage.LABEL_SELECTOR__MATCH_EXPRESSIONS:
-				setMatchExpressions((EList<MatchExpressions>)null);
+				getMatchExpressions().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -177,7 +171,7 @@ public class LabelSelectorImpl extends MinimalEObjectImpl.Container implements L
 			case K8sPackage.LABEL_SELECTOR__MATCH_LABELS:
 				return matchLabels != null;
 			case K8sPackage.LABEL_SELECTOR__MATCH_EXPRESSIONS:
-				return matchExpressions != null;
+				return matchExpressions != null && !matchExpressions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -194,8 +188,6 @@ public class LabelSelectorImpl extends MinimalEObjectImpl.Container implements L
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (matchLabels: ");
 		result.append(matchLabels);
-		result.append(", matchExpressions: ");
-		result.append(matchExpressions);
 		result.append(')');
 		return result.toString();
 	}

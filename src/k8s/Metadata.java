@@ -33,7 +33,7 @@ public interface Metadata extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see k8s.K8sPackage#getMetadata_Name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
@@ -55,7 +55,7 @@ public interface Metadata extends EObject {
 	 * @return the value of the '<em>Namespace</em>' attribute.
 	 * @see #setNamespace(String)
 	 * @see k8s.K8sPackage#getMetadata_Namespace()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getNamespace();

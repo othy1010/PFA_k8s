@@ -2,6 +2,7 @@
  */
 package k8s.impl;
 
+import java.util.Collection;
 import k8s.ContainerPort;
 import k8s.Containers;
 import k8s.EnvVar;
@@ -20,6 +21,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,15 +35,15 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link k8s.impl.ContainersImpl#getName <em>Name</em>}</li>
  *   <li>{@link k8s.impl.ContainersImpl#getImage <em>Image</em>}</li>
  *   <li>{@link k8s.impl.ContainersImpl#isLiveRestart <em>Live Restart</em>}</li>
- *   <li>{@link k8s.impl.ContainersImpl#getPorts <em>Ports</em>}</li>
- *   <li>{@link k8s.impl.ContainersImpl#getEnv <em>Env</em>}</li>
  *   <li>{@link k8s.impl.ContainersImpl#getCommand <em>Command</em>}</li>
  *   <li>{@link k8s.impl.ContainersImpl#getArgs <em>Args</em>}</li>
- *   <li>{@link k8s.impl.ContainersImpl#getVolumeMounts <em>Volume Mounts</em>}</li>
  *   <li>{@link k8s.impl.ContainersImpl#getResources <em>Resources</em>}</li>
  *   <li>{@link k8s.impl.ContainersImpl#getLivenessProbe <em>Liveness Probe</em>}</li>
  *   <li>{@link k8s.impl.ContainersImpl#getReadinessProbe <em>Readiness Probe</em>}</li>
  *   <li>{@link k8s.impl.ContainersImpl#getLifeCycle <em>Life Cycle</em>}</li>
+ *   <li>{@link k8s.impl.ContainersImpl#getVolumeMounts <em>Volume Mounts</em>}</li>
+ *   <li>{@link k8s.impl.ContainersImpl#getEnv <em>Env</em>}</li>
+ *   <li>{@link k8s.impl.ContainersImpl#getPorts <em>Ports</em>}</li>
  * </ul>
  *
  * @generated
@@ -107,27 +110,7 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	protected boolean liveRestart = LIVE_RESTART_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getPorts() <em>Ports</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPorts()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ContainerPort> ports;
-
-	/**
-	 * The cached value of the '{@link #getEnv() <em>Env</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEnv()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<EnvVar> env;
-
-	/**
-	 * The cached value of the '{@link #getCommand() <em>Command</em>}' attribute.
+	 * The cached value of the '{@link #getCommand() <em>Command</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCommand()
@@ -137,7 +120,7 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	protected EList<String> command;
 
 	/**
-	 * The cached value of the '{@link #getArgs() <em>Args</em>}' attribute.
+	 * The cached value of the '{@link #getArgs() <em>Args</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getArgs()
@@ -145,16 +128,6 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	 * @ordered
 	 */
 	protected EList<String> args;
-
-	/**
-	 * The cached value of the '{@link #getVolumeMounts() <em>Volume Mounts</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVolumeMounts()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<VolumeMount> volumeMounts;
 
 	/**
 	 * The cached value of the '{@link #getResources() <em>Resources</em>}' reference.
@@ -195,6 +168,36 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	 * @ordered
 	 */
 	protected LifeCycle lifeCycle;
+
+	/**
+	 * The cached value of the '{@link #getVolumeMounts() <em>Volume Mounts</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVolumeMounts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<VolumeMount> volumeMounts;
+
+	/**
+	 * The cached value of the '{@link #getEnv() <em>Env</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnv()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EnvVar> env;
+
+	/**
+	 * The cached value of the '{@link #getPorts() <em>Ports</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPorts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ContainerPort> ports;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -284,6 +287,9 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	 * @generated
 	 */
 	public EList<ContainerPort> getPorts() {
+		if (ports == null) {
+			ports = new EObjectResolvingEList<ContainerPort>(ContainerPort.class, this, K8sPackage.CONTAINERS__PORTS);
+		}
 		return ports;
 	}
 
@@ -292,19 +298,10 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPorts(EList<ContainerPort> newPorts) {
-		EList<ContainerPort> oldPorts = ports;
-		ports = newPorts;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.CONTAINERS__PORTS, oldPorts, ports));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<EnvVar> getEnv() {
+		if (env == null) {
+			env = new EObjectResolvingEList<EnvVar>(EnvVar.class, this, K8sPackage.CONTAINERS__ENV);
+		}
 		return env;
 	}
 
@@ -313,19 +310,10 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEnv(EList<EnvVar> newEnv) {
-		EList<EnvVar> oldEnv = env;
-		env = newEnv;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.CONTAINERS__ENV, oldEnv, env));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<String> getCommand() {
+		if (command == null) {
+			command = new EDataTypeUniqueEList<String>(String.class, this, K8sPackage.CONTAINERS__COMMAND);
+		}
 		return command;
 	}
 
@@ -334,19 +322,10 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCommand(EList<String> newCommand) {
-		EList<String> oldCommand = command;
-		command = newCommand;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.CONTAINERS__COMMAND, oldCommand, command));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<String> getArgs() {
+		if (args == null) {
+			args = new EDataTypeUniqueEList<String>(String.class, this, K8sPackage.CONTAINERS__ARGS);
+		}
 		return args;
 	}
 
@@ -355,32 +334,11 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setArgs(EList<String> newArgs) {
-		EList<String> oldArgs = args;
-		args = newArgs;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.CONTAINERS__ARGS, oldArgs, args));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<VolumeMount> getVolumeMounts() {
+		if (volumeMounts == null) {
+			volumeMounts = new EObjectResolvingEList<VolumeMount>(VolumeMount.class, this, K8sPackage.CONTAINERS__VOLUME_MOUNTS);
+		}
 		return volumeMounts;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setVolumeMounts(EList<VolumeMount> newVolumeMounts) {
-		EList<VolumeMount> oldVolumeMounts = volumeMounts;
-		volumeMounts = newVolumeMounts;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.CONTAINERS__VOLUME_MOUNTS, oldVolumeMounts, volumeMounts));
 	}
 
 	/**
@@ -549,16 +507,10 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 				return getImage();
 			case K8sPackage.CONTAINERS__LIVE_RESTART:
 				return isLiveRestart();
-			case K8sPackage.CONTAINERS__PORTS:
-				return getPorts();
-			case K8sPackage.CONTAINERS__ENV:
-				return getEnv();
 			case K8sPackage.CONTAINERS__COMMAND:
 				return getCommand();
 			case K8sPackage.CONTAINERS__ARGS:
 				return getArgs();
-			case K8sPackage.CONTAINERS__VOLUME_MOUNTS:
-				return getVolumeMounts();
 			case K8sPackage.CONTAINERS__RESOURCES:
 				if (resolve) return getResources();
 				return basicGetResources();
@@ -571,6 +523,12 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 			case K8sPackage.CONTAINERS__LIFE_CYCLE:
 				if (resolve) return getLifeCycle();
 				return basicGetLifeCycle();
+			case K8sPackage.CONTAINERS__VOLUME_MOUNTS:
+				return getVolumeMounts();
+			case K8sPackage.CONTAINERS__ENV:
+				return getEnv();
+			case K8sPackage.CONTAINERS__PORTS:
+				return getPorts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -593,20 +551,13 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 			case K8sPackage.CONTAINERS__LIVE_RESTART:
 				setLiveRestart((Boolean)newValue);
 				return;
-			case K8sPackage.CONTAINERS__PORTS:
-				setPorts((EList<ContainerPort>)newValue);
-				return;
-			case K8sPackage.CONTAINERS__ENV:
-				setEnv((EList<EnvVar>)newValue);
-				return;
 			case K8sPackage.CONTAINERS__COMMAND:
-				setCommand((EList<String>)newValue);
+				getCommand().clear();
+				getCommand().addAll((Collection<? extends String>)newValue);
 				return;
 			case K8sPackage.CONTAINERS__ARGS:
-				setArgs((EList<String>)newValue);
-				return;
-			case K8sPackage.CONTAINERS__VOLUME_MOUNTS:
-				setVolumeMounts((EList<VolumeMount>)newValue);
+				getArgs().clear();
+				getArgs().addAll((Collection<? extends String>)newValue);
 				return;
 			case K8sPackage.CONTAINERS__RESOURCES:
 				setResources((ResourceRequirements)newValue);
@@ -619,6 +570,18 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 				return;
 			case K8sPackage.CONTAINERS__LIFE_CYCLE:
 				setLifeCycle((LifeCycle)newValue);
+				return;
+			case K8sPackage.CONTAINERS__VOLUME_MOUNTS:
+				getVolumeMounts().clear();
+				getVolumeMounts().addAll((Collection<? extends VolumeMount>)newValue);
+				return;
+			case K8sPackage.CONTAINERS__ENV:
+				getEnv().clear();
+				getEnv().addAll((Collection<? extends EnvVar>)newValue);
+				return;
+			case K8sPackage.CONTAINERS__PORTS:
+				getPorts().clear();
+				getPorts().addAll((Collection<? extends ContainerPort>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -641,20 +604,11 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 			case K8sPackage.CONTAINERS__LIVE_RESTART:
 				setLiveRestart(LIVE_RESTART_EDEFAULT);
 				return;
-			case K8sPackage.CONTAINERS__PORTS:
-				setPorts((EList<ContainerPort>)null);
-				return;
-			case K8sPackage.CONTAINERS__ENV:
-				setEnv((EList<EnvVar>)null);
-				return;
 			case K8sPackage.CONTAINERS__COMMAND:
-				setCommand((EList<String>)null);
+				getCommand().clear();
 				return;
 			case K8sPackage.CONTAINERS__ARGS:
-				setArgs((EList<String>)null);
-				return;
-			case K8sPackage.CONTAINERS__VOLUME_MOUNTS:
-				setVolumeMounts((EList<VolumeMount>)null);
+				getArgs().clear();
 				return;
 			case K8sPackage.CONTAINERS__RESOURCES:
 				setResources((ResourceRequirements)null);
@@ -667,6 +621,15 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 				return;
 			case K8sPackage.CONTAINERS__LIFE_CYCLE:
 				setLifeCycle((LifeCycle)null);
+				return;
+			case K8sPackage.CONTAINERS__VOLUME_MOUNTS:
+				getVolumeMounts().clear();
+				return;
+			case K8sPackage.CONTAINERS__ENV:
+				getEnv().clear();
+				return;
+			case K8sPackage.CONTAINERS__PORTS:
+				getPorts().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -686,16 +649,10 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 				return IMAGE_EDEFAULT == null ? image != null : !IMAGE_EDEFAULT.equals(image);
 			case K8sPackage.CONTAINERS__LIVE_RESTART:
 				return liveRestart != LIVE_RESTART_EDEFAULT;
-			case K8sPackage.CONTAINERS__PORTS:
-				return ports != null;
-			case K8sPackage.CONTAINERS__ENV:
-				return env != null;
 			case K8sPackage.CONTAINERS__COMMAND:
-				return command != null;
+				return command != null && !command.isEmpty();
 			case K8sPackage.CONTAINERS__ARGS:
-				return args != null;
-			case K8sPackage.CONTAINERS__VOLUME_MOUNTS:
-				return volumeMounts != null;
+				return args != null && !args.isEmpty();
 			case K8sPackage.CONTAINERS__RESOURCES:
 				return resources != null;
 			case K8sPackage.CONTAINERS__LIVENESS_PROBE:
@@ -704,6 +661,12 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 				return readinessProbe != null;
 			case K8sPackage.CONTAINERS__LIFE_CYCLE:
 				return lifeCycle != null;
+			case K8sPackage.CONTAINERS__VOLUME_MOUNTS:
+				return volumeMounts != null && !volumeMounts.isEmpty();
+			case K8sPackage.CONTAINERS__ENV:
+				return env != null && !env.isEmpty();
+			case K8sPackage.CONTAINERS__PORTS:
+				return ports != null && !ports.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -724,16 +687,10 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 		result.append(image);
 		result.append(", liveRestart: ");
 		result.append(liveRestart);
-		result.append(", ports: ");
-		result.append(ports);
-		result.append(", env: ");
-		result.append(env);
 		result.append(", command: ");
 		result.append(command);
 		result.append(", args: ");
 		result.append(args);
-		result.append(", volumeMounts: ");
-		result.append(volumeMounts);
 		result.append(')');
 		return result.toString();
 	}

@@ -31,7 +31,7 @@ public interface ObjectFieldSelector extends EObject {
 	 * @see k8s.ApiVersion
 	 * @see #setApiVersion(ApiVersion)
 	 * @see k8s.K8sPackage#getObjectFieldSelector_ApiVersion()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	ApiVersion getApiVersion();
@@ -54,7 +54,7 @@ public interface ObjectFieldSelector extends EObject {
 	 * @return the value of the '<em>Field Path</em>' attribute.
 	 * @see #setFieldPath(String)
 	 * @see k8s.K8sPackage#getObjectFieldSelector_FieldPath()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getFieldPath();

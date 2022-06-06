@@ -2,17 +2,14 @@
  */
 package k8s.impl;
 
+import java.util.Collection;
 import k8s.K8sPackage;
 import k8s.NodeAffinity;
 import k8s.NodeSelector;
-
-import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,14 +26,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class NodeAffinityImpl extends MinimalEObjectImpl.Container implements NodeAffinity {
 	/**
-	 * The cached value of the '{@link #getRequiredDuringSchedulingIgnoredDuringExecution() <em>Required During Scheduling Ignored During Execution</em>}' reference.
+	 * The cached value of the '{@link #getRequiredDuringSchedulingIgnoredDuringExecution() <em>Required During Scheduling Ignored During Execution</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRequiredDuringSchedulingIgnoredDuringExecution()
 	 * @generated
 	 * @ordered
 	 */
-	protected NodeSelector requiredDuringSchedulingIgnoredDuringExecution;
+	protected EList<NodeSelector> requiredDuringSchedulingIgnoredDuringExecution;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,37 +59,11 @@ public class NodeAffinityImpl extends MinimalEObjectImpl.Container implements No
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NodeSelector getRequiredDuringSchedulingIgnoredDuringExecution() {
-		if (requiredDuringSchedulingIgnoredDuringExecution != null && requiredDuringSchedulingIgnoredDuringExecution.eIsProxy()) {
-			InternalEObject oldRequiredDuringSchedulingIgnoredDuringExecution = (InternalEObject)requiredDuringSchedulingIgnoredDuringExecution;
-			requiredDuringSchedulingIgnoredDuringExecution = (NodeSelector)eResolveProxy(oldRequiredDuringSchedulingIgnoredDuringExecution);
-			if (requiredDuringSchedulingIgnoredDuringExecution != oldRequiredDuringSchedulingIgnoredDuringExecution) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, K8sPackage.NODE_AFFINITY__REQUIRED_DURING_SCHEDULING_IGNORED_DURING_EXECUTION, oldRequiredDuringSchedulingIgnoredDuringExecution, requiredDuringSchedulingIgnoredDuringExecution));
-			}
+	public EList<NodeSelector> getRequiredDuringSchedulingIgnoredDuringExecution() {
+		if (requiredDuringSchedulingIgnoredDuringExecution == null) {
+			requiredDuringSchedulingIgnoredDuringExecution = new EObjectResolvingEList<NodeSelector>(NodeSelector.class, this, K8sPackage.NODE_AFFINITY__REQUIRED_DURING_SCHEDULING_IGNORED_DURING_EXECUTION);
 		}
 		return requiredDuringSchedulingIgnoredDuringExecution;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NodeSelector basicGetRequiredDuringSchedulingIgnoredDuringExecution() {
-		return requiredDuringSchedulingIgnoredDuringExecution;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRequiredDuringSchedulingIgnoredDuringExecution(NodeSelector newRequiredDuringSchedulingIgnoredDuringExecution) {
-		NodeSelector oldRequiredDuringSchedulingIgnoredDuringExecution = requiredDuringSchedulingIgnoredDuringExecution;
-		requiredDuringSchedulingIgnoredDuringExecution = newRequiredDuringSchedulingIgnoredDuringExecution;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.NODE_AFFINITY__REQUIRED_DURING_SCHEDULING_IGNORED_DURING_EXECUTION, oldRequiredDuringSchedulingIgnoredDuringExecution, requiredDuringSchedulingIgnoredDuringExecution));
 	}
 
 	/**
@@ -104,8 +75,7 @@ public class NodeAffinityImpl extends MinimalEObjectImpl.Container implements No
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case K8sPackage.NODE_AFFINITY__REQUIRED_DURING_SCHEDULING_IGNORED_DURING_EXECUTION:
-				if (resolve) return getRequiredDuringSchedulingIgnoredDuringExecution();
-				return basicGetRequiredDuringSchedulingIgnoredDuringExecution();
+				return getRequiredDuringSchedulingIgnoredDuringExecution();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -115,11 +85,13 @@ public class NodeAffinityImpl extends MinimalEObjectImpl.Container implements No
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case K8sPackage.NODE_AFFINITY__REQUIRED_DURING_SCHEDULING_IGNORED_DURING_EXECUTION:
-				setRequiredDuringSchedulingIgnoredDuringExecution((NodeSelector)newValue);
+				getRequiredDuringSchedulingIgnoredDuringExecution().clear();
+				getRequiredDuringSchedulingIgnoredDuringExecution().addAll((Collection<? extends NodeSelector>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -134,7 +106,7 @@ public class NodeAffinityImpl extends MinimalEObjectImpl.Container implements No
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case K8sPackage.NODE_AFFINITY__REQUIRED_DURING_SCHEDULING_IGNORED_DURING_EXECUTION:
-				setRequiredDuringSchedulingIgnoredDuringExecution((NodeSelector)null);
+				getRequiredDuringSchedulingIgnoredDuringExecution().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -149,7 +121,7 @@ public class NodeAffinityImpl extends MinimalEObjectImpl.Container implements No
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case K8sPackage.NODE_AFFINITY__REQUIRED_DURING_SCHEDULING_IGNORED_DURING_EXECUTION:
-				return requiredDuringSchedulingIgnoredDuringExecution != null;
+				return requiredDuringSchedulingIgnoredDuringExecution != null && !requiredDuringSchedulingIgnoredDuringExecution.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

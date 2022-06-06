@@ -28,7 +28,7 @@ public interface DeploymentSpec extends SpecFactory {
 	 * @return the value of the '<em>Selector</em>' reference.
 	 * @see #setSelector(Selector)
 	 * @see k8s.K8sPackage#getDeploymentSpec_Selector()
-	 * @model required="true" transient="true"
+	 * @model
 	 * @generated
 	 */
 	Selector getSelector();
@@ -50,7 +50,7 @@ public interface DeploymentSpec extends SpecFactory {
 	 * @return the value of the '<em>Strategy</em>' reference.
 	 * @see #setStrategy(DeploymentStrategy)
 	 * @see k8s.K8sPackage#getDeploymentSpec_Strategy()
-	 * @model required="true" transient="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	DeploymentStrategy getStrategy();
@@ -72,7 +72,7 @@ public interface DeploymentSpec extends SpecFactory {
 	 * @return the value of the '<em>Template</em>' reference.
 	 * @see #setTemplate(PodTemplate)
 	 * @see k8s.K8sPackage#getDeploymentSpec_Template()
-	 * @model required="true" transient="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	PodTemplate getTemplate();

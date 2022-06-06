@@ -16,8 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link k8s.MatchExpressions#getKey <em>Key</em>}</li>
- *   <li>{@link k8s.MatchExpressions#getOperator <em>Operator</em>}</li>
  *   <li>{@link k8s.MatchExpressions#getValues <em>Values</em>}</li>
+ *   <li>{@link k8s.MatchExpressions#getOperator <em>Operator</em>}</li>
  * </ul>
  *
  * @see k8s.K8sPackage#getMatchExpressions()
@@ -32,7 +32,7 @@ public interface MatchExpressions extends EObject {
 	 * @return the value of the '<em>Key</em>' attribute.
 	 * @see #setKey(String)
 	 * @see k8s.K8sPackage#getMatchExpressions_Key()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getKey();
@@ -54,7 +54,7 @@ public interface MatchExpressions extends EObject {
 	 * @return the value of the '<em>Operator</em>' attribute.
 	 * @see #setOperator(String)
 	 * @see k8s.K8sPackage#getMatchExpressions_Operator()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getOperator();
@@ -70,25 +70,15 @@ public interface MatchExpressions extends EObject {
 	void setOperator(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Values</b></em>' attribute.
+	 * Returns the value of the '<em><b>Values</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Values</em>' attribute.
-	 * @see #setValues(EList)
+	 * @return the value of the '<em>Values</em>' attribute list.
 	 * @see k8s.K8sPackage#getMatchExpressions_Values()
-	 * @model many="false" transient="true"
+	 * @model required="true" transient="true"
 	 * @generated
 	 */
 	EList<String> getValues();
-
-	/**
-	 * Sets the value of the '{@link k8s.MatchExpressions#getValues <em>Values</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Values</em>' attribute.
-	 * @see #getValues()
-	 * @generated
-	 */
-	void setValues(EList<String> value);
 
 } // MatchExpressions

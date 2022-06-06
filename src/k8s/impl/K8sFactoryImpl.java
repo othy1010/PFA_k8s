@@ -57,8 +57,8 @@ public class K8sFactoryImpl extends EFactoryImpl implements K8sFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case K8sPackage.METADATA: return createMetadata();
 			case K8sPackage.MANIFEST: return createManifest();
+			case K8sPackage.METADATA: return createMetadata();
 			case K8sPackage.SPEC_FACTORY: return createSpecFactory();
 			case K8sPackage.DEPLOYMENT: return createDeployment();
 			case K8sPackage.POD: return createPod();
@@ -92,6 +92,7 @@ public class K8sFactoryImpl extends EFactoryImpl implements K8sFactory {
 			case K8sPackage.NODE_SELECTOR: return createNodeSelector();
 			case K8sPackage.NODE_SELECTOR_TERM: return createNodeSelectorTerm();
 			case K8sPackage.NODE_SELECTOR_REQUIREMENT: return createNodeSelectorRequirement();
+			case K8sPackage.MYMAP: return createMymap();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -479,6 +480,16 @@ public class K8sFactoryImpl extends EFactoryImpl implements K8sFactory {
 	public NodeSelectorRequirement createNodeSelectorRequirement() {
 		NodeSelectorRequirementImpl nodeSelectorRequirement = new NodeSelectorRequirementImpl();
 		return nodeSelectorRequirement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Mymap createMymap() {
+		MymapImpl mymap = new MymapImpl();
+		return mymap;
 	}
 
 	/**

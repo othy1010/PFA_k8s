@@ -18,15 +18,15 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link k8s.Containers#getName <em>Name</em>}</li>
  *   <li>{@link k8s.Containers#getImage <em>Image</em>}</li>
  *   <li>{@link k8s.Containers#isLiveRestart <em>Live Restart</em>}</li>
- *   <li>{@link k8s.Containers#getPorts <em>Ports</em>}</li>
- *   <li>{@link k8s.Containers#getEnv <em>Env</em>}</li>
  *   <li>{@link k8s.Containers#getCommand <em>Command</em>}</li>
  *   <li>{@link k8s.Containers#getArgs <em>Args</em>}</li>
- *   <li>{@link k8s.Containers#getVolumeMounts <em>Volume Mounts</em>}</li>
  *   <li>{@link k8s.Containers#getResources <em>Resources</em>}</li>
  *   <li>{@link k8s.Containers#getLivenessProbe <em>Liveness Probe</em>}</li>
  *   <li>{@link k8s.Containers#getReadinessProbe <em>Readiness Probe</em>}</li>
  *   <li>{@link k8s.Containers#getLifeCycle <em>Life Cycle</em>}</li>
+ *   <li>{@link k8s.Containers#getVolumeMounts <em>Volume Mounts</em>}</li>
+ *   <li>{@link k8s.Containers#getEnv <em>Env</em>}</li>
+ *   <li>{@link k8s.Containers#getPorts <em>Ports</em>}</li>
  * </ul>
  *
  * @see k8s.K8sPackage#getContainers()
@@ -41,7 +41,7 @@ public interface Containers extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see k8s.K8sPackage#getContainers_Name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
@@ -63,7 +63,7 @@ public interface Containers extends EObject {
 	 * @return the value of the '<em>Image</em>' attribute.
 	 * @see #setImage(String)
 	 * @see k8s.K8sPackage#getContainers_Image()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getImage();
@@ -101,114 +101,64 @@ public interface Containers extends EObject {
 	void setLiveRestart(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Ports</b></em>' attribute.
+	 * Returns the value of the '<em><b>Ports</b></em>' reference list.
+	 * The list contents are of type {@link k8s.ContainerPort}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ports</em>' attribute.
-	 * @see #setPorts(EList)
+	 * @return the value of the '<em>Ports</em>' reference list.
 	 * @see k8s.K8sPackage#getContainers_Ports()
-	 * @model many="false" transient="true"
+	 * @model
 	 * @generated
 	 */
 	EList<ContainerPort> getPorts();
 
 	/**
-	 * Sets the value of the '{@link k8s.Containers#getPorts <em>Ports</em>}' attribute.
+	 * Returns the value of the '<em><b>Env</b></em>' reference list.
+	 * The list contents are of type {@link k8s.EnvVar}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Ports</em>' attribute.
-	 * @see #getPorts()
-	 * @generated
-	 */
-	void setPorts(EList<ContainerPort> value);
-
-	/**
-	 * Returns the value of the '<em><b>Env</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Env</em>' attribute.
-	 * @see #setEnv(EList)
+	 * @return the value of the '<em>Env</em>' reference list.
 	 * @see k8s.K8sPackage#getContainers_Env()
-	 * @model many="false" transient="true"
+	 * @model
 	 * @generated
 	 */
 	EList<EnvVar> getEnv();
 
 	/**
-	 * Sets the value of the '{@link k8s.Containers#getEnv <em>Env</em>}' attribute.
+	 * Returns the value of the '<em><b>Command</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Env</em>' attribute.
-	 * @see #getEnv()
-	 * @generated
-	 */
-	void setEnv(EList<EnvVar> value);
-
-	/**
-	 * Returns the value of the '<em><b>Command</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Command</em>' attribute.
-	 * @see #setCommand(EList)
+	 * @return the value of the '<em>Command</em>' attribute list.
 	 * @see k8s.K8sPackage#getContainers_Command()
-	 * @model many="false" transient="true"
+	 * @model transient="true"
 	 * @generated
 	 */
 	EList<String> getCommand();
 
 	/**
-	 * Sets the value of the '{@link k8s.Containers#getCommand <em>Command</em>}' attribute.
+	 * Returns the value of the '<em><b>Args</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Command</em>' attribute.
-	 * @see #getCommand()
-	 * @generated
-	 */
-	void setCommand(EList<String> value);
-
-	/**
-	 * Returns the value of the '<em><b>Args</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Args</em>' attribute.
-	 * @see #setArgs(EList)
+	 * @return the value of the '<em>Args</em>' attribute list.
 	 * @see k8s.K8sPackage#getContainers_Args()
-	 * @model many="false" transient="true"
+	 * @model transient="true"
 	 * @generated
 	 */
 	EList<String> getArgs();
 
 	/**
-	 * Sets the value of the '{@link k8s.Containers#getArgs <em>Args</em>}' attribute.
+	 * Returns the value of the '<em><b>Volume Mounts</b></em>' reference list.
+	 * The list contents are of type {@link k8s.VolumeMount}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Args</em>' attribute.
-	 * @see #getArgs()
-	 * @generated
-	 */
-	void setArgs(EList<String> value);
-
-	/**
-	 * Returns the value of the '<em><b>Volume Mounts</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Volume Mounts</em>' attribute.
-	 * @see #setVolumeMounts(EList)
+	 * @return the value of the '<em>Volume Mounts</em>' reference list.
 	 * @see k8s.K8sPackage#getContainers_VolumeMounts()
-	 * @model many="false" transient="true"
+	 * @model
 	 * @generated
 	 */
 	EList<VolumeMount> getVolumeMounts();
-
-	/**
-	 * Sets the value of the '{@link k8s.Containers#getVolumeMounts <em>Volume Mounts</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Volume Mounts</em>' attribute.
-	 * @see #getVolumeMounts()
-	 * @generated
-	 */
-	void setVolumeMounts(EList<VolumeMount> value);
 
 	/**
 	 * Returns the value of the '<em><b>Resources</b></em>' reference.
@@ -217,7 +167,7 @@ public interface Containers extends EObject {
 	 * @return the value of the '<em>Resources</em>' reference.
 	 * @see #setResources(ResourceRequirements)
 	 * @see k8s.K8sPackage#getContainers_Resources()
-	 * @model required="true" transient="true"
+	 * @model
 	 * @generated
 	 */
 	ResourceRequirements getResources();
@@ -239,7 +189,7 @@ public interface Containers extends EObject {
 	 * @return the value of the '<em>Liveness Probe</em>' reference.
 	 * @see #setLivenessProbe(Probe)
 	 * @see k8s.K8sPackage#getContainers_LivenessProbe()
-	 * @model required="true" transient="true"
+	 * @model
 	 * @generated
 	 */
 	Probe getLivenessProbe();
@@ -261,7 +211,7 @@ public interface Containers extends EObject {
 	 * @return the value of the '<em>Readiness Probe</em>' reference.
 	 * @see #setReadinessProbe(Probe)
 	 * @see k8s.K8sPackage#getContainers_ReadinessProbe()
-	 * @model required="true" transient="true"
+	 * @model
 	 * @generated
 	 */
 	Probe getReadinessProbe();
@@ -283,7 +233,7 @@ public interface Containers extends EObject {
 	 * @return the value of the '<em>Life Cycle</em>' reference.
 	 * @see #setLifeCycle(LifeCycle)
 	 * @see k8s.K8sPackage#getContainers_LifeCycle()
-	 * @model required="true" transient="true"
+	 * @model
 	 * @generated
 	 */
 	LifeCycle getLifeCycle();

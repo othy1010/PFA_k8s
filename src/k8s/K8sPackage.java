@@ -65,7 +65,71 @@ public interface K8sPackage extends EPackage {
 	 * @see k8s.impl.K8sPackageImpl#getMetadata()
 	 * @generated
 	 */
-	int METADATA = 0;
+	int METADATA = 1;
+
+	/**
+	 * The meta object id for the '{@link k8s.impl.ManifestImpl <em>Manifest</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see k8s.impl.ManifestImpl
+	 * @see k8s.impl.K8sPackageImpl#getManifest()
+	 * @generated
+	 */
+	int MANIFEST = 0;
+
+	/**
+	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANIFEST__API_VERSION = 0;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANIFEST__KIND = 1;
+
+	/**
+	 * The feature id for the '<em><b>Metadata</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANIFEST__METADATA = 2;
+
+	/**
+	 * The feature id for the '<em><b>Spec</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANIFEST__SPEC = 3;
+
+	/**
+	 * The number of structural features of the '<em>Manifest</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANIFEST_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Manifest</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANIFEST_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -122,70 +186,6 @@ public interface K8sPackage extends EPackage {
 	int METADATA_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link k8s.impl.ManifestImpl <em>Manifest</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see k8s.impl.ManifestImpl
-	 * @see k8s.impl.K8sPackageImpl#getManifest()
-	 * @generated
-	 */
-	int MANIFEST = 1;
-
-	/**
-	 * The feature id for the '<em><b>Api Version</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANIFEST__API_VERSION = 0;
-
-	/**
-	 * The feature id for the '<em><b>Kind</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANIFEST__KIND = 1;
-
-	/**
-	 * The feature id for the '<em><b>Metadata</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANIFEST__METADATA = 2;
-
-	/**
-	 * The feature id for the '<em><b>Spec</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANIFEST__SPEC = 3;
-
-	/**
-	 * The number of structural features of the '<em>Manifest</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANIFEST_FEATURE_COUNT = 4;
-
-	/**
-	 * The number of operations of the '<em>Manifest</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANIFEST_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link k8s.impl.SpecFactoryImpl <em>Spec Factory</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -194,24 +194,6 @@ public interface K8sPackage extends EPackage {
 	 * @generated
 	 */
 	int SPEC_FACTORY = 2;
-
-	/**
-	 * The number of structural features of the '<em>Spec Factory</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPEC_FACTORY_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Spec Factory</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPEC_FACTORY_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link k8s.Spec <em>Spec</em>}' class.
@@ -240,6 +222,24 @@ public interface K8sPackage extends EPackage {
 	 * @ordered
 	 */
 	int SPEC_OPERATION_COUNT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Spec Factory</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPEC_FACTORY_FEATURE_COUNT = SPEC_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Spec Factory</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPEC_FACTORY_OPERATION_COUNT = SPEC_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link k8s.impl.DeploymentImpl <em>Deployment</em>}' class.
@@ -308,49 +308,13 @@ public interface K8sPackage extends EPackage {
 	int POD_SPEC = 6;
 
 	/**
-	 * The feature id for the '<em><b>Containers</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POD_SPEC__CONTAINERS = SPEC_FACTORY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Topology Spread Constraints</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POD_SPEC__TOPOLOGY_SPREAD_CONSTRAINTS = SPEC_FACTORY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Init Containers</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POD_SPEC__INIT_CONTAINERS = SPEC_FACTORY_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Volumes</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POD_SPEC__VOLUMES = SPEC_FACTORY_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Restart Policy</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int POD_SPEC__RESTART_POLICY = SPEC_FACTORY_FEATURE_COUNT + 4;
+	int POD_SPEC__RESTART_POLICY = SPEC_FACTORY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Affinity</b></em>' reference.
@@ -359,7 +323,43 @@ public interface K8sPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POD_SPEC__AFFINITY = SPEC_FACTORY_FEATURE_COUNT + 5;
+	int POD_SPEC__AFFINITY = SPEC_FACTORY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Containers</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POD_SPEC__CONTAINERS = SPEC_FACTORY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Volumes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POD_SPEC__VOLUMES = SPEC_FACTORY_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Topology Spread Constraints</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POD_SPEC__TOPOLOGY_SPREAD_CONSTRAINTS = SPEC_FACTORY_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Init Containers</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POD_SPEC__INIT_CONTAINERS = SPEC_FACTORY_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Pod Spec</em>' class.
@@ -500,13 +500,22 @@ public interface K8sPackage extends EPackage {
 	int SELECTOR__MATCH_LABELS = 0;
 
 	/**
+	 * The feature id for the '<em><b>Match Expressions</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECTOR__MATCH_EXPRESSIONS = 1;
+
+	/**
 	 * The number of structural features of the '<em>Selector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTOR_FEATURE_COUNT = 1;
+	int SELECTOR_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Selector</em>' class.
@@ -665,49 +674,22 @@ public interface K8sPackage extends EPackage {
 	int CONTAINERS__LIVE_RESTART = 2;
 
 	/**
-	 * The feature id for the '<em><b>Ports</b></em>' attribute.
+	 * The feature id for the '<em><b>Command</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINERS__PORTS = 3;
+	int CONTAINERS__COMMAND = 3;
 
 	/**
-	 * The feature id for the '<em><b>Env</b></em>' attribute.
+	 * The feature id for the '<em><b>Args</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINERS__ENV = 4;
-
-	/**
-	 * The feature id for the '<em><b>Command</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINERS__COMMAND = 5;
-
-	/**
-	 * The feature id for the '<em><b>Args</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINERS__ARGS = 6;
-
-	/**
-	 * The feature id for the '<em><b>Volume Mounts</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINERS__VOLUME_MOUNTS = 7;
+	int CONTAINERS__ARGS = 4;
 
 	/**
 	 * The feature id for the '<em><b>Resources</b></em>' reference.
@@ -716,7 +698,7 @@ public interface K8sPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINERS__RESOURCES = 8;
+	int CONTAINERS__RESOURCES = 5;
 
 	/**
 	 * The feature id for the '<em><b>Liveness Probe</b></em>' reference.
@@ -725,7 +707,7 @@ public interface K8sPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINERS__LIVENESS_PROBE = 9;
+	int CONTAINERS__LIVENESS_PROBE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Readiness Probe</b></em>' reference.
@@ -734,7 +716,7 @@ public interface K8sPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINERS__READINESS_PROBE = 10;
+	int CONTAINERS__READINESS_PROBE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Life Cycle</b></em>' reference.
@@ -743,7 +725,34 @@ public interface K8sPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINERS__LIFE_CYCLE = 11;
+	int CONTAINERS__LIFE_CYCLE = 8;
+
+	/**
+	 * The feature id for the '<em><b>Volume Mounts</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINERS__VOLUME_MOUNTS = 9;
+
+	/**
+	 * The feature id for the '<em><b>Env</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINERS__ENV = 10;
+
+	/**
+	 * The feature id for the '<em><b>Ports</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINERS__PORTS = 11;
 
 	/**
 	 * The number of structural features of the '<em>Containers</em>' class.
@@ -912,7 +921,7 @@ public interface K8sPackage extends EPackage {
 	int LABEL_SELECTOR__MATCH_LABELS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Match Expressions</b></em>' attribute.
+	 * The feature id for the '<em><b>Match Expressions</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -958,22 +967,22 @@ public interface K8sPackage extends EPackage {
 	int MATCH_EXPRESSIONS__KEY = 0;
 
 	/**
+	 * The feature id for the '<em><b>Values</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCH_EXPRESSIONS__VALUES = 1;
+
+	/**
 	 * The feature id for the '<em><b>Operator</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MATCH_EXPRESSIONS__OPERATOR = 1;
-
-	/**
-	 * The feature id for the '<em><b>Values</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MATCH_EXPRESSIONS__VALUES = 2;
+	int MATCH_EXPRESSIONS__OPERATOR = 2;
 
 	/**
 	 * The number of structural features of the '<em>Match Expressions</em>' class.
@@ -1013,13 +1022,22 @@ public interface K8sPackage extends EPackage {
 	int CONTAINER_PORT__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Protocol</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_PORT__PROTOCOL = 1;
+
+	/**
 	 * The feature id for the '<em><b>Host Port</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER_PORT__HOST_PORT = 1;
+	int CONTAINER_PORT__HOST_PORT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Container Port</b></em>' attribute.
@@ -1028,16 +1046,7 @@ public interface K8sPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER_PORT__CONTAINER_PORT = 2;
-
-	/**
-	 * The feature id for the '<em><b>Protocol</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINER_PORT__PROTOCOL = 3;
+	int CONTAINER_PORT__CONTAINER_PORT = 3;
 
 	/**
 	 * The number of structural features of the '<em>Container Port</em>' class.
@@ -1435,7 +1444,7 @@ public interface K8sPackage extends EPackage {
 	int HTTP_GET_ACTION__SCHEME = 2;
 
 	/**
-	 * The feature id for the '<em><b>Http Headers</b></em>' attribute.
+	 * The feature id for the '<em><b>Http Headers</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1536,7 +1545,7 @@ public interface K8sPackage extends EPackage {
 	int EXEC_ACTION = 28;
 
 	/**
-	 * The feature id for the '<em><b>Command</b></em>' attribute.
+	 * The feature id for the '<em><b>Command</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1693,7 +1702,7 @@ public interface K8sPackage extends EPackage {
 	int NODE_AFFINITY = 32;
 
 	/**
-	 * The feature id for the '<em><b>Required During Scheduling Ignored During Execution</b></em>' reference.
+	 * The feature id for the '<em><b>Required During Scheduling Ignored During Execution</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1730,7 +1739,7 @@ public interface K8sPackage extends EPackage {
 	int NODE_SELECTOR = 33;
 
 	/**
-	 * The feature id for the '<em><b>Node Selector Terms</b></em>' attribute.
+	 * The feature id for the '<em><b>Node Selector Terms</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1767,7 +1776,7 @@ public interface K8sPackage extends EPackage {
 	int NODE_SELECTOR_TERM = 34;
 
 	/**
-	 * The feature id for the '<em><b>Match Expressions</b></em>' attribute.
+	 * The feature id for the '<em><b>Match Expressions</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1804,7 +1813,7 @@ public interface K8sPackage extends EPackage {
 	int NODE_SELECTOR_REQUIREMENT = 35;
 
 	/**
-	 * The feature id for the '<em><b>Values</b></em>' attribute.
+	 * The feature id for the '<em><b>Values</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1849,6 +1858,52 @@ public interface K8sPackage extends EPackage {
 	int NODE_SELECTOR_REQUIREMENT_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link k8s.impl.MymapImpl <em>Mymap</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see k8s.impl.MymapImpl
+	 * @see k8s.impl.K8sPackageImpl#getMymap()
+	 * @generated
+	 */
+	int MYMAP = 36;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MYMAP__KEY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MYMAP__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Mymap</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MYMAP_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Mymap</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MYMAP_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link k8s.ApiVersion <em>Api Version</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1856,7 +1911,7 @@ public interface K8sPackage extends EPackage {
 	 * @see k8s.impl.K8sPackageImpl#getApiVersion()
 	 * @generated
 	 */
-	int API_VERSION = 36;
+	int API_VERSION = 37;
 
 	/**
 	 * The meta object id for the '{@link k8s.Kind <em>Kind</em>}' enum.
@@ -1866,7 +1921,7 @@ public interface K8sPackage extends EPackage {
 	 * @see k8s.impl.K8sPackageImpl#getKind()
 	 * @generated
 	 */
-	int KIND = 37;
+	int KIND = 38;
 
 
 	/**
@@ -1956,10 +2011,10 @@ public interface K8sPackage extends EPackage {
 	EAttribute getManifest_Kind();
 
 	/**
-	 * Returns the meta object for the reference list '{@link k8s.Manifest#getMetadata <em>Metadata</em>}'.
+	 * Returns the meta object for the containment reference '{@link k8s.Manifest#getMetadata <em>Metadata</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Metadata</em>'.
+	 * @return the meta object for the containment reference '<em>Metadata</em>'.
 	 * @see k8s.Manifest#getMetadata()
 	 * @see #getManifest()
 	 * @generated
@@ -1967,10 +2022,10 @@ public interface K8sPackage extends EPackage {
 	EReference getManifest_Metadata();
 
 	/**
-	 * Returns the meta object for the reference list '{@link k8s.Manifest#getSpec <em>Spec</em>}'.
+	 * Returns the meta object for the containment reference '{@link k8s.Manifest#getSpec <em>Spec</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Spec</em>'.
+	 * @return the meta object for the containment reference '<em>Spec</em>'.
 	 * @see k8s.Manifest#getSpec()
 	 * @see #getManifest()
 	 * @generated
@@ -2028,48 +2083,48 @@ public interface K8sPackage extends EPackage {
 	EClass getPodSpec();
 
 	/**
-	 * Returns the meta object for the attribute '{@link k8s.PodSpec#getContainers <em>Containers</em>}'.
+	 * Returns the meta object for the reference list '{@link k8s.PodSpec#getContainers <em>Containers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Containers</em>'.
+	 * @return the meta object for the reference list '<em>Containers</em>'.
 	 * @see k8s.PodSpec#getContainers()
 	 * @see #getPodSpec()
 	 * @generated
 	 */
-	EAttribute getPodSpec_Containers();
+	EReference getPodSpec_Containers();
 
 	/**
-	 * Returns the meta object for the attribute '{@link k8s.PodSpec#getTopologySpreadConstraints <em>Topology Spread Constraints</em>}'.
+	 * Returns the meta object for the reference list '{@link k8s.PodSpec#getTopologySpreadConstraints <em>Topology Spread Constraints</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Topology Spread Constraints</em>'.
+	 * @return the meta object for the reference list '<em>Topology Spread Constraints</em>'.
 	 * @see k8s.PodSpec#getTopologySpreadConstraints()
 	 * @see #getPodSpec()
 	 * @generated
 	 */
-	EAttribute getPodSpec_TopologySpreadConstraints();
+	EReference getPodSpec_TopologySpreadConstraints();
 
 	/**
-	 * Returns the meta object for the attribute '{@link k8s.PodSpec#getInitContainers <em>Init Containers</em>}'.
+	 * Returns the meta object for the reference list '{@link k8s.PodSpec#getInitContainers <em>Init Containers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Init Containers</em>'.
+	 * @return the meta object for the reference list '<em>Init Containers</em>'.
 	 * @see k8s.PodSpec#getInitContainers()
 	 * @see #getPodSpec()
 	 * @generated
 	 */
-	EAttribute getPodSpec_InitContainers();
+	EReference getPodSpec_InitContainers();
 
 	/**
-	 * Returns the meta object for the attribute '{@link k8s.PodSpec#getVolumes <em>Volumes</em>}'.
+	 * Returns the meta object for the reference list '{@link k8s.PodSpec#getVolumes <em>Volumes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Volumes</em>'.
+	 * @return the meta object for the reference list '<em>Volumes</em>'.
 	 * @see k8s.PodSpec#getVolumes()
 	 * @see #getPodSpec()
 	 * @generated
 	 */
-	EAttribute getPodSpec_Volumes();
+	EReference getPodSpec_Volumes();
 
 	/**
 	 * Returns the meta object for the attribute '{@link k8s.PodSpec#getRestartPolicy <em>Restart Policy</em>}'.
@@ -2188,6 +2243,17 @@ public interface K8sPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSelector_MatchLabels();
+
+	/**
+	 * Returns the meta object for the reference list '{@link k8s.Selector#getMatchExpressions <em>Match Expressions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Match Expressions</em>'.
+	 * @see k8s.Selector#getMatchExpressions()
+	 * @see #getSelector()
+	 * @generated
+	 */
+	EReference getSelector_MatchExpressions();
 
 	/**
 	 * Returns the meta object for class '{@link k8s.PodTemplate <em>Pod Template</em>}'.
@@ -2319,32 +2385,32 @@ public interface K8sPackage extends EPackage {
 	EAttribute getContainers_LiveRestart();
 
 	/**
-	 * Returns the meta object for the attribute '{@link k8s.Containers#getPorts <em>Ports</em>}'.
+	 * Returns the meta object for the reference list '{@link k8s.Containers#getPorts <em>Ports</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Ports</em>'.
+	 * @return the meta object for the reference list '<em>Ports</em>'.
 	 * @see k8s.Containers#getPorts()
 	 * @see #getContainers()
 	 * @generated
 	 */
-	EAttribute getContainers_Ports();
+	EReference getContainers_Ports();
 
 	/**
-	 * Returns the meta object for the attribute '{@link k8s.Containers#getEnv <em>Env</em>}'.
+	 * Returns the meta object for the reference list '{@link k8s.Containers#getEnv <em>Env</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Env</em>'.
+	 * @return the meta object for the reference list '<em>Env</em>'.
 	 * @see k8s.Containers#getEnv()
 	 * @see #getContainers()
 	 * @generated
 	 */
-	EAttribute getContainers_Env();
+	EReference getContainers_Env();
 
 	/**
-	 * Returns the meta object for the attribute '{@link k8s.Containers#getCommand <em>Command</em>}'.
+	 * Returns the meta object for the attribute list '{@link k8s.Containers#getCommand <em>Command</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Command</em>'.
+	 * @return the meta object for the attribute list '<em>Command</em>'.
 	 * @see k8s.Containers#getCommand()
 	 * @see #getContainers()
 	 * @generated
@@ -2352,10 +2418,10 @@ public interface K8sPackage extends EPackage {
 	EAttribute getContainers_Command();
 
 	/**
-	 * Returns the meta object for the attribute '{@link k8s.Containers#getArgs <em>Args</em>}'.
+	 * Returns the meta object for the attribute list '{@link k8s.Containers#getArgs <em>Args</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Args</em>'.
+	 * @return the meta object for the attribute list '<em>Args</em>'.
 	 * @see k8s.Containers#getArgs()
 	 * @see #getContainers()
 	 * @generated
@@ -2363,15 +2429,15 @@ public interface K8sPackage extends EPackage {
 	EAttribute getContainers_Args();
 
 	/**
-	 * Returns the meta object for the attribute '{@link k8s.Containers#getVolumeMounts <em>Volume Mounts</em>}'.
+	 * Returns the meta object for the reference list '{@link k8s.Containers#getVolumeMounts <em>Volume Mounts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Volume Mounts</em>'.
+	 * @return the meta object for the reference list '<em>Volume Mounts</em>'.
 	 * @see k8s.Containers#getVolumeMounts()
 	 * @see #getContainers()
 	 * @generated
 	 */
-	EAttribute getContainers_VolumeMounts();
+	EReference getContainers_VolumeMounts();
 
 	/**
 	 * Returns the meta object for the reference '{@link k8s.Containers#getResources <em>Resources</em>}'.
@@ -2524,15 +2590,15 @@ public interface K8sPackage extends EPackage {
 	EAttribute getLabelSelector_MatchLabels();
 
 	/**
-	 * Returns the meta object for the attribute '{@link k8s.LabelSelector#getMatchExpressions <em>Match Expressions</em>}'.
+	 * Returns the meta object for the reference list '{@link k8s.LabelSelector#getMatchExpressions <em>Match Expressions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Match Expressions</em>'.
+	 * @return the meta object for the reference list '<em>Match Expressions</em>'.
 	 * @see k8s.LabelSelector#getMatchExpressions()
 	 * @see #getLabelSelector()
 	 * @generated
 	 */
-	EAttribute getLabelSelector_MatchExpressions();
+	EReference getLabelSelector_MatchExpressions();
 
 	/**
 	 * Returns the meta object for class '{@link k8s.MatchExpressions <em>Match Expressions</em>}'.
@@ -2567,10 +2633,10 @@ public interface K8sPackage extends EPackage {
 	EAttribute getMatchExpressions_Operator();
 
 	/**
-	 * Returns the meta object for the attribute '{@link k8s.MatchExpressions#getValues <em>Values</em>}'.
+	 * Returns the meta object for the attribute list '{@link k8s.MatchExpressions#getValues <em>Values</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Values</em>'.
+	 * @return the meta object for the attribute list '<em>Values</em>'.
 	 * @see k8s.MatchExpressions#getValues()
 	 * @see #getMatchExpressions()
 	 * @generated
@@ -2867,11 +2933,11 @@ public interface K8sPackage extends EPackage {
 	EAttribute getVolumeMount_MountPath();
 
 	/**
-	 * Returns the meta object for the attribute '{@link k8s.VolumeMount#getReadOnly <em>Read Only</em>}'.
+	 * Returns the meta object for the attribute '{@link k8s.VolumeMount#isReadOnly <em>Read Only</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Read Only</em>'.
-	 * @see k8s.VolumeMount#getReadOnly()
+	 * @see k8s.VolumeMount#isReadOnly()
 	 * @see #getVolumeMount()
 	 * @generated
 	 */
@@ -2921,10 +2987,10 @@ public interface K8sPackage extends EPackage {
 	EAttribute getHTTPGetAction_Scheme();
 
 	/**
-	 * Returns the meta object for the attribute '{@link k8s.HTTPGetAction#getHttpHeaders <em>Http Headers</em>}'.
+	 * Returns the meta object for the attribute list '{@link k8s.HTTPGetAction#getHttpHeaders <em>Http Headers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Http Headers</em>'.
+	 * @return the meta object for the attribute list '<em>Http Headers</em>'.
 	 * @see k8s.HTTPGetAction#getHttpHeaders()
 	 * @see #getHTTPGetAction()
 	 * @generated
@@ -2996,10 +3062,10 @@ public interface K8sPackage extends EPackage {
 	EClass getExecAction();
 
 	/**
-	 * Returns the meta object for the attribute '{@link k8s.ExecAction#getCommand <em>Command</em>}'.
+	 * Returns the meta object for the attribute list '{@link k8s.ExecAction#getCommand <em>Command</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Command</em>'.
+	 * @return the meta object for the attribute list '<em>Command</em>'.
 	 * @see k8s.ExecAction#getCommand()
 	 * @see #getExecAction()
 	 * @generated
@@ -3091,10 +3157,10 @@ public interface K8sPackage extends EPackage {
 	EClass getNodeAffinity();
 
 	/**
-	 * Returns the meta object for the reference '{@link k8s.NodeAffinity#getRequiredDuringSchedulingIgnoredDuringExecution <em>Required During Scheduling Ignored During Execution</em>}'.
+	 * Returns the meta object for the reference list '{@link k8s.NodeAffinity#getRequiredDuringSchedulingIgnoredDuringExecution <em>Required During Scheduling Ignored During Execution</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Required During Scheduling Ignored During Execution</em>'.
+	 * @return the meta object for the reference list '<em>Required During Scheduling Ignored During Execution</em>'.
 	 * @see k8s.NodeAffinity#getRequiredDuringSchedulingIgnoredDuringExecution()
 	 * @see #getNodeAffinity()
 	 * @generated
@@ -3112,15 +3178,15 @@ public interface K8sPackage extends EPackage {
 	EClass getNodeSelector();
 
 	/**
-	 * Returns the meta object for the attribute '{@link k8s.NodeSelector#getNodeSelectorTerms <em>Node Selector Terms</em>}'.
+	 * Returns the meta object for the reference list '{@link k8s.NodeSelector#getNodeSelectorTerms <em>Node Selector Terms</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Node Selector Terms</em>'.
+	 * @return the meta object for the reference list '<em>Node Selector Terms</em>'.
 	 * @see k8s.NodeSelector#getNodeSelectorTerms()
 	 * @see #getNodeSelector()
 	 * @generated
 	 */
-	EAttribute getNodeSelector_NodeSelectorTerms();
+	EReference getNodeSelector_NodeSelectorTerms();
 
 	/**
 	 * Returns the meta object for class '{@link k8s.NodeSelectorTerm <em>Node Selector Term</em>}'.
@@ -3133,15 +3199,15 @@ public interface K8sPackage extends EPackage {
 	EClass getNodeSelectorTerm();
 
 	/**
-	 * Returns the meta object for the attribute '{@link k8s.NodeSelectorTerm#getMatchExpressions <em>Match Expressions</em>}'.
+	 * Returns the meta object for the reference list '{@link k8s.NodeSelectorTerm#getMatchExpressions <em>Match Expressions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Match Expressions</em>'.
+	 * @return the meta object for the reference list '<em>Match Expressions</em>'.
 	 * @see k8s.NodeSelectorTerm#getMatchExpressions()
 	 * @see #getNodeSelectorTerm()
 	 * @generated
 	 */
-	EAttribute getNodeSelectorTerm_MatchExpressions();
+	EReference getNodeSelectorTerm_MatchExpressions();
 
 	/**
 	 * Returns the meta object for class '{@link k8s.NodeSelectorRequirement <em>Node Selector Requirement</em>}'.
@@ -3154,10 +3220,10 @@ public interface K8sPackage extends EPackage {
 	EClass getNodeSelectorRequirement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link k8s.NodeSelectorRequirement#getValues <em>Values</em>}'.
+	 * Returns the meta object for the attribute list '{@link k8s.NodeSelectorRequirement#getValues <em>Values</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Values</em>'.
+	 * @return the meta object for the attribute list '<em>Values</em>'.
 	 * @see k8s.NodeSelectorRequirement#getValues()
 	 * @see #getNodeSelectorRequirement()
 	 * @generated
@@ -3185,6 +3251,38 @@ public interface K8sPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getNodeSelectorRequirement_Operator();
+
+	/**
+	 * Returns the meta object for class '{@link k8s.Mymap <em>Mymap</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Mymap</em>'.
+	 * @see k8s.Mymap
+	 * @generated
+	 */
+	EClass getMymap();
+
+	/**
+	 * Returns the meta object for the attribute '{@link k8s.Mymap#getKey <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see k8s.Mymap#getKey()
+	 * @see #getMymap()
+	 * @generated
+	 */
+	EAttribute getMymap_Key();
+
+	/**
+	 * Returns the meta object for the attribute '{@link k8s.Mymap#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see k8s.Mymap#getValue()
+	 * @see #getMymap()
+	 * @generated
+	 */
+	EAttribute getMymap_Value();
 
 	/**
 	 * Returns the meta object for enum '{@link k8s.ApiVersion <em>Api Version</em>}'.
@@ -3298,7 +3396,7 @@ public interface K8sPackage extends EPackage {
 		EAttribute MANIFEST__KIND = eINSTANCE.getManifest_Kind();
 
 		/**
-		 * The meta object literal for the '<em><b>Metadata</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Metadata</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3306,7 +3404,7 @@ public interface K8sPackage extends EPackage {
 		EReference MANIFEST__METADATA = eINSTANCE.getManifest_Metadata();
 
 		/**
-		 * The meta object literal for the '<em><b>Spec</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Spec</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3364,36 +3462,36 @@ public interface K8sPackage extends EPackage {
 		EClass POD_SPEC = eINSTANCE.getPodSpec();
 
 		/**
-		 * The meta object literal for the '<em><b>Containers</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Containers</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute POD_SPEC__CONTAINERS = eINSTANCE.getPodSpec_Containers();
+		EReference POD_SPEC__CONTAINERS = eINSTANCE.getPodSpec_Containers();
 
 		/**
-		 * The meta object literal for the '<em><b>Topology Spread Constraints</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Topology Spread Constraints</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute POD_SPEC__TOPOLOGY_SPREAD_CONSTRAINTS = eINSTANCE.getPodSpec_TopologySpreadConstraints();
+		EReference POD_SPEC__TOPOLOGY_SPREAD_CONSTRAINTS = eINSTANCE.getPodSpec_TopologySpreadConstraints();
 
 		/**
-		 * The meta object literal for the '<em><b>Init Containers</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Init Containers</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute POD_SPEC__INIT_CONTAINERS = eINSTANCE.getPodSpec_InitContainers();
+		EReference POD_SPEC__INIT_CONTAINERS = eINSTANCE.getPodSpec_InitContainers();
 
 		/**
-		 * The meta object literal for the '<em><b>Volumes</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Volumes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute POD_SPEC__VOLUMES = eINSTANCE.getPodSpec_Volumes();
+		EReference POD_SPEC__VOLUMES = eINSTANCE.getPodSpec_Volumes();
 
 		/**
 		 * The meta object literal for the '<em><b>Restart Policy</b></em>' attribute feature.
@@ -3488,6 +3586,14 @@ public interface K8sPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SELECTOR__MATCH_LABELS = eINSTANCE.getSelector_MatchLabels();
+
+		/**
+		 * The meta object literal for the '<em><b>Match Expressions</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SELECTOR__MATCH_EXPRESSIONS = eINSTANCE.getSelector_MatchExpressions();
 
 		/**
 		 * The meta object literal for the '{@link k8s.impl.PodTemplateImpl <em>Pod Template</em>}' class.
@@ -3592,23 +3698,23 @@ public interface K8sPackage extends EPackage {
 		EAttribute CONTAINERS__LIVE_RESTART = eINSTANCE.getContainers_LiveRestart();
 
 		/**
-		 * The meta object literal for the '<em><b>Ports</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Ports</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTAINERS__PORTS = eINSTANCE.getContainers_Ports();
+		EReference CONTAINERS__PORTS = eINSTANCE.getContainers_Ports();
 
 		/**
-		 * The meta object literal for the '<em><b>Env</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Env</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTAINERS__ENV = eINSTANCE.getContainers_Env();
+		EReference CONTAINERS__ENV = eINSTANCE.getContainers_Env();
 
 		/**
-		 * The meta object literal for the '<em><b>Command</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Command</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3616,7 +3722,7 @@ public interface K8sPackage extends EPackage {
 		EAttribute CONTAINERS__COMMAND = eINSTANCE.getContainers_Command();
 
 		/**
-		 * The meta object literal for the '<em><b>Args</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Args</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3624,12 +3730,12 @@ public interface K8sPackage extends EPackage {
 		EAttribute CONTAINERS__ARGS = eINSTANCE.getContainers_Args();
 
 		/**
-		 * The meta object literal for the '<em><b>Volume Mounts</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Volume Mounts</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTAINERS__VOLUME_MOUNTS = eINSTANCE.getContainers_VolumeMounts();
+		EReference CONTAINERS__VOLUME_MOUNTS = eINSTANCE.getContainers_VolumeMounts();
 
 		/**
 		 * The meta object literal for the '<em><b>Resources</b></em>' reference feature.
@@ -3752,12 +3858,12 @@ public interface K8sPackage extends EPackage {
 		EAttribute LABEL_SELECTOR__MATCH_LABELS = eINSTANCE.getLabelSelector_MatchLabels();
 
 		/**
-		 * The meta object literal for the '<em><b>Match Expressions</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Match Expressions</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LABEL_SELECTOR__MATCH_EXPRESSIONS = eINSTANCE.getLabelSelector_MatchExpressions();
+		EReference LABEL_SELECTOR__MATCH_EXPRESSIONS = eINSTANCE.getLabelSelector_MatchExpressions();
 
 		/**
 		 * The meta object literal for the '{@link k8s.impl.MatchExpressionsImpl <em>Match Expressions</em>}' class.
@@ -3786,7 +3892,7 @@ public interface K8sPackage extends EPackage {
 		EAttribute MATCH_EXPRESSIONS__OPERATOR = eINSTANCE.getMatchExpressions_Operator();
 
 		/**
-		 * The meta object literal for the '<em><b>Values</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -4068,7 +4174,7 @@ public interface K8sPackage extends EPackage {
 		EAttribute HTTP_GET_ACTION__SCHEME = eINSTANCE.getHTTPGetAction_Scheme();
 
 		/**
-		 * The meta object literal for the '<em><b>Http Headers</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Http Headers</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -4128,7 +4234,7 @@ public interface K8sPackage extends EPackage {
 		EClass EXEC_ACTION = eINSTANCE.getExecAction();
 
 		/**
-		 * The meta object literal for the '<em><b>Command</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Command</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -4208,7 +4314,7 @@ public interface K8sPackage extends EPackage {
 		EClass NODE_AFFINITY = eINSTANCE.getNodeAffinity();
 
 		/**
-		 * The meta object literal for the '<em><b>Required During Scheduling Ignored During Execution</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Required During Scheduling Ignored During Execution</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -4226,12 +4332,12 @@ public interface K8sPackage extends EPackage {
 		EClass NODE_SELECTOR = eINSTANCE.getNodeSelector();
 
 		/**
-		 * The meta object literal for the '<em><b>Node Selector Terms</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Node Selector Terms</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute NODE_SELECTOR__NODE_SELECTOR_TERMS = eINSTANCE.getNodeSelector_NodeSelectorTerms();
+		EReference NODE_SELECTOR__NODE_SELECTOR_TERMS = eINSTANCE.getNodeSelector_NodeSelectorTerms();
 
 		/**
 		 * The meta object literal for the '{@link k8s.impl.NodeSelectorTermImpl <em>Node Selector Term</em>}' class.
@@ -4244,12 +4350,12 @@ public interface K8sPackage extends EPackage {
 		EClass NODE_SELECTOR_TERM = eINSTANCE.getNodeSelectorTerm();
 
 		/**
-		 * The meta object literal for the '<em><b>Match Expressions</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Match Expressions</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute NODE_SELECTOR_TERM__MATCH_EXPRESSIONS = eINSTANCE.getNodeSelectorTerm_MatchExpressions();
+		EReference NODE_SELECTOR_TERM__MATCH_EXPRESSIONS = eINSTANCE.getNodeSelectorTerm_MatchExpressions();
 
 		/**
 		 * The meta object literal for the '{@link k8s.impl.NodeSelectorRequirementImpl <em>Node Selector Requirement</em>}' class.
@@ -4262,7 +4368,7 @@ public interface K8sPackage extends EPackage {
 		EClass NODE_SELECTOR_REQUIREMENT = eINSTANCE.getNodeSelectorRequirement();
 
 		/**
-		 * The meta object literal for the '<em><b>Values</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -4284,6 +4390,32 @@ public interface K8sPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NODE_SELECTOR_REQUIREMENT__OPERATOR = eINSTANCE.getNodeSelectorRequirement_Operator();
+
+		/**
+		 * The meta object literal for the '{@link k8s.impl.MymapImpl <em>Mymap</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see k8s.impl.MymapImpl
+		 * @see k8s.impl.K8sPackageImpl#getMymap()
+		 * @generated
+		 */
+		EClass MYMAP = eINSTANCE.getMymap();
+
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MYMAP__KEY = eINSTANCE.getMymap_Key();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MYMAP__VALUE = eINSTANCE.getMymap_Value();
 
 		/**
 		 * The meta object literal for the '{@link k8s.ApiVersion <em>Api Version</em>}' enum.

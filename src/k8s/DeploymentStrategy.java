@@ -29,7 +29,7 @@ public interface DeploymentStrategy extends EObject {
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see #setType(String)
 	 * @see k8s.K8sPackage#getDeploymentStrategy_Type()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getType();
@@ -51,7 +51,7 @@ public interface DeploymentStrategy extends EObject {
 	 * @return the value of the '<em>Rolling Update</em>' reference.
 	 * @see #setRollingUpdate(RollingUpdateDeployment)
 	 * @see k8s.K8sPackage#getDeploymentStrategy_RollingUpdate()
-	 * @model required="true" transient="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	RollingUpdateDeployment getRollingUpdate();

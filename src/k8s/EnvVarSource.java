@@ -29,7 +29,7 @@ public interface EnvVarSource extends EObject {
 	 * @return the value of the '<em>Field Ref</em>' reference.
 	 * @see #setFieldRef(SecretKeySelector)
 	 * @see k8s.K8sPackage#getEnvVarSource_FieldRef()
-	 * @model required="true" transient="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	SecretKeySelector getFieldRef();
@@ -51,7 +51,7 @@ public interface EnvVarSource extends EObject {
 	 * @return the value of the '<em>Secret Key Ref</em>' reference.
 	 * @see #setSecretKeyRef(ObjectFieldSelector)
 	 * @see k8s.K8sPackage#getEnvVarSource_SecretKeyRef()
-	 * @model required="true" transient="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	ObjectFieldSelector getSecretKeyRef();

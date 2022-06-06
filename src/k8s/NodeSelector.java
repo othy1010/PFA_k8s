@@ -24,25 +24,15 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface NodeSelector extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Node Selector Terms</b></em>' attribute.
+	 * Returns the value of the '<em><b>Node Selector Terms</b></em>' reference list.
+	 * The list contents are of type {@link k8s.NodeSelectorTerm}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Node Selector Terms</em>' attribute.
-	 * @see #setNodeSelectorTerms(EList)
+	 * @return the value of the '<em>Node Selector Terms</em>' reference list.
 	 * @see k8s.K8sPackage#getNodeSelector_NodeSelectorTerms()
-	 * @model many="false" transient="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	EList<NodeSelectorTerm> getNodeSelectorTerms();
-
-	/**
-	 * Sets the value of the '{@link k8s.NodeSelector#getNodeSelectorTerms <em>Node Selector Terms</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Node Selector Terms</em>' attribute.
-	 * @see #getNodeSelectorTerms()
-	 * @generated
-	 */
-	void setNodeSelectorTerms(EList<NodeSelectorTerm> value);
 
 } // NodeSelector

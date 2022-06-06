@@ -2,36 +2,31 @@
  */
 package k8s.impl;
 
-import java.util.Collection;
 import k8s.K8sPackage;
-import k8s.MatchExpressions;
+import k8s.Mymap;
 
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Match Expressions</b></em>'.
+ * An implementation of the model object '<em><b>Mymap</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link k8s.impl.MatchExpressionsImpl#getKey <em>Key</em>}</li>
- *   <li>{@link k8s.impl.MatchExpressionsImpl#getValues <em>Values</em>}</li>
- *   <li>{@link k8s.impl.MatchExpressionsImpl#getOperator <em>Operator</em>}</li>
+ *   <li>{@link k8s.impl.MymapImpl#getKey <em>Key</em>}</li>
+ *   <li>{@link k8s.impl.MymapImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class MatchExpressionsImpl extends MinimalEObjectImpl.Container implements MatchExpressions {
+public class MymapImpl extends MinimalEObjectImpl.Container implements Mymap {
 	/**
 	 * The default value of the '{@link #getKey() <em>Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -53,41 +48,31 @@ public class MatchExpressionsImpl extends MinimalEObjectImpl.Container implement
 	protected String key = KEY_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getValues() <em>Values</em>}' attribute list.
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getValues()
+	 * @see #getValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<String> values;
+	protected static final String VALUE_EDEFAULT = null;
 
 	/**
-	 * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOperator()
+	 * @see #getValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String OPERATOR_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOperator() <em>Operator</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOperator()
-	 * @generated
-	 * @ordered
-	 */
-	protected String operator = OPERATOR_EDEFAULT;
+	protected String value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MatchExpressionsImpl() {
+	protected MymapImpl() {
 		super();
 	}
 
@@ -98,7 +83,7 @@ public class MatchExpressionsImpl extends MinimalEObjectImpl.Container implement
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return K8sPackage.Literals.MATCH_EXPRESSIONS;
+		return K8sPackage.Literals.MYMAP;
 	}
 
 	/**
@@ -119,7 +104,7 @@ public class MatchExpressionsImpl extends MinimalEObjectImpl.Container implement
 		String oldKey = key;
 		key = newKey;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.MATCH_EXPRESSIONS__KEY, oldKey, key));
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.MYMAP__KEY, oldKey, key));
 	}
 
 	/**
@@ -127,8 +112,8 @@ public class MatchExpressionsImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getOperator() {
-		return operator;
+	public String getValue() {
+		return value;
 	}
 
 	/**
@@ -136,23 +121,11 @@ public class MatchExpressionsImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOperator(String newOperator) {
-		String oldOperator = operator;
-		operator = newOperator;
+	public void setValue(String newValue) {
+		String oldValue = value;
+		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.MATCH_EXPRESSIONS__OPERATOR, oldOperator, operator));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<String> getValues() {
-		if (values == null) {
-			values = new EDataTypeUniqueEList<String>(String.class, this, K8sPackage.MATCH_EXPRESSIONS__VALUES);
-		}
-		return values;
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.MYMAP__VALUE, oldValue, value));
 	}
 
 	/**
@@ -163,12 +136,10 @@ public class MatchExpressionsImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case K8sPackage.MATCH_EXPRESSIONS__KEY:
+			case K8sPackage.MYMAP__KEY:
 				return getKey();
-			case K8sPackage.MATCH_EXPRESSIONS__VALUES:
-				return getValues();
-			case K8sPackage.MATCH_EXPRESSIONS__OPERATOR:
-				return getOperator();
+			case K8sPackage.MYMAP__VALUE:
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -178,19 +149,14 @@ public class MatchExpressionsImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case K8sPackage.MATCH_EXPRESSIONS__KEY:
+			case K8sPackage.MYMAP__KEY:
 				setKey((String)newValue);
 				return;
-			case K8sPackage.MATCH_EXPRESSIONS__VALUES:
-				getValues().clear();
-				getValues().addAll((Collection<? extends String>)newValue);
-				return;
-			case K8sPackage.MATCH_EXPRESSIONS__OPERATOR:
-				setOperator((String)newValue);
+			case K8sPackage.MYMAP__VALUE:
+				setValue((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -204,14 +170,11 @@ public class MatchExpressionsImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case K8sPackage.MATCH_EXPRESSIONS__KEY:
+			case K8sPackage.MYMAP__KEY:
 				setKey(KEY_EDEFAULT);
 				return;
-			case K8sPackage.MATCH_EXPRESSIONS__VALUES:
-				getValues().clear();
-				return;
-			case K8sPackage.MATCH_EXPRESSIONS__OPERATOR:
-				setOperator(OPERATOR_EDEFAULT);
+			case K8sPackage.MYMAP__VALUE:
+				setValue(VALUE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -225,12 +188,10 @@ public class MatchExpressionsImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case K8sPackage.MATCH_EXPRESSIONS__KEY:
+			case K8sPackage.MYMAP__KEY:
 				return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
-			case K8sPackage.MATCH_EXPRESSIONS__VALUES:
-				return values != null && !values.isEmpty();
-			case K8sPackage.MATCH_EXPRESSIONS__OPERATOR:
-				return OPERATOR_EDEFAULT == null ? operator != null : !OPERATOR_EDEFAULT.equals(operator);
+			case K8sPackage.MYMAP__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -247,12 +208,10 @@ public class MatchExpressionsImpl extends MinimalEObjectImpl.Container implement
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (key: ");
 		result.append(key);
-		result.append(", values: ");
-		result.append(values);
-		result.append(", operator: ");
-		result.append(operator);
+		result.append(", value: ");
+		result.append(value);
 		result.append(')');
 		return result.toString();
 	}
 
-} //MatchExpressionsImpl
+} //MymapImpl

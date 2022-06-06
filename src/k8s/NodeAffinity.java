@@ -2,6 +2,7 @@
  */
 package k8s;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -22,25 +23,15 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface NodeAffinity extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Required During Scheduling Ignored During Execution</b></em>' reference.
+	 * Returns the value of the '<em><b>Required During Scheduling Ignored During Execution</b></em>' reference list.
+	 * The list contents are of type {@link k8s.NodeSelector}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Required During Scheduling Ignored During Execution</em>' reference.
-	 * @see #setRequiredDuringSchedulingIgnoredDuringExecution(NodeSelector)
+	 * @return the value of the '<em>Required During Scheduling Ignored During Execution</em>' reference list.
 	 * @see k8s.K8sPackage#getNodeAffinity_RequiredDuringSchedulingIgnoredDuringExecution()
-	 * @model required="true" transient="true"
+	 * @model required="true"
 	 * @generated
 	 */
-	NodeSelector getRequiredDuringSchedulingIgnoredDuringExecution();
-
-	/**
-	 * Sets the value of the '{@link k8s.NodeAffinity#getRequiredDuringSchedulingIgnoredDuringExecution <em>Required During Scheduling Ignored During Execution</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Required During Scheduling Ignored During Execution</em>' reference.
-	 * @see #getRequiredDuringSchedulingIgnoredDuringExecution()
-	 * @generated
-	 */
-	void setRequiredDuringSchedulingIgnoredDuringExecution(NodeSelector value);
+	EList<NodeSelector> getRequiredDuringSchedulingIgnoredDuringExecution();
 
 } // NodeAffinity

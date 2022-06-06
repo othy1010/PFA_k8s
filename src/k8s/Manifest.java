@@ -2,7 +2,6 @@
  */
 package k8s;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -34,7 +33,7 @@ public interface Manifest extends EObject {
 	 * @see k8s.ApiVersion
 	 * @see #setApiVersion(ApiVersion)
 	 * @see k8s.K8sPackage#getManifest_ApiVersion()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	ApiVersion getApiVersion();
@@ -59,7 +58,7 @@ public interface Manifest extends EObject {
 	 * @see k8s.Kind
 	 * @see #setKind(Kind)
 	 * @see k8s.K8sPackage#getManifest_Kind()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	Kind getKind();
@@ -76,27 +75,47 @@ public interface Manifest extends EObject {
 	void setKind(Kind value);
 
 	/**
-	 * Returns the value of the '<em><b>Metadata</b></em>' reference list.
-	 * The list contents are of type {@link k8s.Metadata}.
+	 * Returns the value of the '<em><b>Metadata</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Metadata</em>' reference list.
+	 * @return the value of the '<em>Metadata</em>' containment reference.
+	 * @see #setMetadata(Metadata)
 	 * @see k8s.K8sPackage#getManifest_Metadata()
-	 * @model transient="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Metadata> getMetadata();
+	Metadata getMetadata();
 
 	/**
-	 * Returns the value of the '<em><b>Spec</b></em>' reference list.
-	 * The list contents are of type {@link k8s.Spec}.
+	 * Sets the value of the '{@link k8s.Manifest#getMetadata <em>Metadata</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Spec</em>' reference list.
-	 * @see k8s.K8sPackage#getManifest_Spec()
-	 * @model transient="true"
+	 * @param value the new value of the '<em>Metadata</em>' containment reference.
+	 * @see #getMetadata()
 	 * @generated
 	 */
-	EList<Spec> getSpec();
+	void setMetadata(Metadata value);
+
+	/**
+	 * Returns the value of the '<em><b>Spec</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Spec</em>' containment reference.
+	 * @see #setSpec(Spec)
+	 * @see k8s.K8sPackage#getManifest_Spec()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	Spec getSpec();
+
+	/**
+	 * Sets the value of the '{@link k8s.Manifest#getSpec <em>Spec</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Spec</em>' containment reference.
+	 * @see #getSpec()
+	 * @generated
+	 */
+	void setSpec(Spec value);
 
 } // Manifest

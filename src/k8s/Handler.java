@@ -28,7 +28,7 @@ public interface Handler extends EObject {
 	 * @return the value of the '<em>Exec</em>' reference.
 	 * @see #setExec(ExecAction)
 	 * @see k8s.K8sPackage#getHandler_Exec()
-	 * @model required="true" transient="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	ExecAction getExec();

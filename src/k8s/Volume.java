@@ -29,7 +29,7 @@ public interface Volume extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see k8s.K8sPackage#getVolume_Name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
@@ -51,7 +51,7 @@ public interface Volume extends EObject {
 	 * @return the value of the '<em>Host Path</em>' reference.
 	 * @see #setHostPath(HostPathVolumeSource)
 	 * @see k8s.K8sPackage#getVolume_HostPath()
-	 * @model required="true" transient="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	HostPathVolumeSource getHostPath();

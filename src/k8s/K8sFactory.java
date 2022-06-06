@@ -337,6 +337,15 @@ public interface K8sFactory extends EFactory {
 	NodeSelectorRequirement createNodeSelectorRequirement();
 
 	/**
+	 * Returns a new object of class '<em>Mymap</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mymap</em>'.
+	 * @generated
+	 */
+	Mymap createMymap();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

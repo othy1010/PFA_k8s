@@ -2,6 +2,7 @@
  */
 package k8s.impl;
 
+import java.util.Collection;
 import k8s.K8sPackage;
 import k8s.NodeSelectorRequirement;
 
@@ -13,6 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +33,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class NodeSelectorRequirementImpl extends MinimalEObjectImpl.Container implements NodeSelectorRequirement {
 	/**
-	 * The cached value of the '{@link #getValues() <em>Values</em>}' attribute.
+	 * The cached value of the '{@link #getValues() <em>Values</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getValues()
@@ -105,19 +107,10 @@ public class NodeSelectorRequirementImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 */
 	public EList<String> getValues() {
+		if (values == null) {
+			values = new EDataTypeUniqueEList<String>(String.class, this, K8sPackage.NODE_SELECTOR_REQUIREMENT__VALUES);
+		}
 		return values;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setValues(EList<String> newValues) {
-		EList<String> oldValues = values;
-		values = newValues;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.NODE_SELECTOR_REQUIREMENT__VALUES, oldValues, values));
 	}
 
 	/**
@@ -190,7 +183,8 @@ public class NodeSelectorRequirementImpl extends MinimalEObjectImpl.Container im
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case K8sPackage.NODE_SELECTOR_REQUIREMENT__VALUES:
-				setValues((EList<String>)newValue);
+				getValues().clear();
+				getValues().addAll((Collection<? extends String>)newValue);
 				return;
 			case K8sPackage.NODE_SELECTOR_REQUIREMENT__KEY:
 				setKey((String)newValue);
@@ -211,7 +205,7 @@ public class NodeSelectorRequirementImpl extends MinimalEObjectImpl.Container im
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case K8sPackage.NODE_SELECTOR_REQUIREMENT__VALUES:
-				setValues((EList<String>)null);
+				getValues().clear();
 				return;
 			case K8sPackage.NODE_SELECTOR_REQUIREMENT__KEY:
 				setKey(KEY_EDEFAULT);
@@ -232,7 +226,7 @@ public class NodeSelectorRequirementImpl extends MinimalEObjectImpl.Container im
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case K8sPackage.NODE_SELECTOR_REQUIREMENT__VALUES:
-				return values != null;
+				return values != null && !values.isEmpty();
 			case K8sPackage.NODE_SELECTOR_REQUIREMENT__KEY:
 				return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
 			case K8sPackage.NODE_SELECTOR_REQUIREMENT__OPERATOR:

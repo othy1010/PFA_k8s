@@ -2,8 +2,8 @@
  */
 package k8s.impl;
 
+import java.util.Collection;
 import k8s.HTTPGetAction;
-import k8s.HTTPHeader;
 import k8s.K8sPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -93,14 +94,14 @@ public class HTTPGetActionImpl extends MinimalEObjectImpl.Container implements H
 	protected String scheme = SCHEME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getHttpHeaders() <em>Http Headers</em>}' attribute.
+	 * The cached value of the '{@link #getHttpHeaders() <em>Http Headers</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getHttpHeaders()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<HTTPHeader> httpHeaders;
+	protected EList<String> httpHeaders;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -189,20 +190,11 @@ public class HTTPGetActionImpl extends MinimalEObjectImpl.Container implements H
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<HTTPHeader> getHttpHeaders() {
+	public EList<String> getHttpHeaders() {
+		if (httpHeaders == null) {
+			httpHeaders = new EDataTypeUniqueEList<String>(String.class, this, K8sPackage.HTTP_GET_ACTION__HTTP_HEADERS);
+		}
 		return httpHeaders;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setHttpHeaders(EList<HTTPHeader> newHttpHeaders) {
-		EList<HTTPHeader> oldHttpHeaders = httpHeaders;
-		httpHeaders = newHttpHeaders;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.HTTP_GET_ACTION__HTTP_HEADERS, oldHttpHeaders, httpHeaders));
 	}
 
 	/**
@@ -244,7 +236,8 @@ public class HTTPGetActionImpl extends MinimalEObjectImpl.Container implements H
 				setScheme((String)newValue);
 				return;
 			case K8sPackage.HTTP_GET_ACTION__HTTP_HEADERS:
-				setHttpHeaders((EList<HTTPHeader>)newValue);
+				getHttpHeaders().clear();
+				getHttpHeaders().addAll((Collection<? extends String>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -268,7 +261,7 @@ public class HTTPGetActionImpl extends MinimalEObjectImpl.Container implements H
 				setScheme(SCHEME_EDEFAULT);
 				return;
 			case K8sPackage.HTTP_GET_ACTION__HTTP_HEADERS:
-				setHttpHeaders((EList<HTTPHeader>)null);
+				getHttpHeaders().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -289,7 +282,7 @@ public class HTTPGetActionImpl extends MinimalEObjectImpl.Container implements H
 			case K8sPackage.HTTP_GET_ACTION__SCHEME:
 				return SCHEME_EDEFAULT == null ? scheme != null : !SCHEME_EDEFAULT.equals(scheme);
 			case K8sPackage.HTTP_GET_ACTION__HTTP_HEADERS:
-				return httpHeaders != null;
+				return httpHeaders != null && !httpHeaders.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

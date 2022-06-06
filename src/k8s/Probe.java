@@ -31,7 +31,7 @@ public interface Probe extends EObject {
 	 * @return the value of the '<em>Http Get</em>' reference.
 	 * @see #setHttpGet(HTTPGetAction)
 	 * @see k8s.K8sPackage#getProbe_HttpGet()
-	 * @model required="true" transient="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	HTTPGetAction getHttpGet();
@@ -53,7 +53,7 @@ public interface Probe extends EObject {
 	 * @return the value of the '<em>Exec</em>' reference.
 	 * @see #setExec(ExecAction)
 	 * @see k8s.K8sPackage#getProbe_Exec()
-	 * @model required="true" transient="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	ExecAction getExec();
