@@ -31,7 +31,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Spec" abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Deployment" eSuperTypes="#//Spec"/>
   <eClassifiers xsi:type="ecore:EClass" name="Pod" eSuperTypes="#//Spec"/>
-  <eClassifiers xsi:type="ecore:EClass" name="PodSpec" eSuperTypes="#//SpecFactory">
+  <eClassifiers xsi:type="ecore:EClass" name="PodSpec" eSuperTypes="#//Spec">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="restartPolicy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="affinity" eType="#//Affinity"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="containers" upperBound="-1"
@@ -43,7 +43,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="initContainers" upperBound="-1"
         eType="#//Containers"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DeploymentSpec" eSuperTypes="#//SpecFactory">
+  <eClassifiers xsi:type="ecore:EClass" name="DeploymentSpec" eSuperTypes="#//Spec">
     <eStructuralFeatures xsi:type="ecore:EReference" name="selector" eType="#//Selector"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="strategy" lowerBound="1"
         eType="#//DeploymentStrategy"/>
