@@ -25,44 +25,44 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Probe extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Http Get</b></em>' reference.
+	 * Returns the value of the '<em><b>Http Get</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Http Get</em>' reference.
+	 * @return the value of the '<em>Http Get</em>' containment reference.
 	 * @see #setHttpGet(HTTPGetAction)
 	 * @see k8s.K8sPackage#getProbe_HttpGet()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	HTTPGetAction getHttpGet();
 
 	/**
-	 * Sets the value of the '{@link k8s.Probe#getHttpGet <em>Http Get</em>}' reference.
+	 * Sets the value of the '{@link k8s.Probe#getHttpGet <em>Http Get</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Http Get</em>' reference.
+	 * @param value the new value of the '<em>Http Get</em>' containment reference.
 	 * @see #getHttpGet()
 	 * @generated
 	 */
 	void setHttpGet(HTTPGetAction value);
 
 	/**
-	 * Returns the value of the '<em><b>Exec</b></em>' reference.
+	 * Returns the value of the '<em><b>Exec</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Exec</em>' reference.
+	 * @return the value of the '<em>Exec</em>' containment reference.
 	 * @see #setExec(ExecAction)
 	 * @see k8s.K8sPackage#getProbe_Exec()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	ExecAction getExec();
 
 	/**
-	 * Sets the value of the '{@link k8s.Probe#getExec <em>Exec</em>}' reference.
+	 * Sets the value of the '{@link k8s.Probe#getExec <em>Exec</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Exec</em>' reference.
+	 * @param value the new value of the '<em>Exec</em>' containment reference.
 	 * @see #getExec()
 	 * @generated
 	 */

@@ -8,6 +8,7 @@ import k8s.NodeAffinity;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -29,7 +30,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class AffinityImpl extends MinimalEObjectImpl.Container implements Affinity {
 	/**
-	 * The cached value of the '{@link #getNodeAffinity() <em>Node Affinity</em>}' reference.
+	 * The cached value of the '{@link #getNodeAffinity() <em>Node Affinity</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getNodeAffinity()
@@ -63,14 +64,6 @@ public class AffinityImpl extends MinimalEObjectImpl.Container implements Affini
 	 * @generated
 	 */
 	public NodeAffinity getNodeAffinity() {
-		if (nodeAffinity != null && nodeAffinity.eIsProxy()) {
-			InternalEObject oldNodeAffinity = (InternalEObject)nodeAffinity;
-			nodeAffinity = (NodeAffinity)eResolveProxy(oldNodeAffinity);
-			if (nodeAffinity != oldNodeAffinity) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, K8sPackage.AFFINITY__NODE_AFFINITY, oldNodeAffinity, nodeAffinity));
-			}
-		}
 		return nodeAffinity;
 	}
 
@@ -79,8 +72,14 @@ public class AffinityImpl extends MinimalEObjectImpl.Container implements Affini
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NodeAffinity basicGetNodeAffinity() {
-		return nodeAffinity;
+	public NotificationChain basicSetNodeAffinity(NodeAffinity newNodeAffinity, NotificationChain msgs) {
+		NodeAffinity oldNodeAffinity = nodeAffinity;
+		nodeAffinity = newNodeAffinity;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.AFFINITY__NODE_AFFINITY, oldNodeAffinity, newNodeAffinity);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -89,10 +88,31 @@ public class AffinityImpl extends MinimalEObjectImpl.Container implements Affini
 	 * @generated
 	 */
 	public void setNodeAffinity(NodeAffinity newNodeAffinity) {
-		NodeAffinity oldNodeAffinity = nodeAffinity;
-		nodeAffinity = newNodeAffinity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.AFFINITY__NODE_AFFINITY, oldNodeAffinity, nodeAffinity));
+		if (newNodeAffinity != nodeAffinity) {
+			NotificationChain msgs = null;
+			if (nodeAffinity != null)
+				msgs = ((InternalEObject)nodeAffinity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.AFFINITY__NODE_AFFINITY, null, msgs);
+			if (newNodeAffinity != null)
+				msgs = ((InternalEObject)newNodeAffinity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.AFFINITY__NODE_AFFINITY, null, msgs);
+			msgs = basicSetNodeAffinity(newNodeAffinity, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.AFFINITY__NODE_AFFINITY, newNodeAffinity, newNodeAffinity));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case K8sPackage.AFFINITY__NODE_AFFINITY:
+				return basicSetNodeAffinity(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -104,8 +124,7 @@ public class AffinityImpl extends MinimalEObjectImpl.Container implements Affini
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case K8sPackage.AFFINITY__NODE_AFFINITY:
-				if (resolve) return getNodeAffinity();
-				return basicGetNodeAffinity();
+				return getNodeAffinity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

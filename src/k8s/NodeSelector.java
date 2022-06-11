@@ -24,13 +24,13 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface NodeSelector extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Node Selector Terms</b></em>' reference list.
+	 * Returns the value of the '<em><b>Node Selector Terms</b></em>' containment reference list.
 	 * The list contents are of type {@link k8s.NodeSelectorTerm}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Node Selector Terms</em>' reference list.
+	 * @return the value of the '<em>Node Selector Terms</em>' containment reference list.
 	 * @see k8s.K8sPackage#getNodeSelector_NodeSelectorTerms()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	EList<NodeSelectorTerm> getNodeSelectorTerms();

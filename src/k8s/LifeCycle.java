@@ -23,44 +23,44 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface LifeCycle extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Post Start</b></em>' reference.
+	 * Returns the value of the '<em><b>Post Start</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Post Start</em>' reference.
+	 * @return the value of the '<em>Post Start</em>' containment reference.
 	 * @see #setPostStart(Handler)
 	 * @see k8s.K8sPackage#getLifeCycle_PostStart()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	Handler getPostStart();
 
 	/**
-	 * Sets the value of the '{@link k8s.LifeCycle#getPostStart <em>Post Start</em>}' reference.
+	 * Sets the value of the '{@link k8s.LifeCycle#getPostStart <em>Post Start</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Post Start</em>' reference.
+	 * @param value the new value of the '<em>Post Start</em>' containment reference.
 	 * @see #getPostStart()
 	 * @generated
 	 */
 	void setPostStart(Handler value);
 
 	/**
-	 * Returns the value of the '<em><b>Pre Stop</b></em>' reference.
+	 * Returns the value of the '<em><b>Pre Stop</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pre Stop</em>' reference.
+	 * @return the value of the '<em>Pre Stop</em>' containment reference.
 	 * @see #setPreStop(Handler)
 	 * @see k8s.K8sPackage#getLifeCycle_PreStop()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	Handler getPreStop();
 
 	/**
-	 * Sets the value of the '{@link k8s.LifeCycle#getPreStop <em>Pre Stop</em>}' reference.
+	 * Sets the value of the '{@link k8s.LifeCycle#getPreStop <em>Pre Stop</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Pre Stop</em>' reference.
+	 * @param value the new value of the '<em>Pre Stop</em>' containment reference.
 	 * @see #getPreStop()
 	 * @generated
 	 */

@@ -6,11 +6,14 @@ import java.util.Collection;
 import k8s.K8sPackage;
 import k8s.NodeSelector;
 import k8s.NodeSelectorTerm;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +30,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class NodeSelectorImpl extends MinimalEObjectImpl.Container implements NodeSelector {
 	/**
-	 * The cached value of the '{@link #getNodeSelectorTerms() <em>Node Selector Terms</em>}' reference list.
+	 * The cached value of the '{@link #getNodeSelectorTerms() <em>Node Selector Terms</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getNodeSelectorTerms()
@@ -62,9 +65,23 @@ public class NodeSelectorImpl extends MinimalEObjectImpl.Container implements No
 	 */
 	public EList<NodeSelectorTerm> getNodeSelectorTerms() {
 		if (nodeSelectorTerms == null) {
-			nodeSelectorTerms = new EObjectResolvingEList<NodeSelectorTerm>(NodeSelectorTerm.class, this, K8sPackage.NODE_SELECTOR__NODE_SELECTOR_TERMS);
+			nodeSelectorTerms = new EObjectContainmentEList<NodeSelectorTerm>(NodeSelectorTerm.class, this, K8sPackage.NODE_SELECTOR__NODE_SELECTOR_TERMS);
 		}
 		return nodeSelectorTerms;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case K8sPackage.NODE_SELECTOR__NODE_SELECTOR_TERMS:
+				return ((InternalEList<?>)getNodeSelectorTerms()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

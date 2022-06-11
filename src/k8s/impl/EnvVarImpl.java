@@ -8,6 +8,7 @@ import k8s.K8sPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -71,7 +72,7 @@ public class EnvVarImpl extends MinimalEObjectImpl.Container implements EnvVar {
 	protected int value = VALUE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getValueFrom() <em>Value From</em>}' reference.
+	 * The cached value of the '{@link #getValueFrom() <em>Value From</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getValueFrom()
@@ -147,14 +148,6 @@ public class EnvVarImpl extends MinimalEObjectImpl.Container implements EnvVar {
 	 * @generated
 	 */
 	public EnvVarSource getValueFrom() {
-		if (valueFrom != null && valueFrom.eIsProxy()) {
-			InternalEObject oldValueFrom = (InternalEObject)valueFrom;
-			valueFrom = (EnvVarSource)eResolveProxy(oldValueFrom);
-			if (valueFrom != oldValueFrom) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, K8sPackage.ENV_VAR__VALUE_FROM, oldValueFrom, valueFrom));
-			}
-		}
 		return valueFrom;
 	}
 
@@ -163,8 +156,14 @@ public class EnvVarImpl extends MinimalEObjectImpl.Container implements EnvVar {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EnvVarSource basicGetValueFrom() {
-		return valueFrom;
+	public NotificationChain basicSetValueFrom(EnvVarSource newValueFrom, NotificationChain msgs) {
+		EnvVarSource oldValueFrom = valueFrom;
+		valueFrom = newValueFrom;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.ENV_VAR__VALUE_FROM, oldValueFrom, newValueFrom);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -173,10 +172,31 @@ public class EnvVarImpl extends MinimalEObjectImpl.Container implements EnvVar {
 	 * @generated
 	 */
 	public void setValueFrom(EnvVarSource newValueFrom) {
-		EnvVarSource oldValueFrom = valueFrom;
-		valueFrom = newValueFrom;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.ENV_VAR__VALUE_FROM, oldValueFrom, valueFrom));
+		if (newValueFrom != valueFrom) {
+			NotificationChain msgs = null;
+			if (valueFrom != null)
+				msgs = ((InternalEObject)valueFrom).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.ENV_VAR__VALUE_FROM, null, msgs);
+			if (newValueFrom != null)
+				msgs = ((InternalEObject)newValueFrom).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.ENV_VAR__VALUE_FROM, null, msgs);
+			msgs = basicSetValueFrom(newValueFrom, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.ENV_VAR__VALUE_FROM, newValueFrom, newValueFrom));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case K8sPackage.ENV_VAR__VALUE_FROM:
+				return basicSetValueFrom(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -192,8 +212,7 @@ public class EnvVarImpl extends MinimalEObjectImpl.Container implements EnvVar {
 			case K8sPackage.ENV_VAR__VALUE:
 				return getValue();
 			case K8sPackage.ENV_VAR__VALUE_FROM:
-				if (resolve) return getValueFrom();
-				return basicGetValueFrom();
+				return getValueFrom();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

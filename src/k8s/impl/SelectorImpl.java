@@ -11,12 +11,15 @@ import k8s.Selector;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -44,7 +47,7 @@ public class SelectorImpl extends MinimalEObjectImpl.Container implements Select
 	protected Map<String, String> matchLabels;
 
 	/**
-	 * The cached value of the '{@link #getMatchExpressions() <em>Match Expressions</em>}' reference list.
+	 * The cached value of the '{@link #getMatchExpressions() <em>Match Expressions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMatchExpressions()
@@ -100,9 +103,23 @@ public class SelectorImpl extends MinimalEObjectImpl.Container implements Select
 	 */
 	public EList<MatchExpressions> getMatchExpressions() {
 		if (matchExpressions == null) {
-			matchExpressions = new EObjectResolvingEList<MatchExpressions>(MatchExpressions.class, this, K8sPackage.SELECTOR__MATCH_EXPRESSIONS);
+			matchExpressions = new EObjectContainmentEList<MatchExpressions>(MatchExpressions.class, this, K8sPackage.SELECTOR__MATCH_EXPRESSIONS);
 		}
 		return matchExpressions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case K8sPackage.SELECTOR__MATCH_EXPRESSIONS:
+				return ((InternalEList<?>)getMatchExpressions()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

@@ -8,6 +8,7 @@ import k8s.K8sPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -29,7 +30,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class HandlerImpl extends MinimalEObjectImpl.Container implements Handler {
 	/**
-	 * The cached value of the '{@link #getExec() <em>Exec</em>}' reference.
+	 * The cached value of the '{@link #getExec() <em>Exec</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getExec()
@@ -63,14 +64,6 @@ public class HandlerImpl extends MinimalEObjectImpl.Container implements Handler
 	 * @generated
 	 */
 	public ExecAction getExec() {
-		if (exec != null && exec.eIsProxy()) {
-			InternalEObject oldExec = (InternalEObject)exec;
-			exec = (ExecAction)eResolveProxy(oldExec);
-			if (exec != oldExec) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, K8sPackage.HANDLER__EXEC, oldExec, exec));
-			}
-		}
 		return exec;
 	}
 
@@ -79,8 +72,14 @@ public class HandlerImpl extends MinimalEObjectImpl.Container implements Handler
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExecAction basicGetExec() {
-		return exec;
+	public NotificationChain basicSetExec(ExecAction newExec, NotificationChain msgs) {
+		ExecAction oldExec = exec;
+		exec = newExec;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.HANDLER__EXEC, oldExec, newExec);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -89,10 +88,31 @@ public class HandlerImpl extends MinimalEObjectImpl.Container implements Handler
 	 * @generated
 	 */
 	public void setExec(ExecAction newExec) {
-		ExecAction oldExec = exec;
-		exec = newExec;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.HANDLER__EXEC, oldExec, exec));
+		if (newExec != exec) {
+			NotificationChain msgs = null;
+			if (exec != null)
+				msgs = ((InternalEObject)exec).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.HANDLER__EXEC, null, msgs);
+			if (newExec != null)
+				msgs = ((InternalEObject)newExec).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.HANDLER__EXEC, null, msgs);
+			msgs = basicSetExec(newExec, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.HANDLER__EXEC, newExec, newExec));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case K8sPackage.HANDLER__EXEC:
+				return basicSetExec(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -104,8 +124,7 @@ public class HandlerImpl extends MinimalEObjectImpl.Container implements Handler
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case K8sPackage.HANDLER__EXEC:
-				if (resolve) return getExec();
-				return basicGetExec();
+				return getExec();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

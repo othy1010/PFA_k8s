@@ -45,22 +45,22 @@ public interface DeploymentStrategy extends EObject {
 	void setType(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Rolling Update</b></em>' reference.
+	 * Returns the value of the '<em><b>Rolling Update</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Rolling Update</em>' reference.
+	 * @return the value of the '<em>Rolling Update</em>' containment reference.
 	 * @see #setRollingUpdate(RollingUpdateDeployment)
 	 * @see k8s.K8sPackage#getDeploymentStrategy_RollingUpdate()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	RollingUpdateDeployment getRollingUpdate();
 
 	/**
-	 * Sets the value of the '{@link k8s.DeploymentStrategy#getRollingUpdate <em>Rolling Update</em>}' reference.
+	 * Sets the value of the '{@link k8s.DeploymentStrategy#getRollingUpdate <em>Rolling Update</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rolling Update</em>' reference.
+	 * @param value the new value of the '<em>Rolling Update</em>' containment reference.
 	 * @see #getRollingUpdate()
 	 * @generated
 	 */

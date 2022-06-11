@@ -8,6 +8,7 @@ import k8s.RollingUpdateDeployment;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -50,7 +51,7 @@ public class DeploymentStrategyImpl extends MinimalEObjectImpl.Container impleme
 	protected String type = TYPE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getRollingUpdate() <em>Rolling Update</em>}' reference.
+	 * The cached value of the '{@link #getRollingUpdate() <em>Rolling Update</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRollingUpdate()
@@ -105,14 +106,6 @@ public class DeploymentStrategyImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public RollingUpdateDeployment getRollingUpdate() {
-		if (rollingUpdate != null && rollingUpdate.eIsProxy()) {
-			InternalEObject oldRollingUpdate = (InternalEObject)rollingUpdate;
-			rollingUpdate = (RollingUpdateDeployment)eResolveProxy(oldRollingUpdate);
-			if (rollingUpdate != oldRollingUpdate) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, K8sPackage.DEPLOYMENT_STRATEGY__ROLLING_UPDATE, oldRollingUpdate, rollingUpdate));
-			}
-		}
 		return rollingUpdate;
 	}
 
@@ -121,8 +114,14 @@ public class DeploymentStrategyImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RollingUpdateDeployment basicGetRollingUpdate() {
-		return rollingUpdate;
+	public NotificationChain basicSetRollingUpdate(RollingUpdateDeployment newRollingUpdate, NotificationChain msgs) {
+		RollingUpdateDeployment oldRollingUpdate = rollingUpdate;
+		rollingUpdate = newRollingUpdate;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.DEPLOYMENT_STRATEGY__ROLLING_UPDATE, oldRollingUpdate, newRollingUpdate);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -131,10 +130,31 @@ public class DeploymentStrategyImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public void setRollingUpdate(RollingUpdateDeployment newRollingUpdate) {
-		RollingUpdateDeployment oldRollingUpdate = rollingUpdate;
-		rollingUpdate = newRollingUpdate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.DEPLOYMENT_STRATEGY__ROLLING_UPDATE, oldRollingUpdate, rollingUpdate));
+		if (newRollingUpdate != rollingUpdate) {
+			NotificationChain msgs = null;
+			if (rollingUpdate != null)
+				msgs = ((InternalEObject)rollingUpdate).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.DEPLOYMENT_STRATEGY__ROLLING_UPDATE, null, msgs);
+			if (newRollingUpdate != null)
+				msgs = ((InternalEObject)newRollingUpdate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.DEPLOYMENT_STRATEGY__ROLLING_UPDATE, null, msgs);
+			msgs = basicSetRollingUpdate(newRollingUpdate, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.DEPLOYMENT_STRATEGY__ROLLING_UPDATE, newRollingUpdate, newRollingUpdate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case K8sPackage.DEPLOYMENT_STRATEGY__ROLLING_UPDATE:
+				return basicSetRollingUpdate(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -148,8 +168,7 @@ public class DeploymentStrategyImpl extends MinimalEObjectImpl.Container impleme
 			case K8sPackage.DEPLOYMENT_STRATEGY__TYPE:
 				return getType();
 			case K8sPackage.DEPLOYMENT_STRATEGY__ROLLING_UPDATE:
-				if (resolve) return getRollingUpdate();
-				return basicGetRollingUpdate();
+				return getRollingUpdate();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

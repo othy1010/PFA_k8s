@@ -24,13 +24,13 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface NodeSelectorTerm extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Match Expressions</b></em>' reference list.
+	 * Returns the value of the '<em><b>Match Expressions</b></em>' containment reference list.
 	 * The list contents are of type {@link k8s.NodeSelectorRequirement}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Match Expressions</em>' reference list.
+	 * @return the value of the '<em>Match Expressions</em>' containment reference list.
 	 * @see k8s.K8sPackage#getNodeSelectorTerm_MatchExpressions()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	EList<NodeSelectorRequirement> getMatchExpressions();

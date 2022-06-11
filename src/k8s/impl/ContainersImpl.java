@@ -14,6 +14,7 @@ import k8s.VolumeMount;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -22,7 +23,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -130,7 +132,7 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	protected EList<String> args;
 
 	/**
-	 * The cached value of the '{@link #getResources() <em>Resources</em>}' reference.
+	 * The cached value of the '{@link #getResources() <em>Resources</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getResources()
@@ -140,7 +142,7 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	protected ResourceRequirements resources;
 
 	/**
-	 * The cached value of the '{@link #getLivenessProbe() <em>Liveness Probe</em>}' reference.
+	 * The cached value of the '{@link #getLivenessProbe() <em>Liveness Probe</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getLivenessProbe()
@@ -150,7 +152,7 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	protected Probe livenessProbe;
 
 	/**
-	 * The cached value of the '{@link #getReadinessProbe() <em>Readiness Probe</em>}' reference.
+	 * The cached value of the '{@link #getReadinessProbe() <em>Readiness Probe</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getReadinessProbe()
@@ -160,7 +162,7 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	protected Probe readinessProbe;
 
 	/**
-	 * The cached value of the '{@link #getLifeCycle() <em>Life Cycle</em>}' reference.
+	 * The cached value of the '{@link #getLifeCycle() <em>Life Cycle</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getLifeCycle()
@@ -170,7 +172,7 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	protected LifeCycle lifeCycle;
 
 	/**
-	 * The cached value of the '{@link #getVolumeMounts() <em>Volume Mounts</em>}' reference list.
+	 * The cached value of the '{@link #getVolumeMounts() <em>Volume Mounts</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getVolumeMounts()
@@ -180,7 +182,7 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	protected EList<VolumeMount> volumeMounts;
 
 	/**
-	 * The cached value of the '{@link #getEnv() <em>Env</em>}' reference list.
+	 * The cached value of the '{@link #getEnv() <em>Env</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getEnv()
@@ -190,7 +192,7 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	protected EList<EnvVar> env;
 
 	/**
-	 * The cached value of the '{@link #getPorts() <em>Ports</em>}' reference list.
+	 * The cached value of the '{@link #getPorts() <em>Ports</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPorts()
@@ -288,7 +290,7 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	 */
 	public EList<ContainerPort> getPorts() {
 		if (ports == null) {
-			ports = new EObjectResolvingEList<ContainerPort>(ContainerPort.class, this, K8sPackage.CONTAINERS__PORTS);
+			ports = new EObjectContainmentEList<ContainerPort>(ContainerPort.class, this, K8sPackage.CONTAINERS__PORTS);
 		}
 		return ports;
 	}
@@ -298,9 +300,35 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case K8sPackage.CONTAINERS__RESOURCES:
+				return basicSetResources(null, msgs);
+			case K8sPackage.CONTAINERS__LIVENESS_PROBE:
+				return basicSetLivenessProbe(null, msgs);
+			case K8sPackage.CONTAINERS__READINESS_PROBE:
+				return basicSetReadinessProbe(null, msgs);
+			case K8sPackage.CONTAINERS__LIFE_CYCLE:
+				return basicSetLifeCycle(null, msgs);
+			case K8sPackage.CONTAINERS__VOLUME_MOUNTS:
+				return ((InternalEList<?>)getVolumeMounts()).basicRemove(otherEnd, msgs);
+			case K8sPackage.CONTAINERS__ENV:
+				return ((InternalEList<?>)getEnv()).basicRemove(otherEnd, msgs);
+			case K8sPackage.CONTAINERS__PORTS:
+				return ((InternalEList<?>)getPorts()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<EnvVar> getEnv() {
 		if (env == null) {
-			env = new EObjectResolvingEList<EnvVar>(EnvVar.class, this, K8sPackage.CONTAINERS__ENV);
+			env = new EObjectContainmentEList<EnvVar>(EnvVar.class, this, K8sPackage.CONTAINERS__ENV);
 		}
 		return env;
 	}
@@ -336,7 +364,7 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	 */
 	public EList<VolumeMount> getVolumeMounts() {
 		if (volumeMounts == null) {
-			volumeMounts = new EObjectResolvingEList<VolumeMount>(VolumeMount.class, this, K8sPackage.CONTAINERS__VOLUME_MOUNTS);
+			volumeMounts = new EObjectContainmentEList<VolumeMount>(VolumeMount.class, this, K8sPackage.CONTAINERS__VOLUME_MOUNTS);
 		}
 		return volumeMounts;
 	}
@@ -347,14 +375,6 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	 * @generated
 	 */
 	public ResourceRequirements getResources() {
-		if (resources != null && resources.eIsProxy()) {
-			InternalEObject oldResources = (InternalEObject)resources;
-			resources = (ResourceRequirements)eResolveProxy(oldResources);
-			if (resources != oldResources) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, K8sPackage.CONTAINERS__RESOURCES, oldResources, resources));
-			}
-		}
 		return resources;
 	}
 
@@ -363,8 +383,14 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ResourceRequirements basicGetResources() {
-		return resources;
+	public NotificationChain basicSetResources(ResourceRequirements newResources, NotificationChain msgs) {
+		ResourceRequirements oldResources = resources;
+		resources = newResources;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.CONTAINERS__RESOURCES, oldResources, newResources);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -373,10 +399,17 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	 * @generated
 	 */
 	public void setResources(ResourceRequirements newResources) {
-		ResourceRequirements oldResources = resources;
-		resources = newResources;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.CONTAINERS__RESOURCES, oldResources, resources));
+		if (newResources != resources) {
+			NotificationChain msgs = null;
+			if (resources != null)
+				msgs = ((InternalEObject)resources).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.CONTAINERS__RESOURCES, null, msgs);
+			if (newResources != null)
+				msgs = ((InternalEObject)newResources).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.CONTAINERS__RESOURCES, null, msgs);
+			msgs = basicSetResources(newResources, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.CONTAINERS__RESOURCES, newResources, newResources));
 	}
 
 	/**
@@ -385,14 +418,6 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	 * @generated
 	 */
 	public Probe getLivenessProbe() {
-		if (livenessProbe != null && livenessProbe.eIsProxy()) {
-			InternalEObject oldLivenessProbe = (InternalEObject)livenessProbe;
-			livenessProbe = (Probe)eResolveProxy(oldLivenessProbe);
-			if (livenessProbe != oldLivenessProbe) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, K8sPackage.CONTAINERS__LIVENESS_PROBE, oldLivenessProbe, livenessProbe));
-			}
-		}
 		return livenessProbe;
 	}
 
@@ -401,8 +426,14 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Probe basicGetLivenessProbe() {
-		return livenessProbe;
+	public NotificationChain basicSetLivenessProbe(Probe newLivenessProbe, NotificationChain msgs) {
+		Probe oldLivenessProbe = livenessProbe;
+		livenessProbe = newLivenessProbe;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.CONTAINERS__LIVENESS_PROBE, oldLivenessProbe, newLivenessProbe);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -411,10 +442,17 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	 * @generated
 	 */
 	public void setLivenessProbe(Probe newLivenessProbe) {
-		Probe oldLivenessProbe = livenessProbe;
-		livenessProbe = newLivenessProbe;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.CONTAINERS__LIVENESS_PROBE, oldLivenessProbe, livenessProbe));
+		if (newLivenessProbe != livenessProbe) {
+			NotificationChain msgs = null;
+			if (livenessProbe != null)
+				msgs = ((InternalEObject)livenessProbe).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.CONTAINERS__LIVENESS_PROBE, null, msgs);
+			if (newLivenessProbe != null)
+				msgs = ((InternalEObject)newLivenessProbe).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.CONTAINERS__LIVENESS_PROBE, null, msgs);
+			msgs = basicSetLivenessProbe(newLivenessProbe, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.CONTAINERS__LIVENESS_PROBE, newLivenessProbe, newLivenessProbe));
 	}
 
 	/**
@@ -423,14 +461,6 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	 * @generated
 	 */
 	public Probe getReadinessProbe() {
-		if (readinessProbe != null && readinessProbe.eIsProxy()) {
-			InternalEObject oldReadinessProbe = (InternalEObject)readinessProbe;
-			readinessProbe = (Probe)eResolveProxy(oldReadinessProbe);
-			if (readinessProbe != oldReadinessProbe) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, K8sPackage.CONTAINERS__READINESS_PROBE, oldReadinessProbe, readinessProbe));
-			}
-		}
 		return readinessProbe;
 	}
 
@@ -439,8 +469,14 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Probe basicGetReadinessProbe() {
-		return readinessProbe;
+	public NotificationChain basicSetReadinessProbe(Probe newReadinessProbe, NotificationChain msgs) {
+		Probe oldReadinessProbe = readinessProbe;
+		readinessProbe = newReadinessProbe;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.CONTAINERS__READINESS_PROBE, oldReadinessProbe, newReadinessProbe);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -449,10 +485,17 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	 * @generated
 	 */
 	public void setReadinessProbe(Probe newReadinessProbe) {
-		Probe oldReadinessProbe = readinessProbe;
-		readinessProbe = newReadinessProbe;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.CONTAINERS__READINESS_PROBE, oldReadinessProbe, readinessProbe));
+		if (newReadinessProbe != readinessProbe) {
+			NotificationChain msgs = null;
+			if (readinessProbe != null)
+				msgs = ((InternalEObject)readinessProbe).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.CONTAINERS__READINESS_PROBE, null, msgs);
+			if (newReadinessProbe != null)
+				msgs = ((InternalEObject)newReadinessProbe).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.CONTAINERS__READINESS_PROBE, null, msgs);
+			msgs = basicSetReadinessProbe(newReadinessProbe, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.CONTAINERS__READINESS_PROBE, newReadinessProbe, newReadinessProbe));
 	}
 
 	/**
@@ -461,14 +504,6 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	 * @generated
 	 */
 	public LifeCycle getLifeCycle() {
-		if (lifeCycle != null && lifeCycle.eIsProxy()) {
-			InternalEObject oldLifeCycle = (InternalEObject)lifeCycle;
-			lifeCycle = (LifeCycle)eResolveProxy(oldLifeCycle);
-			if (lifeCycle != oldLifeCycle) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, K8sPackage.CONTAINERS__LIFE_CYCLE, oldLifeCycle, lifeCycle));
-			}
-		}
 		return lifeCycle;
 	}
 
@@ -477,8 +512,14 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LifeCycle basicGetLifeCycle() {
-		return lifeCycle;
+	public NotificationChain basicSetLifeCycle(LifeCycle newLifeCycle, NotificationChain msgs) {
+		LifeCycle oldLifeCycle = lifeCycle;
+		lifeCycle = newLifeCycle;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.CONTAINERS__LIFE_CYCLE, oldLifeCycle, newLifeCycle);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -487,10 +528,17 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	 * @generated
 	 */
 	public void setLifeCycle(LifeCycle newLifeCycle) {
-		LifeCycle oldLifeCycle = lifeCycle;
-		lifeCycle = newLifeCycle;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.CONTAINERS__LIFE_CYCLE, oldLifeCycle, lifeCycle));
+		if (newLifeCycle != lifeCycle) {
+			NotificationChain msgs = null;
+			if (lifeCycle != null)
+				msgs = ((InternalEObject)lifeCycle).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.CONTAINERS__LIFE_CYCLE, null, msgs);
+			if (newLifeCycle != null)
+				msgs = ((InternalEObject)newLifeCycle).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.CONTAINERS__LIFE_CYCLE, null, msgs);
+			msgs = basicSetLifeCycle(newLifeCycle, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.CONTAINERS__LIFE_CYCLE, newLifeCycle, newLifeCycle));
 	}
 
 	/**
@@ -512,17 +560,13 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 			case K8sPackage.CONTAINERS__ARGS:
 				return getArgs();
 			case K8sPackage.CONTAINERS__RESOURCES:
-				if (resolve) return getResources();
-				return basicGetResources();
+				return getResources();
 			case K8sPackage.CONTAINERS__LIVENESS_PROBE:
-				if (resolve) return getLivenessProbe();
-				return basicGetLivenessProbe();
+				return getLivenessProbe();
 			case K8sPackage.CONTAINERS__READINESS_PROBE:
-				if (resolve) return getReadinessProbe();
-				return basicGetReadinessProbe();
+				return getReadinessProbe();
 			case K8sPackage.CONTAINERS__LIFE_CYCLE:
-				if (resolve) return getLifeCycle();
-				return basicGetLifeCycle();
+				return getLifeCycle();
 			case K8sPackage.CONTAINERS__VOLUME_MOUNTS:
 				return getVolumeMounts();
 			case K8sPackage.CONTAINERS__ENV:

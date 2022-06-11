@@ -10,10 +10,12 @@ import k8s.Selector;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,9 +32,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class DeploymentSpecImpl extends SpecFactoryImpl implements DeploymentSpec {
+public class DeploymentSpecImpl extends MinimalEObjectImpl.Container implements DeploymentSpec {
 	/**
-	 * The cached value of the '{@link #getSelector() <em>Selector</em>}' reference.
+	 * The cached value of the '{@link #getSelector() <em>Selector</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSelector()
@@ -42,7 +44,7 @@ public class DeploymentSpecImpl extends SpecFactoryImpl implements DeploymentSpe
 	protected Selector selector;
 
 	/**
-	 * The cached value of the '{@link #getStrategy() <em>Strategy</em>}' reference.
+	 * The cached value of the '{@link #getStrategy() <em>Strategy</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStrategy()
@@ -52,7 +54,7 @@ public class DeploymentSpecImpl extends SpecFactoryImpl implements DeploymentSpe
 	protected DeploymentStrategy strategy;
 
 	/**
-	 * The cached value of the '{@link #getTemplate() <em>Template</em>}' reference.
+	 * The cached value of the '{@link #getTemplate() <em>Template</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTemplate()
@@ -86,14 +88,6 @@ public class DeploymentSpecImpl extends SpecFactoryImpl implements DeploymentSpe
 	 * @generated
 	 */
 	public Selector getSelector() {
-		if (selector != null && selector.eIsProxy()) {
-			InternalEObject oldSelector = (InternalEObject)selector;
-			selector = (Selector)eResolveProxy(oldSelector);
-			if (selector != oldSelector) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, K8sPackage.DEPLOYMENT_SPEC__SELECTOR, oldSelector, selector));
-			}
-		}
 		return selector;
 	}
 
@@ -102,8 +96,14 @@ public class DeploymentSpecImpl extends SpecFactoryImpl implements DeploymentSpe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Selector basicGetSelector() {
-		return selector;
+	public NotificationChain basicSetSelector(Selector newSelector, NotificationChain msgs) {
+		Selector oldSelector = selector;
+		selector = newSelector;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.DEPLOYMENT_SPEC__SELECTOR, oldSelector, newSelector);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -112,10 +112,17 @@ public class DeploymentSpecImpl extends SpecFactoryImpl implements DeploymentSpe
 	 * @generated
 	 */
 	public void setSelector(Selector newSelector) {
-		Selector oldSelector = selector;
-		selector = newSelector;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.DEPLOYMENT_SPEC__SELECTOR, oldSelector, selector));
+		if (newSelector != selector) {
+			NotificationChain msgs = null;
+			if (selector != null)
+				msgs = ((InternalEObject)selector).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.DEPLOYMENT_SPEC__SELECTOR, null, msgs);
+			if (newSelector != null)
+				msgs = ((InternalEObject)newSelector).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.DEPLOYMENT_SPEC__SELECTOR, null, msgs);
+			msgs = basicSetSelector(newSelector, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.DEPLOYMENT_SPEC__SELECTOR, newSelector, newSelector));
 	}
 
 	/**
@@ -124,14 +131,6 @@ public class DeploymentSpecImpl extends SpecFactoryImpl implements DeploymentSpe
 	 * @generated
 	 */
 	public DeploymentStrategy getStrategy() {
-		if (strategy != null && strategy.eIsProxy()) {
-			InternalEObject oldStrategy = (InternalEObject)strategy;
-			strategy = (DeploymentStrategy)eResolveProxy(oldStrategy);
-			if (strategy != oldStrategy) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, K8sPackage.DEPLOYMENT_SPEC__STRATEGY, oldStrategy, strategy));
-			}
-		}
 		return strategy;
 	}
 
@@ -140,8 +139,14 @@ public class DeploymentSpecImpl extends SpecFactoryImpl implements DeploymentSpe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DeploymentStrategy basicGetStrategy() {
-		return strategy;
+	public NotificationChain basicSetStrategy(DeploymentStrategy newStrategy, NotificationChain msgs) {
+		DeploymentStrategy oldStrategy = strategy;
+		strategy = newStrategy;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.DEPLOYMENT_SPEC__STRATEGY, oldStrategy, newStrategy);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -150,10 +155,17 @@ public class DeploymentSpecImpl extends SpecFactoryImpl implements DeploymentSpe
 	 * @generated
 	 */
 	public void setStrategy(DeploymentStrategy newStrategy) {
-		DeploymentStrategy oldStrategy = strategy;
-		strategy = newStrategy;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.DEPLOYMENT_SPEC__STRATEGY, oldStrategy, strategy));
+		if (newStrategy != strategy) {
+			NotificationChain msgs = null;
+			if (strategy != null)
+				msgs = ((InternalEObject)strategy).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.DEPLOYMENT_SPEC__STRATEGY, null, msgs);
+			if (newStrategy != null)
+				msgs = ((InternalEObject)newStrategy).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.DEPLOYMENT_SPEC__STRATEGY, null, msgs);
+			msgs = basicSetStrategy(newStrategy, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.DEPLOYMENT_SPEC__STRATEGY, newStrategy, newStrategy));
 	}
 
 	/**
@@ -162,14 +174,6 @@ public class DeploymentSpecImpl extends SpecFactoryImpl implements DeploymentSpe
 	 * @generated
 	 */
 	public PodTemplate getTemplate() {
-		if (template != null && template.eIsProxy()) {
-			InternalEObject oldTemplate = (InternalEObject)template;
-			template = (PodTemplate)eResolveProxy(oldTemplate);
-			if (template != oldTemplate) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, K8sPackage.DEPLOYMENT_SPEC__TEMPLATE, oldTemplate, template));
-			}
-		}
 		return template;
 	}
 
@@ -178,8 +182,14 @@ public class DeploymentSpecImpl extends SpecFactoryImpl implements DeploymentSpe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PodTemplate basicGetTemplate() {
-		return template;
+	public NotificationChain basicSetTemplate(PodTemplate newTemplate, NotificationChain msgs) {
+		PodTemplate oldTemplate = template;
+		template = newTemplate;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.DEPLOYMENT_SPEC__TEMPLATE, oldTemplate, newTemplate);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -188,10 +198,35 @@ public class DeploymentSpecImpl extends SpecFactoryImpl implements DeploymentSpe
 	 * @generated
 	 */
 	public void setTemplate(PodTemplate newTemplate) {
-		PodTemplate oldTemplate = template;
-		template = newTemplate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.DEPLOYMENT_SPEC__TEMPLATE, oldTemplate, template));
+		if (newTemplate != template) {
+			NotificationChain msgs = null;
+			if (template != null)
+				msgs = ((InternalEObject)template).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.DEPLOYMENT_SPEC__TEMPLATE, null, msgs);
+			if (newTemplate != null)
+				msgs = ((InternalEObject)newTemplate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.DEPLOYMENT_SPEC__TEMPLATE, null, msgs);
+			msgs = basicSetTemplate(newTemplate, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.DEPLOYMENT_SPEC__TEMPLATE, newTemplate, newTemplate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case K8sPackage.DEPLOYMENT_SPEC__SELECTOR:
+				return basicSetSelector(null, msgs);
+			case K8sPackage.DEPLOYMENT_SPEC__STRATEGY:
+				return basicSetStrategy(null, msgs);
+			case K8sPackage.DEPLOYMENT_SPEC__TEMPLATE:
+				return basicSetTemplate(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -203,14 +238,11 @@ public class DeploymentSpecImpl extends SpecFactoryImpl implements DeploymentSpe
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case K8sPackage.DEPLOYMENT_SPEC__SELECTOR:
-				if (resolve) return getSelector();
-				return basicGetSelector();
+				return getSelector();
 			case K8sPackage.DEPLOYMENT_SPEC__STRATEGY:
-				if (resolve) return getStrategy();
-				return basicGetStrategy();
+				return getStrategy();
 			case K8sPackage.DEPLOYMENT_SPEC__TEMPLATE:
-				if (resolve) return getTemplate();
-				return basicGetTemplate();
+				return getTemplate();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

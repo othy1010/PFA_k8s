@@ -45,22 +45,22 @@ public interface Volume extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Host Path</b></em>' reference.
+	 * Returns the value of the '<em><b>Host Path</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Host Path</em>' reference.
+	 * @return the value of the '<em>Host Path</em>' containment reference.
 	 * @see #setHostPath(HostPathVolumeSource)
 	 * @see k8s.K8sPackage#getVolume_HostPath()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	HostPathVolumeSource getHostPath();
 
 	/**
-	 * Sets the value of the '{@link k8s.Volume#getHostPath <em>Host Path</em>}' reference.
+	 * Sets the value of the '{@link k8s.Volume#getHostPath <em>Host Path</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Host Path</em>' reference.
+	 * @param value the new value of the '<em>Host Path</em>' containment reference.
 	 * @see #getHostPath()
 	 * @generated
 	 */

@@ -8,6 +8,7 @@ import k8s.Volume;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -50,7 +51,7 @@ public class VolumeImpl extends MinimalEObjectImpl.Container implements Volume {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getHostPath() <em>Host Path</em>}' reference.
+	 * The cached value of the '{@link #getHostPath() <em>Host Path</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getHostPath()
@@ -105,14 +106,6 @@ public class VolumeImpl extends MinimalEObjectImpl.Container implements Volume {
 	 * @generated
 	 */
 	public HostPathVolumeSource getHostPath() {
-		if (hostPath != null && hostPath.eIsProxy()) {
-			InternalEObject oldHostPath = (InternalEObject)hostPath;
-			hostPath = (HostPathVolumeSource)eResolveProxy(oldHostPath);
-			if (hostPath != oldHostPath) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, K8sPackage.VOLUME__HOST_PATH, oldHostPath, hostPath));
-			}
-		}
 		return hostPath;
 	}
 
@@ -121,8 +114,14 @@ public class VolumeImpl extends MinimalEObjectImpl.Container implements Volume {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HostPathVolumeSource basicGetHostPath() {
-		return hostPath;
+	public NotificationChain basicSetHostPath(HostPathVolumeSource newHostPath, NotificationChain msgs) {
+		HostPathVolumeSource oldHostPath = hostPath;
+		hostPath = newHostPath;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.VOLUME__HOST_PATH, oldHostPath, newHostPath);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -131,10 +130,31 @@ public class VolumeImpl extends MinimalEObjectImpl.Container implements Volume {
 	 * @generated
 	 */
 	public void setHostPath(HostPathVolumeSource newHostPath) {
-		HostPathVolumeSource oldHostPath = hostPath;
-		hostPath = newHostPath;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.VOLUME__HOST_PATH, oldHostPath, hostPath));
+		if (newHostPath != hostPath) {
+			NotificationChain msgs = null;
+			if (hostPath != null)
+				msgs = ((InternalEObject)hostPath).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.VOLUME__HOST_PATH, null, msgs);
+			if (newHostPath != null)
+				msgs = ((InternalEObject)newHostPath).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.VOLUME__HOST_PATH, null, msgs);
+			msgs = basicSetHostPath(newHostPath, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.VOLUME__HOST_PATH, newHostPath, newHostPath));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case K8sPackage.VOLUME__HOST_PATH:
+				return basicSetHostPath(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -148,8 +168,7 @@ public class VolumeImpl extends MinimalEObjectImpl.Container implements Volume {
 			case K8sPackage.VOLUME__NAME:
 				return getName();
 			case K8sPackage.VOLUME__HOST_PATH:
-				if (resolve) return getHostPath();
-				return basicGetHostPath();
+				return getHostPath();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

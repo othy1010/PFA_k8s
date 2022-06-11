@@ -23,44 +23,44 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface PodTemplate extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Metadata</b></em>' reference.
+	 * Returns the value of the '<em><b>Metadata</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Metadata</em>' reference.
+	 * @return the value of the '<em>Metadata</em>' containment reference.
 	 * @see #setMetadata(Metadata)
 	 * @see k8s.K8sPackage#getPodTemplate_Metadata()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	Metadata getMetadata();
 
 	/**
-	 * Sets the value of the '{@link k8s.PodTemplate#getMetadata <em>Metadata</em>}' reference.
+	 * Sets the value of the '{@link k8s.PodTemplate#getMetadata <em>Metadata</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Metadata</em>' reference.
+	 * @param value the new value of the '<em>Metadata</em>' containment reference.
 	 * @see #getMetadata()
 	 * @generated
 	 */
 	void setMetadata(Metadata value);
 
 	/**
-	 * Returns the value of the '<em><b>Spec</b></em>' reference.
+	 * Returns the value of the '<em><b>Spec</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Spec</em>' reference.
+	 * @return the value of the '<em>Spec</em>' containment reference.
 	 * @see #setSpec(PodSpec)
 	 * @see k8s.K8sPackage#getPodTemplate_Spec()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	PodSpec getSpec();
 
 	/**
-	 * Sets the value of the '{@link k8s.PodTemplate#getSpec <em>Spec</em>}' reference.
+	 * Sets the value of the '{@link k8s.PodTemplate#getSpec <em>Spec</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Spec</em>' reference.
+	 * @param value the new value of the '<em>Spec</em>' containment reference.
 	 * @see #getSpec()
 	 * @generated
 	 */

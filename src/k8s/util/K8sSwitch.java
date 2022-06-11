@@ -108,7 +108,6 @@ public class K8sSwitch<T> extends Switch<T> {
 			case K8sPackage.POD_SPEC: {
 				PodSpec podSpec = (PodSpec)theEObject;
 				T result = casePodSpec(podSpec);
-				if (result == null) result = caseSpecFactory(podSpec);
 				if (result == null) result = caseSpec(podSpec);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -116,7 +115,6 @@ public class K8sSwitch<T> extends Switch<T> {
 			case K8sPackage.DEPLOYMENT_SPEC: {
 				DeploymentSpec deploymentSpec = (DeploymentSpec)theEObject;
 				T result = caseDeploymentSpec(deploymentSpec);
-				if (result == null) result = caseSpecFactory(deploymentSpec);
 				if (result == null) result = caseSpec(deploymentSpec);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

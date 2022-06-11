@@ -23,13 +23,13 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface NodeAffinity extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Required During Scheduling Ignored During Execution</b></em>' reference list.
+	 * Returns the value of the '<em><b>Required During Scheduling Ignored During Execution</b></em>' containment reference list.
 	 * The list contents are of type {@link k8s.NodeSelector}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Required During Scheduling Ignored During Execution</em>' reference list.
+	 * @return the value of the '<em>Required During Scheduling Ignored During Execution</em>' containment reference list.
 	 * @see k8s.K8sPackage#getNodeAffinity_RequiredDuringSchedulingIgnoredDuringExecution()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	EList<NodeSelector> getRequiredDuringSchedulingIgnoredDuringExecution();

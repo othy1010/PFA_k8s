@@ -8,6 +8,7 @@ import k8s.LifeCycle;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -30,7 +31,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class LifeCycleImpl extends MinimalEObjectImpl.Container implements LifeCycle {
 	/**
-	 * The cached value of the '{@link #getPostStart() <em>Post Start</em>}' reference.
+	 * The cached value of the '{@link #getPostStart() <em>Post Start</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPostStart()
@@ -40,7 +41,7 @@ public class LifeCycleImpl extends MinimalEObjectImpl.Container implements LifeC
 	protected Handler postStart;
 
 	/**
-	 * The cached value of the '{@link #getPreStop() <em>Pre Stop</em>}' reference.
+	 * The cached value of the '{@link #getPreStop() <em>Pre Stop</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPreStop()
@@ -74,14 +75,6 @@ public class LifeCycleImpl extends MinimalEObjectImpl.Container implements LifeC
 	 * @generated
 	 */
 	public Handler getPostStart() {
-		if (postStart != null && postStart.eIsProxy()) {
-			InternalEObject oldPostStart = (InternalEObject)postStart;
-			postStart = (Handler)eResolveProxy(oldPostStart);
-			if (postStart != oldPostStart) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, K8sPackage.LIFE_CYCLE__POST_START, oldPostStart, postStart));
-			}
-		}
 		return postStart;
 	}
 
@@ -90,8 +83,14 @@ public class LifeCycleImpl extends MinimalEObjectImpl.Container implements LifeC
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Handler basicGetPostStart() {
-		return postStart;
+	public NotificationChain basicSetPostStart(Handler newPostStart, NotificationChain msgs) {
+		Handler oldPostStart = postStart;
+		postStart = newPostStart;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.LIFE_CYCLE__POST_START, oldPostStart, newPostStart);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -100,10 +99,17 @@ public class LifeCycleImpl extends MinimalEObjectImpl.Container implements LifeC
 	 * @generated
 	 */
 	public void setPostStart(Handler newPostStart) {
-		Handler oldPostStart = postStart;
-		postStart = newPostStart;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.LIFE_CYCLE__POST_START, oldPostStart, postStart));
+		if (newPostStart != postStart) {
+			NotificationChain msgs = null;
+			if (postStart != null)
+				msgs = ((InternalEObject)postStart).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.LIFE_CYCLE__POST_START, null, msgs);
+			if (newPostStart != null)
+				msgs = ((InternalEObject)newPostStart).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.LIFE_CYCLE__POST_START, null, msgs);
+			msgs = basicSetPostStart(newPostStart, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.LIFE_CYCLE__POST_START, newPostStart, newPostStart));
 	}
 
 	/**
@@ -112,14 +118,6 @@ public class LifeCycleImpl extends MinimalEObjectImpl.Container implements LifeC
 	 * @generated
 	 */
 	public Handler getPreStop() {
-		if (preStop != null && preStop.eIsProxy()) {
-			InternalEObject oldPreStop = (InternalEObject)preStop;
-			preStop = (Handler)eResolveProxy(oldPreStop);
-			if (preStop != oldPreStop) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, K8sPackage.LIFE_CYCLE__PRE_STOP, oldPreStop, preStop));
-			}
-		}
 		return preStop;
 	}
 
@@ -128,8 +126,14 @@ public class LifeCycleImpl extends MinimalEObjectImpl.Container implements LifeC
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Handler basicGetPreStop() {
-		return preStop;
+	public NotificationChain basicSetPreStop(Handler newPreStop, NotificationChain msgs) {
+		Handler oldPreStop = preStop;
+		preStop = newPreStop;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.LIFE_CYCLE__PRE_STOP, oldPreStop, newPreStop);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -138,10 +142,33 @@ public class LifeCycleImpl extends MinimalEObjectImpl.Container implements LifeC
 	 * @generated
 	 */
 	public void setPreStop(Handler newPreStop) {
-		Handler oldPreStop = preStop;
-		preStop = newPreStop;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.LIFE_CYCLE__PRE_STOP, oldPreStop, preStop));
+		if (newPreStop != preStop) {
+			NotificationChain msgs = null;
+			if (preStop != null)
+				msgs = ((InternalEObject)preStop).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.LIFE_CYCLE__PRE_STOP, null, msgs);
+			if (newPreStop != null)
+				msgs = ((InternalEObject)newPreStop).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.LIFE_CYCLE__PRE_STOP, null, msgs);
+			msgs = basicSetPreStop(newPreStop, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.LIFE_CYCLE__PRE_STOP, newPreStop, newPreStop));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case K8sPackage.LIFE_CYCLE__POST_START:
+				return basicSetPostStart(null, msgs);
+			case K8sPackage.LIFE_CYCLE__PRE_STOP:
+				return basicSetPreStop(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -153,11 +180,9 @@ public class LifeCycleImpl extends MinimalEObjectImpl.Container implements LifeC
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case K8sPackage.LIFE_CYCLE__POST_START:
-				if (resolve) return getPostStart();
-				return basicGetPostStart();
+				return getPostStart();
 			case K8sPackage.LIFE_CYCLE__PRE_STOP:
-				if (resolve) return getPreStop();
-				return basicGetPreStop();
+				return getPreStop();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

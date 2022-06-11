@@ -8,6 +8,7 @@ import k8s.TopologySpreadConstraint;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -32,7 +33,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class TopologySpreadConstraintImpl extends MinimalEObjectImpl.Container implements TopologySpreadConstraint {
 	/**
-	 * The cached value of the '{@link #getLabelSelector() <em>Label Selector</em>}' reference.
+	 * The cached value of the '{@link #getLabelSelector() <em>Label Selector</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getLabelSelector()
@@ -126,14 +127,6 @@ public class TopologySpreadConstraintImpl extends MinimalEObjectImpl.Container i
 	 * @generated
 	 */
 	public LabelSelector getLabelSelector() {
-		if (labelSelector != null && labelSelector.eIsProxy()) {
-			InternalEObject oldLabelSelector = (InternalEObject)labelSelector;
-			labelSelector = (LabelSelector)eResolveProxy(oldLabelSelector);
-			if (labelSelector != oldLabelSelector) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, K8sPackage.TOPOLOGY_SPREAD_CONSTRAINT__LABEL_SELECTOR, oldLabelSelector, labelSelector));
-			}
-		}
 		return labelSelector;
 	}
 
@@ -142,8 +135,14 @@ public class TopologySpreadConstraintImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LabelSelector basicGetLabelSelector() {
-		return labelSelector;
+	public NotificationChain basicSetLabelSelector(LabelSelector newLabelSelector, NotificationChain msgs) {
+		LabelSelector oldLabelSelector = labelSelector;
+		labelSelector = newLabelSelector;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.TOPOLOGY_SPREAD_CONSTRAINT__LABEL_SELECTOR, oldLabelSelector, newLabelSelector);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -152,10 +151,17 @@ public class TopologySpreadConstraintImpl extends MinimalEObjectImpl.Container i
 	 * @generated
 	 */
 	public void setLabelSelector(LabelSelector newLabelSelector) {
-		LabelSelector oldLabelSelector = labelSelector;
-		labelSelector = newLabelSelector;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.TOPOLOGY_SPREAD_CONSTRAINT__LABEL_SELECTOR, oldLabelSelector, labelSelector));
+		if (newLabelSelector != labelSelector) {
+			NotificationChain msgs = null;
+			if (labelSelector != null)
+				msgs = ((InternalEObject)labelSelector).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.TOPOLOGY_SPREAD_CONSTRAINT__LABEL_SELECTOR, null, msgs);
+			if (newLabelSelector != null)
+				msgs = ((InternalEObject)newLabelSelector).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.TOPOLOGY_SPREAD_CONSTRAINT__LABEL_SELECTOR, null, msgs);
+			msgs = basicSetLabelSelector(newLabelSelector, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.TOPOLOGY_SPREAD_CONSTRAINT__LABEL_SELECTOR, newLabelSelector, newLabelSelector));
 	}
 
 	/**
@@ -227,11 +233,24 @@ public class TopologySpreadConstraintImpl extends MinimalEObjectImpl.Container i
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case K8sPackage.TOPOLOGY_SPREAD_CONSTRAINT__LABEL_SELECTOR:
+				return basicSetLabelSelector(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case K8sPackage.TOPOLOGY_SPREAD_CONSTRAINT__LABEL_SELECTOR:
-				if (resolve) return getLabelSelector();
-				return basicGetLabelSelector();
+				return getLabelSelector();
 			case K8sPackage.TOPOLOGY_SPREAD_CONSTRAINT__TOPOLOGY_KEY:
 				return getTopologyKey();
 			case K8sPackage.TOPOLOGY_SPREAD_CONSTRAINT__WHEN_UNSATISFIABLE:

@@ -9,6 +9,7 @@ import k8s.SecretKeySelector;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -31,7 +32,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class EnvVarSourceImpl extends MinimalEObjectImpl.Container implements EnvVarSource {
 	/**
-	 * The cached value of the '{@link #getFieldRef() <em>Field Ref</em>}' reference.
+	 * The cached value of the '{@link #getFieldRef() <em>Field Ref</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFieldRef()
@@ -41,7 +42,7 @@ public class EnvVarSourceImpl extends MinimalEObjectImpl.Container implements En
 	protected SecretKeySelector fieldRef;
 
 	/**
-	 * The cached value of the '{@link #getSecretKeyRef() <em>Secret Key Ref</em>}' reference.
+	 * The cached value of the '{@link #getSecretKeyRef() <em>Secret Key Ref</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSecretKeyRef()
@@ -75,14 +76,6 @@ public class EnvVarSourceImpl extends MinimalEObjectImpl.Container implements En
 	 * @generated
 	 */
 	public SecretKeySelector getFieldRef() {
-		if (fieldRef != null && fieldRef.eIsProxy()) {
-			InternalEObject oldFieldRef = (InternalEObject)fieldRef;
-			fieldRef = (SecretKeySelector)eResolveProxy(oldFieldRef);
-			if (fieldRef != oldFieldRef) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, K8sPackage.ENV_VAR_SOURCE__FIELD_REF, oldFieldRef, fieldRef));
-			}
-		}
 		return fieldRef;
 	}
 
@@ -91,8 +84,14 @@ public class EnvVarSourceImpl extends MinimalEObjectImpl.Container implements En
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SecretKeySelector basicGetFieldRef() {
-		return fieldRef;
+	public NotificationChain basicSetFieldRef(SecretKeySelector newFieldRef, NotificationChain msgs) {
+		SecretKeySelector oldFieldRef = fieldRef;
+		fieldRef = newFieldRef;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.ENV_VAR_SOURCE__FIELD_REF, oldFieldRef, newFieldRef);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -101,10 +100,17 @@ public class EnvVarSourceImpl extends MinimalEObjectImpl.Container implements En
 	 * @generated
 	 */
 	public void setFieldRef(SecretKeySelector newFieldRef) {
-		SecretKeySelector oldFieldRef = fieldRef;
-		fieldRef = newFieldRef;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.ENV_VAR_SOURCE__FIELD_REF, oldFieldRef, fieldRef));
+		if (newFieldRef != fieldRef) {
+			NotificationChain msgs = null;
+			if (fieldRef != null)
+				msgs = ((InternalEObject)fieldRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.ENV_VAR_SOURCE__FIELD_REF, null, msgs);
+			if (newFieldRef != null)
+				msgs = ((InternalEObject)newFieldRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.ENV_VAR_SOURCE__FIELD_REF, null, msgs);
+			msgs = basicSetFieldRef(newFieldRef, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.ENV_VAR_SOURCE__FIELD_REF, newFieldRef, newFieldRef));
 	}
 
 	/**
@@ -113,14 +119,6 @@ public class EnvVarSourceImpl extends MinimalEObjectImpl.Container implements En
 	 * @generated
 	 */
 	public ObjectFieldSelector getSecretKeyRef() {
-		if (secretKeyRef != null && secretKeyRef.eIsProxy()) {
-			InternalEObject oldSecretKeyRef = (InternalEObject)secretKeyRef;
-			secretKeyRef = (ObjectFieldSelector)eResolveProxy(oldSecretKeyRef);
-			if (secretKeyRef != oldSecretKeyRef) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, K8sPackage.ENV_VAR_SOURCE__SECRET_KEY_REF, oldSecretKeyRef, secretKeyRef));
-			}
-		}
 		return secretKeyRef;
 	}
 
@@ -129,8 +127,14 @@ public class EnvVarSourceImpl extends MinimalEObjectImpl.Container implements En
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ObjectFieldSelector basicGetSecretKeyRef() {
-		return secretKeyRef;
+	public NotificationChain basicSetSecretKeyRef(ObjectFieldSelector newSecretKeyRef, NotificationChain msgs) {
+		ObjectFieldSelector oldSecretKeyRef = secretKeyRef;
+		secretKeyRef = newSecretKeyRef;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.ENV_VAR_SOURCE__SECRET_KEY_REF, oldSecretKeyRef, newSecretKeyRef);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -139,10 +143,33 @@ public class EnvVarSourceImpl extends MinimalEObjectImpl.Container implements En
 	 * @generated
 	 */
 	public void setSecretKeyRef(ObjectFieldSelector newSecretKeyRef) {
-		ObjectFieldSelector oldSecretKeyRef = secretKeyRef;
-		secretKeyRef = newSecretKeyRef;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.ENV_VAR_SOURCE__SECRET_KEY_REF, oldSecretKeyRef, secretKeyRef));
+		if (newSecretKeyRef != secretKeyRef) {
+			NotificationChain msgs = null;
+			if (secretKeyRef != null)
+				msgs = ((InternalEObject)secretKeyRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.ENV_VAR_SOURCE__SECRET_KEY_REF, null, msgs);
+			if (newSecretKeyRef != null)
+				msgs = ((InternalEObject)newSecretKeyRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.ENV_VAR_SOURCE__SECRET_KEY_REF, null, msgs);
+			msgs = basicSetSecretKeyRef(newSecretKeyRef, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.ENV_VAR_SOURCE__SECRET_KEY_REF, newSecretKeyRef, newSecretKeyRef));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case K8sPackage.ENV_VAR_SOURCE__FIELD_REF:
+				return basicSetFieldRef(null, msgs);
+			case K8sPackage.ENV_VAR_SOURCE__SECRET_KEY_REF:
+				return basicSetSecretKeyRef(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -154,11 +181,9 @@ public class EnvVarSourceImpl extends MinimalEObjectImpl.Container implements En
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case K8sPackage.ENV_VAR_SOURCE__FIELD_REF:
-				if (resolve) return getFieldRef();
-				return basicGetFieldRef();
+				return getFieldRef();
 			case K8sPackage.ENV_VAR_SOURCE__SECRET_KEY_REF:
-				if (resolve) return getSecretKeyRef();
-				return basicGetSecretKeyRef();
+				return getSecretKeyRef();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

@@ -9,6 +9,7 @@ import k8s.PodTemplate;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -31,7 +32,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class PodTemplateImpl extends MinimalEObjectImpl.Container implements PodTemplate {
 	/**
-	 * The cached value of the '{@link #getMetadata() <em>Metadata</em>}' reference.
+	 * The cached value of the '{@link #getMetadata() <em>Metadata</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMetadata()
@@ -41,7 +42,7 @@ public class PodTemplateImpl extends MinimalEObjectImpl.Container implements Pod
 	protected Metadata metadata;
 
 	/**
-	 * The cached value of the '{@link #getSpec() <em>Spec</em>}' reference.
+	 * The cached value of the '{@link #getSpec() <em>Spec</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSpec()
@@ -75,14 +76,6 @@ public class PodTemplateImpl extends MinimalEObjectImpl.Container implements Pod
 	 * @generated
 	 */
 	public Metadata getMetadata() {
-		if (metadata != null && metadata.eIsProxy()) {
-			InternalEObject oldMetadata = (InternalEObject)metadata;
-			metadata = (Metadata)eResolveProxy(oldMetadata);
-			if (metadata != oldMetadata) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, K8sPackage.POD_TEMPLATE__METADATA, oldMetadata, metadata));
-			}
-		}
 		return metadata;
 	}
 
@@ -91,8 +84,14 @@ public class PodTemplateImpl extends MinimalEObjectImpl.Container implements Pod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Metadata basicGetMetadata() {
-		return metadata;
+	public NotificationChain basicSetMetadata(Metadata newMetadata, NotificationChain msgs) {
+		Metadata oldMetadata = metadata;
+		metadata = newMetadata;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.POD_TEMPLATE__METADATA, oldMetadata, newMetadata);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -101,10 +100,17 @@ public class PodTemplateImpl extends MinimalEObjectImpl.Container implements Pod
 	 * @generated
 	 */
 	public void setMetadata(Metadata newMetadata) {
-		Metadata oldMetadata = metadata;
-		metadata = newMetadata;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.POD_TEMPLATE__METADATA, oldMetadata, metadata));
+		if (newMetadata != metadata) {
+			NotificationChain msgs = null;
+			if (metadata != null)
+				msgs = ((InternalEObject)metadata).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.POD_TEMPLATE__METADATA, null, msgs);
+			if (newMetadata != null)
+				msgs = ((InternalEObject)newMetadata).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.POD_TEMPLATE__METADATA, null, msgs);
+			msgs = basicSetMetadata(newMetadata, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.POD_TEMPLATE__METADATA, newMetadata, newMetadata));
 	}
 
 	/**
@@ -113,14 +119,6 @@ public class PodTemplateImpl extends MinimalEObjectImpl.Container implements Pod
 	 * @generated
 	 */
 	public PodSpec getSpec() {
-		if (spec != null && spec.eIsProxy()) {
-			InternalEObject oldSpec = (InternalEObject)spec;
-			spec = (PodSpec)eResolveProxy(oldSpec);
-			if (spec != oldSpec) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, K8sPackage.POD_TEMPLATE__SPEC, oldSpec, spec));
-			}
-		}
 		return spec;
 	}
 
@@ -129,8 +127,14 @@ public class PodTemplateImpl extends MinimalEObjectImpl.Container implements Pod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PodSpec basicGetSpec() {
-		return spec;
+	public NotificationChain basicSetSpec(PodSpec newSpec, NotificationChain msgs) {
+		PodSpec oldSpec = spec;
+		spec = newSpec;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.POD_TEMPLATE__SPEC, oldSpec, newSpec);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -139,10 +143,33 @@ public class PodTemplateImpl extends MinimalEObjectImpl.Container implements Pod
 	 * @generated
 	 */
 	public void setSpec(PodSpec newSpec) {
-		PodSpec oldSpec = spec;
-		spec = newSpec;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.POD_TEMPLATE__SPEC, oldSpec, spec));
+		if (newSpec != spec) {
+			NotificationChain msgs = null;
+			if (spec != null)
+				msgs = ((InternalEObject)spec).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.POD_TEMPLATE__SPEC, null, msgs);
+			if (newSpec != null)
+				msgs = ((InternalEObject)newSpec).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.POD_TEMPLATE__SPEC, null, msgs);
+			msgs = basicSetSpec(newSpec, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.POD_TEMPLATE__SPEC, newSpec, newSpec));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case K8sPackage.POD_TEMPLATE__METADATA:
+				return basicSetMetadata(null, msgs);
+			case K8sPackage.POD_TEMPLATE__SPEC:
+				return basicSetSpec(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -154,11 +181,9 @@ public class PodTemplateImpl extends MinimalEObjectImpl.Container implements Pod
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case K8sPackage.POD_TEMPLATE__METADATA:
-				if (resolve) return getMetadata();
-				return basicGetMetadata();
+				return getMetadata();
 			case K8sPackage.POD_TEMPLATE__SPEC:
-				if (resolve) return getSpec();
-				return basicGetSpec();
+				return getSpec();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

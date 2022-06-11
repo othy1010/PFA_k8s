@@ -48,13 +48,13 @@ public interface Selector extends EObject {
 	void setMatchLabels(Map<String, String> value);
 
 	/**
-	 * Returns the value of the '<em><b>Match Expressions</b></em>' reference list.
+	 * Returns the value of the '<em><b>Match Expressions</b></em>' containment reference list.
 	 * The list contents are of type {@link k8s.MatchExpressions}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Match Expressions</em>' reference list.
+	 * @return the value of the '<em>Match Expressions</em>' containment reference list.
 	 * @see k8s.K8sPackage#getSelector_MatchExpressions()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<MatchExpressions> getMatchExpressions();

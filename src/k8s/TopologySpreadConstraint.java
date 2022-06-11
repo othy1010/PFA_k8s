@@ -25,22 +25,22 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface TopologySpreadConstraint extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Label Selector</b></em>' reference.
+	 * Returns the value of the '<em><b>Label Selector</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Label Selector</em>' reference.
+	 * @return the value of the '<em>Label Selector</em>' containment reference.
 	 * @see #setLabelSelector(LabelSelector)
 	 * @see k8s.K8sPackage#getTopologySpreadConstraint_LabelSelector()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	LabelSelector getLabelSelector();
 
 	/**
-	 * Sets the value of the '{@link k8s.TopologySpreadConstraint#getLabelSelector <em>Label Selector</em>}' reference.
+	 * Sets the value of the '{@link k8s.TopologySpreadConstraint#getLabelSelector <em>Label Selector</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Label Selector</em>' reference.
+	 * @param value the new value of the '<em>Label Selector</em>' containment reference.
 	 * @see #getLabelSelector()
 	 * @generated
 	 */

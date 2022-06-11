@@ -12,13 +12,16 @@ import k8s.Volume;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,7 +41,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *
  * @generated
  */
-public class PodSpecImpl extends SpecFactoryImpl implements PodSpec {
+public class PodSpecImpl extends MinimalEObjectImpl.Container implements PodSpec {
 	/**
 	 * The default value of the '{@link #getRestartPolicy() <em>Restart Policy</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -60,7 +63,7 @@ public class PodSpecImpl extends SpecFactoryImpl implements PodSpec {
 	protected String restartPolicy = RESTART_POLICY_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getAffinity() <em>Affinity</em>}' reference.
+	 * The cached value of the '{@link #getAffinity() <em>Affinity</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAffinity()
@@ -70,7 +73,7 @@ public class PodSpecImpl extends SpecFactoryImpl implements PodSpec {
 	protected Affinity affinity;
 
 	/**
-	 * The cached value of the '{@link #getContainers() <em>Containers</em>}' reference list.
+	 * The cached value of the '{@link #getContainers() <em>Containers</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getContainers()
@@ -80,7 +83,7 @@ public class PodSpecImpl extends SpecFactoryImpl implements PodSpec {
 	protected EList<Containers> containers;
 
 	/**
-	 * The cached value of the '{@link #getVolumes() <em>Volumes</em>}' reference list.
+	 * The cached value of the '{@link #getVolumes() <em>Volumes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getVolumes()
@@ -90,7 +93,7 @@ public class PodSpecImpl extends SpecFactoryImpl implements PodSpec {
 	protected EList<Volume> volumes;
 
 	/**
-	 * The cached value of the '{@link #getTopologySpreadConstraints() <em>Topology Spread Constraints</em>}' reference list.
+	 * The cached value of the '{@link #getTopologySpreadConstraints() <em>Topology Spread Constraints</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTopologySpreadConstraints()
@@ -100,7 +103,7 @@ public class PodSpecImpl extends SpecFactoryImpl implements PodSpec {
 	protected EList<TopologySpreadConstraint> topologySpreadConstraints;
 
 	/**
-	 * The cached value of the '{@link #getInitContainers() <em>Init Containers</em>}' reference list.
+	 * The cached value of the '{@link #getInitContainers() <em>Init Containers</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInitContainers()
@@ -135,7 +138,7 @@ public class PodSpecImpl extends SpecFactoryImpl implements PodSpec {
 	 */
 	public EList<Containers> getContainers() {
 		if (containers == null) {
-			containers = new EObjectResolvingEList<Containers>(Containers.class, this, K8sPackage.POD_SPEC__CONTAINERS);
+			containers = new EObjectContainmentEList<Containers>(Containers.class, this, K8sPackage.POD_SPEC__CONTAINERS);
 		}
 		return containers;
 	}
@@ -147,7 +150,7 @@ public class PodSpecImpl extends SpecFactoryImpl implements PodSpec {
 	 */
 	public EList<TopologySpreadConstraint> getTopologySpreadConstraints() {
 		if (topologySpreadConstraints == null) {
-			topologySpreadConstraints = new EObjectResolvingEList<TopologySpreadConstraint>(TopologySpreadConstraint.class, this, K8sPackage.POD_SPEC__TOPOLOGY_SPREAD_CONSTRAINTS);
+			topologySpreadConstraints = new EObjectContainmentEList<TopologySpreadConstraint>(TopologySpreadConstraint.class, this, K8sPackage.POD_SPEC__TOPOLOGY_SPREAD_CONSTRAINTS);
 		}
 		return topologySpreadConstraints;
 	}
@@ -159,7 +162,7 @@ public class PodSpecImpl extends SpecFactoryImpl implements PodSpec {
 	 */
 	public EList<Containers> getInitContainers() {
 		if (initContainers == null) {
-			initContainers = new EObjectResolvingEList<Containers>(Containers.class, this, K8sPackage.POD_SPEC__INIT_CONTAINERS);
+			initContainers = new EObjectContainmentEList<Containers>(Containers.class, this, K8sPackage.POD_SPEC__INIT_CONTAINERS);
 		}
 		return initContainers;
 	}
@@ -169,9 +172,31 @@ public class PodSpecImpl extends SpecFactoryImpl implements PodSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case K8sPackage.POD_SPEC__AFFINITY:
+				return basicSetAffinity(null, msgs);
+			case K8sPackage.POD_SPEC__CONTAINERS:
+				return ((InternalEList<?>)getContainers()).basicRemove(otherEnd, msgs);
+			case K8sPackage.POD_SPEC__VOLUMES:
+				return ((InternalEList<?>)getVolumes()).basicRemove(otherEnd, msgs);
+			case K8sPackage.POD_SPEC__TOPOLOGY_SPREAD_CONSTRAINTS:
+				return ((InternalEList<?>)getTopologySpreadConstraints()).basicRemove(otherEnd, msgs);
+			case K8sPackage.POD_SPEC__INIT_CONTAINERS:
+				return ((InternalEList<?>)getInitContainers()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<Volume> getVolumes() {
 		if (volumes == null) {
-			volumes = new EObjectResolvingEList<Volume>(Volume.class, this, K8sPackage.POD_SPEC__VOLUMES);
+			volumes = new EObjectContainmentEList<Volume>(Volume.class, this, K8sPackage.POD_SPEC__VOLUMES);
 		}
 		return volumes;
 	}
@@ -203,14 +228,6 @@ public class PodSpecImpl extends SpecFactoryImpl implements PodSpec {
 	 * @generated
 	 */
 	public Affinity getAffinity() {
-		if (affinity != null && affinity.eIsProxy()) {
-			InternalEObject oldAffinity = (InternalEObject)affinity;
-			affinity = (Affinity)eResolveProxy(oldAffinity);
-			if (affinity != oldAffinity) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, K8sPackage.POD_SPEC__AFFINITY, oldAffinity, affinity));
-			}
-		}
 		return affinity;
 	}
 
@@ -219,8 +236,14 @@ public class PodSpecImpl extends SpecFactoryImpl implements PodSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Affinity basicGetAffinity() {
-		return affinity;
+	public NotificationChain basicSetAffinity(Affinity newAffinity, NotificationChain msgs) {
+		Affinity oldAffinity = affinity;
+		affinity = newAffinity;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.POD_SPEC__AFFINITY, oldAffinity, newAffinity);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -229,10 +252,17 @@ public class PodSpecImpl extends SpecFactoryImpl implements PodSpec {
 	 * @generated
 	 */
 	public void setAffinity(Affinity newAffinity) {
-		Affinity oldAffinity = affinity;
-		affinity = newAffinity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.POD_SPEC__AFFINITY, oldAffinity, affinity));
+		if (newAffinity != affinity) {
+			NotificationChain msgs = null;
+			if (affinity != null)
+				msgs = ((InternalEObject)affinity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.POD_SPEC__AFFINITY, null, msgs);
+			if (newAffinity != null)
+				msgs = ((InternalEObject)newAffinity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.POD_SPEC__AFFINITY, null, msgs);
+			msgs = basicSetAffinity(newAffinity, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.POD_SPEC__AFFINITY, newAffinity, newAffinity));
 	}
 
 	/**
@@ -246,8 +276,7 @@ public class PodSpecImpl extends SpecFactoryImpl implements PodSpec {
 			case K8sPackage.POD_SPEC__RESTART_POLICY:
 				return getRestartPolicy();
 			case K8sPackage.POD_SPEC__AFFINITY:
-				if (resolve) return getAffinity();
-				return basicGetAffinity();
+				return getAffinity();
 			case K8sPackage.POD_SPEC__CONTAINERS:
 				return getContainers();
 			case K8sPackage.POD_SPEC__VOLUMES:

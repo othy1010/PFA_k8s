@@ -6,11 +6,14 @@ import java.util.Collection;
 import k8s.K8sPackage;
 import k8s.NodeSelectorRequirement;
 import k8s.NodeSelectorTerm;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +30,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class NodeSelectorTermImpl extends MinimalEObjectImpl.Container implements NodeSelectorTerm {
 	/**
-	 * The cached value of the '{@link #getMatchExpressions() <em>Match Expressions</em>}' reference list.
+	 * The cached value of the '{@link #getMatchExpressions() <em>Match Expressions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMatchExpressions()
@@ -62,9 +65,23 @@ public class NodeSelectorTermImpl extends MinimalEObjectImpl.Container implement
 	 */
 	public EList<NodeSelectorRequirement> getMatchExpressions() {
 		if (matchExpressions == null) {
-			matchExpressions = new EObjectResolvingEList<NodeSelectorRequirement>(NodeSelectorRequirement.class, this, K8sPackage.NODE_SELECTOR_TERM__MATCH_EXPRESSIONS);
+			matchExpressions = new EObjectContainmentEList<NodeSelectorRequirement>(NodeSelectorRequirement.class, this, K8sPackage.NODE_SELECTOR_TERM__MATCH_EXPRESSIONS);
 		}
 		return matchExpressions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case K8sPackage.NODE_SELECTOR_TERM__MATCH_EXPRESSIONS:
+				return ((InternalEList<?>)getMatchExpressions()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

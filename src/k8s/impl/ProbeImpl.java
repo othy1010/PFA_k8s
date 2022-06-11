@@ -9,6 +9,7 @@ import k8s.Probe;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -33,7 +34,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class ProbeImpl extends MinimalEObjectImpl.Container implements Probe {
 	/**
-	 * The cached value of the '{@link #getHttpGet() <em>Http Get</em>}' reference.
+	 * The cached value of the '{@link #getHttpGet() <em>Http Get</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getHttpGet()
@@ -43,7 +44,7 @@ public class ProbeImpl extends MinimalEObjectImpl.Container implements Probe {
 	protected HTTPGetAction httpGet;
 
 	/**
-	 * The cached value of the '{@link #getExec() <em>Exec</em>}' reference.
+	 * The cached value of the '{@link #getExec() <em>Exec</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getExec()
@@ -117,14 +118,6 @@ public class ProbeImpl extends MinimalEObjectImpl.Container implements Probe {
 	 * @generated
 	 */
 	public HTTPGetAction getHttpGet() {
-		if (httpGet != null && httpGet.eIsProxy()) {
-			InternalEObject oldHttpGet = (InternalEObject)httpGet;
-			httpGet = (HTTPGetAction)eResolveProxy(oldHttpGet);
-			if (httpGet != oldHttpGet) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, K8sPackage.PROBE__HTTP_GET, oldHttpGet, httpGet));
-			}
-		}
 		return httpGet;
 	}
 
@@ -133,8 +126,14 @@ public class ProbeImpl extends MinimalEObjectImpl.Container implements Probe {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HTTPGetAction basicGetHttpGet() {
-		return httpGet;
+	public NotificationChain basicSetHttpGet(HTTPGetAction newHttpGet, NotificationChain msgs) {
+		HTTPGetAction oldHttpGet = httpGet;
+		httpGet = newHttpGet;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.PROBE__HTTP_GET, oldHttpGet, newHttpGet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -143,10 +142,17 @@ public class ProbeImpl extends MinimalEObjectImpl.Container implements Probe {
 	 * @generated
 	 */
 	public void setHttpGet(HTTPGetAction newHttpGet) {
-		HTTPGetAction oldHttpGet = httpGet;
-		httpGet = newHttpGet;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.PROBE__HTTP_GET, oldHttpGet, httpGet));
+		if (newHttpGet != httpGet) {
+			NotificationChain msgs = null;
+			if (httpGet != null)
+				msgs = ((InternalEObject)httpGet).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.PROBE__HTTP_GET, null, msgs);
+			if (newHttpGet != null)
+				msgs = ((InternalEObject)newHttpGet).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.PROBE__HTTP_GET, null, msgs);
+			msgs = basicSetHttpGet(newHttpGet, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.PROBE__HTTP_GET, newHttpGet, newHttpGet));
 	}
 
 	/**
@@ -155,14 +161,6 @@ public class ProbeImpl extends MinimalEObjectImpl.Container implements Probe {
 	 * @generated
 	 */
 	public ExecAction getExec() {
-		if (exec != null && exec.eIsProxy()) {
-			InternalEObject oldExec = (InternalEObject)exec;
-			exec = (ExecAction)eResolveProxy(oldExec);
-			if (exec != oldExec) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, K8sPackage.PROBE__EXEC, oldExec, exec));
-			}
-		}
 		return exec;
 	}
 
@@ -171,8 +169,14 @@ public class ProbeImpl extends MinimalEObjectImpl.Container implements Probe {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExecAction basicGetExec() {
-		return exec;
+	public NotificationChain basicSetExec(ExecAction newExec, NotificationChain msgs) {
+		ExecAction oldExec = exec;
+		exec = newExec;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.PROBE__EXEC, oldExec, newExec);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -181,10 +185,17 @@ public class ProbeImpl extends MinimalEObjectImpl.Container implements Probe {
 	 * @generated
 	 */
 	public void setExec(ExecAction newExec) {
-		ExecAction oldExec = exec;
-		exec = newExec;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.PROBE__EXEC, oldExec, exec));
+		if (newExec != exec) {
+			NotificationChain msgs = null;
+			if (exec != null)
+				msgs = ((InternalEObject)exec).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.PROBE__EXEC, null, msgs);
+			if (newExec != null)
+				msgs = ((InternalEObject)newExec).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.PROBE__EXEC, null, msgs);
+			msgs = basicSetExec(newExec, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.PROBE__EXEC, newExec, newExec));
 	}
 
 	/**
@@ -235,14 +246,28 @@ public class ProbeImpl extends MinimalEObjectImpl.Container implements Probe {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case K8sPackage.PROBE__HTTP_GET:
+				return basicSetHttpGet(null, msgs);
+			case K8sPackage.PROBE__EXEC:
+				return basicSetExec(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case K8sPackage.PROBE__HTTP_GET:
-				if (resolve) return getHttpGet();
-				return basicGetHttpGet();
+				return getHttpGet();
 			case K8sPackage.PROBE__EXEC:
-				if (resolve) return getExec();
-				return basicGetExec();
+				return getExec();
 			case K8sPackage.PROBE__INITIAL_DELAY_SECONDS:
 				return getInitialDelaySeconds();
 			case K8sPackage.PROBE__TIMEOUT_SECONDS:

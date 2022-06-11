@@ -68,22 +68,22 @@ public interface EnvVar extends EObject {
 	void setValue(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Value From</b></em>' reference.
+	 * Returns the value of the '<em><b>Value From</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value From</em>' reference.
+	 * @return the value of the '<em>Value From</em>' containment reference.
 	 * @see #setValueFrom(EnvVarSource)
 	 * @see k8s.K8sPackage#getEnvVar_ValueFrom()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	EnvVarSource getValueFrom();
 
 	/**
-	 * Sets the value of the '{@link k8s.EnvVar#getValueFrom <em>Value From</em>}' reference.
+	 * Sets the value of the '{@link k8s.EnvVar#getValueFrom <em>Value From</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value From</em>' reference.
+	 * @param value the new value of the '<em>Value From</em>' containment reference.
 	 * @see #getValueFrom()
 	 * @generated
 	 */
