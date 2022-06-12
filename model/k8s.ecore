@@ -12,12 +12,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Metadata">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="namespace" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" eType="#//Mymap"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="labels" eType="#//Mymap"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="namespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"
+        eType="#//Mymap" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="labels" upperBound="-1"
+        eType="#//Mymap" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SpecFactory" eSuperTypes="#//Spec"/>
   <eClassifiers xsi:type="ecore:EClass" name="Spec" abstract="true" interface="true"/>
@@ -52,8 +51,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Selector">
     <eStructuralFeatures xsi:type="ecore:EReference" name="matchExpressions" upperBound="-1"
         eType="#//MatchExpressions" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="matchLabels" eType="#//Mymap"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="matchLabels" lowerBound="1"
+        upperBound="-1" eType="#//Mymap" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PodTemplate">
     <eStructuralFeatures xsi:type="ecore:EReference" name="metadata" lowerBound="1"
@@ -109,8 +108,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="LabelSelector">
     <eStructuralFeatures xsi:type="ecore:EReference" name="matchExpressions" upperBound="-1"
         eType="#//MatchExpressions" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="matchLabels" eType="#//Mymap"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="matchLabels" lowerBound="1"
+        upperBound="-1" eType="#//Mymap" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MatchExpressions">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -130,10 +129,10 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ResourceRequirements">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requests" eType="#//Mymap"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="limits" eType="#//Mymap"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requests" upperBound="-1"
+        eType="#//Mymap" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="limits" upperBound="-1"
+        eType="#//Mymap" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EnvVar">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -267,7 +266,7 @@
     <eLiterals name="StatefulSet" value="32"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Mymap">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

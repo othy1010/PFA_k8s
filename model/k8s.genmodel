@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/k8s_1_0_0/src" modelPluginID="k8s_1_0_0" modelName="K8s_1"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/k8s_1_0_0/src" modelPluginID="k8s_1_0_0" modelName="K8s"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>k8s.ecore</foreignModel>
@@ -60,8 +60,8 @@
     <genClasses ecoreClass="k8s.ecore#//Metadata">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//Metadata/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//Metadata/namespace"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EReference k8s.ecore#//Metadata/annotations"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EReference k8s.ecore#//Metadata/labels"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//Metadata/annotations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//Metadata/labels"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//SpecFactory"/>
     <genClasses image="false" ecoreClass="k8s.ecore#//Spec"/>
@@ -69,31 +69,31 @@
     <genClasses ecoreClass="k8s.ecore#//Pod"/>
     <genClasses ecoreClass="k8s.ecore#//PodSpec">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//PodSpec/restartPolicy"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//PodSpec/affinity"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EReference k8s.ecore#//PodSpec/containers"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EReference k8s.ecore#//PodSpec/volumes"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EReference k8s.ecore#//PodSpec/topologySpreadConstraints"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EReference k8s.ecore#//PodSpec/initContainers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//PodSpec/affinity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//PodSpec/containers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//PodSpec/volumes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//PodSpec/topologySpreadConstraints"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//PodSpec/initContainers"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//DeploymentSpec">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//DeploymentSpec/selector"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//DeploymentSpec/strategy"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//DeploymentSpec/template"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//DeploymentSpec/selector"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//DeploymentSpec/strategy"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//DeploymentSpec/template"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//DeploymentStrategy">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//DeploymentStrategy/type"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//DeploymentStrategy/rollingUpdate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//DeploymentStrategy/rollingUpdate"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//Selector">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//Selector/matchExpressions"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EReference k8s.ecore#//Selector/matchLabels"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//Selector/matchExpressions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//Selector/matchLabels"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//PodTemplate">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//PodTemplate/metadata"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//PodTemplate/spec"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//PodTemplate/metadata"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//PodTemplate/spec"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//TopologySpreadConstraint">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//TopologySpreadConstraint/labelSelector"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//TopologySpreadConstraint/labelSelector"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//TopologySpreadConstraint/topologyKey"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//TopologySpreadConstraint/whenUnsatisfiable"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//TopologySpreadConstraint/maxSkew"/>
@@ -104,28 +104,28 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//Containers/liveRestart"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//Containers/command"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//Containers/args"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//Containers/resources"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//Containers/livenessProbe"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//Containers/readinessProbe"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//Containers/lifeCycle"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EReference k8s.ecore#//Containers/volumeMounts"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EReference k8s.ecore#//Containers/env"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EReference k8s.ecore#//Containers/ports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//Containers/resources"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//Containers/livenessProbe"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//Containers/readinessProbe"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//Containers/lifeCycle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//Containers/volumeMounts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//Containers/env"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//Containers/ports"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//Volume">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//Volume/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//Volume/hostPath"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//Volume/hostPath"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//Affinity">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//Affinity/nodeAffinity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//Affinity/nodeAffinity"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//RollingUpdateDeployment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//RollingUpdateDeployment/maxUnavailable"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//RollingUpdateDeployment/maxSurge"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//LabelSelector">
-      <genFeatures createChild="false" ecoreFeature="ecore:EReference k8s.ecore#//LabelSelector/matchExpressions"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EReference k8s.ecore#//LabelSelector/matchLabels"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//LabelSelector/matchExpressions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//LabelSelector/matchLabels"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//MatchExpressions">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//MatchExpressions/key"/>
@@ -139,17 +139,17 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//ContainerPort/containerPort"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//ResourceRequirements">
-      <genFeatures createChild="false" ecoreFeature="ecore:EReference k8s.ecore#//ResourceRequirements/requests"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EReference k8s.ecore#//ResourceRequirements/limits"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//ResourceRequirements/requests"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//ResourceRequirements/limits"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//EnvVar">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//EnvVar/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//EnvVar/value"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//EnvVar/valueFrom"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//EnvVar/valueFrom"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//EnvVarSource">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//EnvVarSource/fieldRef"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//EnvVarSource/secretKeyRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//EnvVarSource/fieldRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//EnvVarSource/secretKeyRef"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//SecretKeySelector">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//SecretKeySelector/name"/>
@@ -175,8 +175,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//HTTPGetAction/httpHeaders"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//Probe">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//Probe/httpGet"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//Probe/exec"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//Probe/httpGet"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//Probe/exec"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//Probe/initialDelaySeconds"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//Probe/timeoutSeconds"/>
     </genClasses>
@@ -184,23 +184,23 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//ExecAction/command"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//Handler">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//Handler/exec"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//Handler/exec"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//LifeCycle">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//LifeCycle/postStart"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//LifeCycle/preStop"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//LifeCycle/postStart"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//LifeCycle/preStop"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//HostPathVolumeSource">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//HostPathVolumeSource/path"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//NodeAffinity">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//NodeAffinity/requiredDuringSchedulingIgnoredDuringExecution"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//NodeAffinity/requiredDuringSchedulingIgnoredDuringExecution"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//NodeSelector">
-      <genFeatures createChild="false" ecoreFeature="ecore:EReference k8s.ecore#//NodeSelector/nodeSelectorTerms"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//NodeSelector/nodeSelectorTerms"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//NodeSelectorTerm">
-      <genFeatures createChild="false" ecoreFeature="ecore:EReference k8s.ecore#//NodeSelectorTerm/matchExpressions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//NodeSelectorTerm/matchExpressions"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//NodeSelectorRequirement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//NodeSelectorRequirement/values"/>
