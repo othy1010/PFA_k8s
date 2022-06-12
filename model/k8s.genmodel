@@ -63,10 +63,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//Metadata/annotations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//Metadata/labels"/>
     </genClasses>
-    <genClasses ecoreClass="k8s.ecore#//SpecFactory"/>
     <genClasses image="false" ecoreClass="k8s.ecore#//Spec"/>
-    <genClasses ecoreClass="k8s.ecore#//Deployment"/>
-    <genClasses ecoreClass="k8s.ecore#//Pod"/>
     <genClasses ecoreClass="k8s.ecore#//PodSpec">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//PodSpec/restartPolicy"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference k8s.ecore#//PodSpec/affinity"/>
