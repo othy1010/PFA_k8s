@@ -60,8 +60,8 @@
     <genClasses ecoreClass="k8s.ecore#//Metadata">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//Metadata/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//Metadata/namespace"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//Metadata/labels"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//Metadata/annotations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference k8s.ecore#//Metadata/annotations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference k8s.ecore#//Metadata/labels"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//SpecFactory"/>
     <genClasses image="false" ecoreClass="k8s.ecore#//Spec"/>
@@ -85,8 +85,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//DeploymentStrategy/rollingUpdate"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//Selector">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//Selector/matchLabels"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//Selector/matchExpressions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference k8s.ecore#//Selector/matchLabels"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//PodTemplate">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference k8s.ecore#//PodTemplate/metadata"/>
@@ -124,8 +124,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//RollingUpdateDeployment/maxSurge"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//LabelSelector">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//LabelSelector/matchLabels"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EReference k8s.ecore#//LabelSelector/matchExpressions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference k8s.ecore#//LabelSelector/matchLabels"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//MatchExpressions">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//MatchExpressions/key"/>
@@ -139,8 +139,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//ContainerPort/containerPort"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//ResourceRequirements">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//ResourceRequirements/limits"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//ResourceRequirements/requests"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference k8s.ecore#//ResourceRequirements/requests"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference k8s.ecore#//ResourceRequirements/limits"/>
     </genClasses>
     <genClasses ecoreClass="k8s.ecore#//EnvVar">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute k8s.ecore#//EnvVar/name"/>
