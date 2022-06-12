@@ -18,10 +18,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="labels" upperBound="-1"
         eType="#//Mymap" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SpecFactory" eSuperTypes="#//Spec"/>
   <eClassifiers xsi:type="ecore:EClass" name="Spec" abstract="true" interface="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Deployment" eSuperTypes="#//Spec"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Pod" eSuperTypes="#//Spec"/>
   <eClassifiers xsi:type="ecore:EClass" name="PodSpec" eSuperTypes="#//Spec">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="restartPolicy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="affinity" eType="#//Affinity"
