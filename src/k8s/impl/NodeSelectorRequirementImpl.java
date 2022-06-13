@@ -3,6 +3,7 @@
 package k8s.impl;
 
 import java.util.Collection;
+
 import k8s.K8sPackage;
 import k8s.NodeSelectorRequirement;
 
@@ -14,6 +15,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**

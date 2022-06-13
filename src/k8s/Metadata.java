@@ -2,8 +2,6 @@
  */
 package k8s;
 
-import java.util.Map;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -71,47 +69,47 @@ public interface Metadata extends EObject {
 	void setNamespace(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Labels</b></em>' attribute.
+	 * Returns the value of the '<em><b>Labels</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Labels</em>' attribute.
-	 * @see #setLabels(Map)
+	 * @return the value of the '<em>Labels</em>' containment reference.
+	 * @see #setLabels(Mymap)
 	 * @see k8s.K8sPackage#getMetadata_Labels()
-	 * @model transient="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	Map<String, String> getLabels();
+	Mymap getLabels();
 
 	/**
-	 * Sets the value of the '{@link k8s.Metadata#getLabels <em>Labels</em>}' attribute.
+	 * Sets the value of the '{@link k8s.Metadata#getLabels <em>Labels</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Labels</em>' attribute.
+	 * @param value the new value of the '<em>Labels</em>' containment reference.
 	 * @see #getLabels()
 	 * @generated
 	 */
-	void setLabels(Map<String, String> value);
+	void setLabels(Mymap value);
 
 	/**
-	 * Returns the value of the '<em><b>Annotations</b></em>' attribute.
+	 * Returns the value of the '<em><b>Annotations</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Annotations</em>' attribute.
-	 * @see #setAnnotations(Map)
+	 * @return the value of the '<em>Annotations</em>' containment reference.
+	 * @see #setAnnotations(Mymap)
 	 * @see k8s.K8sPackage#getMetadata_Annotations()
-	 * @model transient="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	Map<String, String> getAnnotations();
+	Mymap getAnnotations();
 
 	/**
-	 * Sets the value of the '{@link k8s.Metadata#getAnnotations <em>Annotations</em>}' attribute.
+	 * Sets the value of the '{@link k8s.Metadata#getAnnotations <em>Annotations</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Annotations</em>' attribute.
+	 * @param value the new value of the '<em>Annotations</em>' containment reference.
 	 * @see #getAnnotations()
 	 * @generated
 	 */
-	void setAnnotations(Map<String, String> value);
+	void setAnnotations(Mymap value);
 
 } // Metadata

@@ -27,54 +27,6 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface PodSpec extends Spec {
 	/**
-	 * Returns the value of the '<em><b>Containers</b></em>' containment reference list.
-	 * The list contents are of type {@link k8s.Containers}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Containers</em>' containment reference list.
-	 * @see k8s.K8sPackage#getPodSpec_Containers()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Containers> getContainers();
-
-	/**
-	 * Returns the value of the '<em><b>Topology Spread Constraints</b></em>' containment reference list.
-	 * The list contents are of type {@link k8s.TopologySpreadConstraint}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Topology Spread Constraints</em>' containment reference list.
-	 * @see k8s.K8sPackage#getPodSpec_TopologySpreadConstraints()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<TopologySpreadConstraint> getTopologySpreadConstraints();
-
-	/**
-	 * Returns the value of the '<em><b>Init Containers</b></em>' containment reference list.
-	 * The list contents are of type {@link k8s.Containers}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Init Containers</em>' containment reference list.
-	 * @see k8s.K8sPackage#getPodSpec_InitContainers()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Containers> getInitContainers();
-
-	/**
-	 * Returns the value of the '<em><b>Volumes</b></em>' containment reference list.
-	 * The list contents are of type {@link k8s.Volume}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Volumes</em>' containment reference list.
-	 * @see k8s.K8sPackage#getPodSpec_Volumes()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Volume> getVolumes();
-
-	/**
 	 * Returns the value of the '<em><b>Restart Policy</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -117,5 +69,53 @@ public interface PodSpec extends Spec {
 	 * @generated
 	 */
 	void setAffinity(Affinity value);
+
+	/**
+	 * Returns the value of the '<em><b>Containers</b></em>' containment reference list.
+	 * The list contents are of type {@link k8s.Containers}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Containers</em>' containment reference list.
+	 * @see k8s.K8sPackage#getPodSpec_Containers()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Containers> getContainers();
+
+	/**
+	 * Returns the value of the '<em><b>Volumes</b></em>' containment reference list.
+	 * The list contents are of type {@link k8s.Volume}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Volumes</em>' containment reference list.
+	 * @see k8s.K8sPackage#getPodSpec_Volumes()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Volume> getVolumes();
+
+	/**
+	 * Returns the value of the '<em><b>Topology Spread Constraints</b></em>' containment reference list.
+	 * The list contents are of type {@link k8s.TopologySpreadConstraint}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Topology Spread Constraints</em>' containment reference list.
+	 * @see k8s.K8sPackage#getPodSpec_TopologySpreadConstraints()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<TopologySpreadConstraint> getTopologySpreadConstraints();
+
+	/**
+	 * Returns the value of the '<em><b>Init Containers</b></em>' containment reference list.
+	 * The list contents are of type {@link k8s.Containers}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Init Containers</em>' containment reference list.
+	 * @see k8s.K8sPackage#getPodSpec_InitContainers()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Containers> getInitContainers();
 
 } // PodSpec

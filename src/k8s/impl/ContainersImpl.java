@@ -3,6 +3,7 @@
 package k8s.impl;
 
 import java.util.Collection;
+
 import k8s.ContainerPort;
 import k8s.Containers;
 import k8s.EnvVar;
@@ -13,8 +14,8 @@ import k8s.ResourceRequirements;
 import k8s.VolumeMount;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -22,6 +23,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -288,56 +290,6 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ContainerPort> getPorts() {
-		if (ports == null) {
-			ports = new EObjectContainmentEList<ContainerPort>(ContainerPort.class, this, K8sPackage.CONTAINERS__PORTS);
-		}
-		return ports;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case K8sPackage.CONTAINERS__RESOURCES:
-				return basicSetResources(null, msgs);
-			case K8sPackage.CONTAINERS__LIVENESS_PROBE:
-				return basicSetLivenessProbe(null, msgs);
-			case K8sPackage.CONTAINERS__READINESS_PROBE:
-				return basicSetReadinessProbe(null, msgs);
-			case K8sPackage.CONTAINERS__LIFE_CYCLE:
-				return basicSetLifeCycle(null, msgs);
-			case K8sPackage.CONTAINERS__VOLUME_MOUNTS:
-				return ((InternalEList<?>)getVolumeMounts()).basicRemove(otherEnd, msgs);
-			case K8sPackage.CONTAINERS__ENV:
-				return ((InternalEList<?>)getEnv()).basicRemove(otherEnd, msgs);
-			case K8sPackage.CONTAINERS__PORTS:
-				return ((InternalEList<?>)getPorts()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<EnvVar> getEnv() {
-		if (env == null) {
-			env = new EObjectContainmentEList<EnvVar>(EnvVar.class, this, K8sPackage.CONTAINERS__ENV);
-		}
-		return env;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<String> getCommand() {
 		if (command == null) {
 			command = new EDataTypeUniqueEList<String>(String.class, this, K8sPackage.CONTAINERS__COMMAND);
@@ -355,18 +307,6 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 			args = new EDataTypeUniqueEList<String>(String.class, this, K8sPackage.CONTAINERS__ARGS);
 		}
 		return args;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<VolumeMount> getVolumeMounts() {
-		if (volumeMounts == null) {
-			volumeMounts = new EObjectContainmentEList<VolumeMount>(VolumeMount.class, this, K8sPackage.CONTAINERS__VOLUME_MOUNTS);
-		}
-		return volumeMounts;
 	}
 
 	/**
@@ -539,6 +479,68 @@ public class ContainersImpl extends MinimalEObjectImpl.Container implements Cont
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.CONTAINERS__LIFE_CYCLE, newLifeCycle, newLifeCycle));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<VolumeMount> getVolumeMounts() {
+		if (volumeMounts == null) {
+			volumeMounts = new EObjectContainmentEList<VolumeMount>(VolumeMount.class, this, K8sPackage.CONTAINERS__VOLUME_MOUNTS);
+		}
+		return volumeMounts;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<EnvVar> getEnv() {
+		if (env == null) {
+			env = new EObjectContainmentEList<EnvVar>(EnvVar.class, this, K8sPackage.CONTAINERS__ENV);
+		}
+		return env;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ContainerPort> getPorts() {
+		if (ports == null) {
+			ports = new EObjectContainmentEList<ContainerPort>(ContainerPort.class, this, K8sPackage.CONTAINERS__PORTS);
+		}
+		return ports;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case K8sPackage.CONTAINERS__RESOURCES:
+				return basicSetResources(null, msgs);
+			case K8sPackage.CONTAINERS__LIVENESS_PROBE:
+				return basicSetLivenessProbe(null, msgs);
+			case K8sPackage.CONTAINERS__READINESS_PROBE:
+				return basicSetReadinessProbe(null, msgs);
+			case K8sPackage.CONTAINERS__LIFE_CYCLE:
+				return basicSetLifeCycle(null, msgs);
+			case K8sPackage.CONTAINERS__VOLUME_MOUNTS:
+				return ((InternalEList<?>)getVolumeMounts()).basicRemove(otherEnd, msgs);
+			case K8sPackage.CONTAINERS__ENV:
+				return ((InternalEList<?>)getEnv()).basicRemove(otherEnd, msgs);
+			case K8sPackage.CONTAINERS__PORTS:
+				return ((InternalEList<?>)getPorts()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

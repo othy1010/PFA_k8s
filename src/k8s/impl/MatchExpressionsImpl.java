@@ -3,6 +3,7 @@
 package k8s.impl;
 
 import java.util.Collection;
+
 import k8s.K8sPackage;
 import k8s.MatchExpressions;
 
@@ -14,6 +15,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
@@ -127,6 +129,18 @@ public class MatchExpressionsImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<String> getValues() {
+		if (values == null) {
+			values = new EDataTypeUniqueEList<String>(String.class, this, K8sPackage.MATCH_EXPRESSIONS__VALUES);
+		}
+		return values;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getOperator() {
 		return operator;
 	}
@@ -141,18 +155,6 @@ public class MatchExpressionsImpl extends MinimalEObjectImpl.Container implement
 		operator = newOperator;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.MATCH_EXPRESSIONS__OPERATOR, oldOperator, operator));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<String> getValues() {
-		if (values == null) {
-			values = new EDataTypeUniqueEList<String>(String.class, this, K8sPackage.MATCH_EXPRESSIONS__VALUES);
-		}
-		return values;
 	}
 
 	/**

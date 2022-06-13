@@ -78,30 +78,9 @@ public class K8sSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case K8sPackage.SPEC_FACTORY: {
-				SpecFactory specFactory = (SpecFactory)theEObject;
-				T result = caseSpecFactory(specFactory);
-				if (result == null) result = caseSpec(specFactory);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case K8sPackage.SPEC: {
 				Spec spec = (Spec)theEObject;
 				T result = caseSpec(spec);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case K8sPackage.DEPLOYMENT: {
-				Deployment deployment = (Deployment)theEObject;
-				T result = caseDeployment(deployment);
-				if (result == null) result = caseSpec(deployment);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case K8sPackage.POD: {
-				Pod pod = (Pod)theEObject;
-				T result = casePod(pod);
-				if (result == null) result = caseSpec(pod);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -298,21 +277,6 @@ public class K8sSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Metadata</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Metadata</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMetadata(Metadata object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Manifest</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -328,17 +292,17 @@ public class K8sSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Spec Factory</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Metadata</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Spec Factory</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Metadata</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSpecFactory(SpecFactory object) {
+	public T caseMetadata(Metadata object) {
 		return null;
 	}
 
@@ -354,36 +318,6 @@ public class K8sSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSpec(Spec object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Deployment</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Deployment</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDeployment(Deployment object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Pod</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Pod</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePod(Pod object) {
 		return null;
 	}
 

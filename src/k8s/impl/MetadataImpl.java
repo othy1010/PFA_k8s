@@ -2,14 +2,15 @@
  */
 package k8s.impl;
 
-import java.util.Map;
-
 import k8s.K8sPackage;
 import k8s.Metadata;
+import k8s.Mymap;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -72,24 +73,24 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 	protected String namespace = NAMESPACE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getLabels() <em>Labels</em>}' attribute.
+	 * The cached value of the '{@link #getLabels() <em>Labels</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getLabels()
 	 * @generated
 	 * @ordered
 	 */
-	protected Map<String, String> labels;
+	protected Mymap labels;
 
 	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' attribute.
+	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAnnotations()
 	 * @generated
 	 * @ordered
 	 */
-	protected Map<String, String> annotations;
+	protected Mymap annotations;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -157,7 +158,7 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Map<String, String> getLabels() {
+	public Mymap getLabels() {
 		return labels;
 	}
 
@@ -166,11 +167,14 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLabels(Map<String, String> newLabels) {
-		Map<String, String> oldLabels = labels;
+	public NotificationChain basicSetLabels(Mymap newLabels, NotificationChain msgs) {
+		Mymap oldLabels = labels;
 		labels = newLabels;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.METADATA__LABELS, oldLabels, labels));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.METADATA__LABELS, oldLabels, newLabels);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -178,7 +182,26 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Map<String, String> getAnnotations() {
+	public void setLabels(Mymap newLabels) {
+		if (newLabels != labels) {
+			NotificationChain msgs = null;
+			if (labels != null)
+				msgs = ((InternalEObject)labels).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.METADATA__LABELS, null, msgs);
+			if (newLabels != null)
+				msgs = ((InternalEObject)newLabels).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.METADATA__LABELS, null, msgs);
+			msgs = basicSetLabels(newLabels, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.METADATA__LABELS, newLabels, newLabels));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Mymap getAnnotations() {
 		return annotations;
 	}
 
@@ -187,11 +210,49 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAnnotations(Map<String, String> newAnnotations) {
-		Map<String, String> oldAnnotations = annotations;
+	public NotificationChain basicSetAnnotations(Mymap newAnnotations, NotificationChain msgs) {
+		Mymap oldAnnotations = annotations;
 		annotations = newAnnotations;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.METADATA__ANNOTATIONS, oldAnnotations, annotations));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.METADATA__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAnnotations(Mymap newAnnotations) {
+		if (newAnnotations != annotations) {
+			NotificationChain msgs = null;
+			if (annotations != null)
+				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.METADATA__ANNOTATIONS, null, msgs);
+			if (newAnnotations != null)
+				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.METADATA__ANNOTATIONS, null, msgs);
+			msgs = basicSetAnnotations(newAnnotations, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.METADATA__ANNOTATIONS, newAnnotations, newAnnotations));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case K8sPackage.METADATA__LABELS:
+				return basicSetLabels(null, msgs);
+			case K8sPackage.METADATA__ANNOTATIONS:
+				return basicSetAnnotations(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -219,7 +280,6 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -230,10 +290,10 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 				setNamespace((String)newValue);
 				return;
 			case K8sPackage.METADATA__LABELS:
-				setLabels((Map<String, String>)newValue);
+				setLabels((Mymap)newValue);
 				return;
 			case K8sPackage.METADATA__ANNOTATIONS:
-				setAnnotations((Map<String, String>)newValue);
+				setAnnotations((Mymap)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -254,10 +314,10 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 				setNamespace(NAMESPACE_EDEFAULT);
 				return;
 			case K8sPackage.METADATA__LABELS:
-				setLabels((Map<String, String>)null);
+				setLabels((Mymap)null);
 				return;
 			case K8sPackage.METADATA__ANNOTATIONS:
-				setAnnotations((Map<String, String>)null);
+				setAnnotations((Mymap)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -297,10 +357,6 @@ public class MetadataImpl extends MinimalEObjectImpl.Container implements Metada
 		result.append(name);
 		result.append(", namespace: ");
 		result.append(namespace);
-		result.append(", labels: ");
-		result.append(labels);
-		result.append(", annotations: ");
-		result.append(annotations);
 		result.append(')');
 		return result.toString();
 	}

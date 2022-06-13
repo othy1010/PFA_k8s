@@ -8,8 +8,8 @@ import k8s.ObjectFieldSelector;
 import k8s.SecretKeySelector;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 

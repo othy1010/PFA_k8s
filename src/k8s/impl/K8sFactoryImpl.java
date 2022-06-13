@@ -59,9 +59,6 @@ public class K8sFactoryImpl extends EFactoryImpl implements K8sFactory {
 		switch (eClass.getClassifierID()) {
 			case K8sPackage.MANIFEST: return createManifest();
 			case K8sPackage.METADATA: return createMetadata();
-			case K8sPackage.SPEC_FACTORY: return createSpecFactory();
-			case K8sPackage.DEPLOYMENT: return createDeployment();
-			case K8sPackage.POD: return createPod();
 			case K8sPackage.POD_SPEC: return createPodSpec();
 			case K8sPackage.DEPLOYMENT_SPEC: return createDeploymentSpec();
 			case K8sPackage.DEPLOYMENT_STRATEGY: return createDeploymentStrategy();
@@ -137,16 +134,6 @@ public class K8sFactoryImpl extends EFactoryImpl implements K8sFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Metadata createMetadata() {
-		MetadataImpl metadata = new MetadataImpl();
-		return metadata;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Manifest createManifest() {
 		ManifestImpl manifest = new ManifestImpl();
 		return manifest;
@@ -157,29 +144,9 @@ public class K8sFactoryImpl extends EFactoryImpl implements K8sFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SpecFactory createSpecFactory() {
-		SpecFactoryImpl specFactory = new SpecFactoryImpl();
-		return specFactory;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Deployment createDeployment() {
-		DeploymentImpl deployment = new DeploymentImpl();
-		return deployment;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Pod createPod() {
-		PodImpl pod = new PodImpl();
-		return pod;
+	public Metadata createMetadata() {
+		MetadataImpl metadata = new MetadataImpl();
+		return metadata;
 	}
 
 	/**

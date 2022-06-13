@@ -81,7 +81,7 @@ public interface Manifest extends EObject {
 	 * @return the value of the '<em>Metadata</em>' containment reference.
 	 * @see #setMetadata(Metadata)
 	 * @see k8s.K8sPackage#getManifest_Metadata()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	Metadata getMetadata();
@@ -103,7 +103,7 @@ public interface Manifest extends EObject {
 	 * @return the value of the '<em>Spec</em>' containment reference.
 	 * @see #setSpec(Spec)
 	 * @see k8s.K8sPackage#getManifest_Spec()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	Spec getSpec();

@@ -76,20 +76,8 @@ public class K8sAdapterFactory extends AdapterFactoryImpl {
 				return createMetadataAdapter();
 			}
 			@Override
-			public Adapter caseSpecFactory(SpecFactory object) {
-				return createSpecFactoryAdapter();
-			}
-			@Override
 			public Adapter caseSpec(Spec object) {
 				return createSpecAdapter();
-			}
-			@Override
-			public Adapter caseDeployment(Deployment object) {
-				return createDeploymentAdapter();
-			}
-			@Override
-			public Adapter casePod(Pod object) {
-				return createPodAdapter();
 			}
 			@Override
 			public Adapter casePodSpec(PodSpec object) {
@@ -236,20 +224,6 @@ public class K8sAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link k8s.Metadata <em>Metadata</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see k8s.Metadata
-	 * @generated
-	 */
-	public Adapter createMetadataAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link k8s.Manifest <em>Manifest</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -264,16 +238,16 @@ public class K8sAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link k8s.SpecFactory <em>Spec Factory</em>}'.
+	 * Creates a new adapter for an object of class '{@link k8s.Metadata <em>Metadata</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see k8s.SpecFactory
+	 * @see k8s.Metadata
 	 * @generated
 	 */
-	public Adapter createSpecFactoryAdapter() {
+	public Adapter createMetadataAdapter() {
 		return null;
 	}
 
@@ -288,34 +262,6 @@ public class K8sAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSpecAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link k8s.Deployment <em>Deployment</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see k8s.Deployment
-	 * @generated
-	 */
-	public Adapter createDeploymentAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link k8s.Pod <em>Pod</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see k8s.Pod
-	 * @generated
-	 */
-	public Adapter createPodAdapter() {
 		return null;
 	}
 

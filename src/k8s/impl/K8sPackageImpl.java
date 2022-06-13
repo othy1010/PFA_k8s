@@ -6,7 +6,6 @@ import k8s.Affinity;
 import k8s.ApiVersion;
 import k8s.ContainerPort;
 import k8s.Containers;
-import k8s.Deployment;
 import k8s.DeploymentSpec;
 import k8s.DeploymentStrategy;
 import k8s.EnvVar;
@@ -30,7 +29,6 @@ import k8s.NodeSelector;
 import k8s.NodeSelectorRequirement;
 import k8s.NodeSelectorTerm;
 import k8s.ObjectFieldSelector;
-import k8s.Pod;
 import k8s.PodSpec;
 import k8s.PodTemplate;
 import k8s.Probe;
@@ -39,7 +37,6 @@ import k8s.RollingUpdateDeployment;
 import k8s.SecretKeySelector;
 import k8s.Selector;
 import k8s.Spec;
-import k8s.SpecFactory;
 import k8s.TopologySpreadConstraint;
 import k8s.Volume;
 import k8s.VolumeMount;
@@ -47,7 +44,6 @@ import k8s.VolumeMount;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -65,13 +61,6 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass metadataEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass manifestEClass = null;
 
 	/**
@@ -79,7 +68,7 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass specFactoryEClass = null;
+	private EClass metadataEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -87,20 +76,6 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 	 * @generated
 	 */
 	private EClass specEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass deploymentEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass podEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -399,51 +374,6 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getMetadata() {
-		return metadataEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getMetadata_Name() {
-		return (EAttribute)metadataEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getMetadata_Namespace() {
-		return (EAttribute)metadataEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getMetadata_Labels() {
-		return (EAttribute)metadataEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getMetadata_Annotations() {
-		return (EAttribute)metadataEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getManifest() {
 		return manifestEClass;
 	}
@@ -489,8 +419,44 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSpecFactory() {
-		return specFactoryEClass;
+	public EClass getMetadata() {
+		return metadataEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMetadata_Name() {
+		return (EAttribute)metadataEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMetadata_Namespace() {
+		return (EAttribute)metadataEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMetadata_Labels() {
+		return (EReference)metadataEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMetadata_Annotations() {
+		return (EReference)metadataEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -507,62 +473,8 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getDeployment() {
-		return deploymentEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getPod() {
-		return podEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getPodSpec() {
 		return podSpecEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPodSpec_Containers() {
-		return (EReference)podSpecEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPodSpec_TopologySpreadConstraints() {
-		return (EReference)podSpecEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPodSpec_InitContainers() {
-		return (EReference)podSpecEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPodSpec_Volumes() {
-		return (EReference)podSpecEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -581,6 +493,42 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 	 */
 	public EReference getPodSpec_Affinity() {
 		return (EReference)podSpecEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPodSpec_Containers() {
+		return (EReference)podSpecEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPodSpec_Volumes() {
+		return (EReference)podSpecEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPodSpec_TopologySpreadConstraints() {
+		return (EReference)podSpecEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPodSpec_InitContainers() {
+		return (EReference)podSpecEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -660,8 +608,8 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSelector_MatchLabels() {
-		return (EAttribute)selectorEClass.getEStructuralFeatures().get(0);
+	public EReference getSelector_MatchExpressions() {
+		return (EReference)selectorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -669,7 +617,7 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSelector_MatchExpressions() {
+	public EReference getSelector_MatchLabels() {
 		return (EReference)selectorEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -786,24 +734,6 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getContainers_Ports() {
-		return (EReference)containersEClass.getEStructuralFeatures().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getContainers_Env() {
-		return (EReference)containersEClass.getEStructuralFeatures().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getContainers_Command() {
 		return (EAttribute)containersEClass.getEStructuralFeatures().get(3);
 	}
@@ -815,15 +745,6 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 	 */
 	public EAttribute getContainers_Args() {
 		return (EAttribute)containersEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getContainers_VolumeMounts() {
-		return (EReference)containersEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -860,6 +781,33 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 	 */
 	public EReference getContainers_LifeCycle() {
 		return (EReference)containersEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getContainers_VolumeMounts() {
+		return (EReference)containersEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getContainers_Env() {
+		return (EReference)containersEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getContainers_Ports() {
+		return (EReference)containersEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -948,8 +896,8 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLabelSelector_MatchLabels() {
-		return (EAttribute)labelSelectorEClass.getEStructuralFeatures().get(0);
+	public EReference getLabelSelector_MatchExpressions() {
+		return (EReference)labelSelectorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -957,7 +905,7 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLabelSelector_MatchExpressions() {
+	public EReference getLabelSelector_MatchLabels() {
 		return (EReference)labelSelectorEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -984,8 +932,8 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMatchExpressions_Operator() {
-		return (EAttribute)matchExpressionsEClass.getEStructuralFeatures().get(2);
+	public EAttribute getMatchExpressions_Values() {
+		return (EAttribute)matchExpressionsEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -993,8 +941,8 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMatchExpressions_Values() {
-		return (EAttribute)matchExpressionsEClass.getEStructuralFeatures().get(1);
+	public EAttribute getMatchExpressions_Operator() {
+		return (EAttribute)matchExpressionsEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1020,6 +968,15 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getContainerPort_Protocol() {
+		return (EAttribute)containerPortEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getContainerPort_HostPort() {
 		return (EAttribute)containerPortEClass.getEStructuralFeatures().get(2);
 	}
@@ -1038,15 +995,6 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContainerPort_Protocol() {
-		return (EAttribute)containerPortEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getResourceRequirements() {
 		return resourceRequirementsEClass;
 	}
@@ -1056,8 +1004,8 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getResourceRequirements_Limits() {
-		return (EAttribute)resourceRequirementsEClass.getEStructuralFeatures().get(0);
+	public EReference getResourceRequirements_Limits() {
+		return (EReference)resourceRequirementsEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1065,8 +1013,8 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getResourceRequirements_Requests() {
-		return (EAttribute)resourceRequirementsEClass.getEStructuralFeatures().get(1);
+	public EReference getResourceRequirements_Requests() {
+		return (EReference)resourceRequirementsEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1592,16 +1540,10 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 		metadataEClass = createEClass(METADATA);
 		createEAttribute(metadataEClass, METADATA__NAME);
 		createEAttribute(metadataEClass, METADATA__NAMESPACE);
-		createEAttribute(metadataEClass, METADATA__LABELS);
-		createEAttribute(metadataEClass, METADATA__ANNOTATIONS);
-
-		specFactoryEClass = createEClass(SPEC_FACTORY);
+		createEReference(metadataEClass, METADATA__LABELS);
+		createEReference(metadataEClass, METADATA__ANNOTATIONS);
 
 		specEClass = createEClass(SPEC);
-
-		deploymentEClass = createEClass(DEPLOYMENT);
-
-		podEClass = createEClass(POD);
 
 		podSpecEClass = createEClass(POD_SPEC);
 		createEAttribute(podSpecEClass, POD_SPEC__RESTART_POLICY);
@@ -1621,8 +1563,8 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 		createEReference(deploymentStrategyEClass, DEPLOYMENT_STRATEGY__ROLLING_UPDATE);
 
 		selectorEClass = createEClass(SELECTOR);
-		createEAttribute(selectorEClass, SELECTOR__MATCH_LABELS);
 		createEReference(selectorEClass, SELECTOR__MATCH_EXPRESSIONS);
+		createEReference(selectorEClass, SELECTOR__MATCH_LABELS);
 
 		podTemplateEClass = createEClass(POD_TEMPLATE);
 		createEReference(podTemplateEClass, POD_TEMPLATE__METADATA);
@@ -1660,8 +1602,8 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 		createEAttribute(rollingUpdateDeploymentEClass, ROLLING_UPDATE_DEPLOYMENT__MAX_SURGE);
 
 		labelSelectorEClass = createEClass(LABEL_SELECTOR);
-		createEAttribute(labelSelectorEClass, LABEL_SELECTOR__MATCH_LABELS);
 		createEReference(labelSelectorEClass, LABEL_SELECTOR__MATCH_EXPRESSIONS);
+		createEReference(labelSelectorEClass, LABEL_SELECTOR__MATCH_LABELS);
 
 		matchExpressionsEClass = createEClass(MATCH_EXPRESSIONS);
 		createEAttribute(matchExpressionsEClass, MATCH_EXPRESSIONS__KEY);
@@ -1675,8 +1617,8 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 		createEAttribute(containerPortEClass, CONTAINER_PORT__CONTAINER_PORT);
 
 		resourceRequirementsEClass = createEClass(RESOURCE_REQUIREMENTS);
-		createEAttribute(resourceRequirementsEClass, RESOURCE_REQUIREMENTS__LIMITS);
-		createEAttribute(resourceRequirementsEClass, RESOURCE_REQUIREMENTS__REQUESTS);
+		createEReference(resourceRequirementsEClass, RESOURCE_REQUIREMENTS__LIMITS);
+		createEReference(resourceRequirementsEClass, RESOURCE_REQUIREMENTS__REQUESTS);
 
 		envVarEClass = createEClass(ENV_VAR);
 		createEAttribute(envVarEClass, ENV_VAR__NAME);
@@ -1780,9 +1722,6 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		specFactoryEClass.getESuperTypes().add(this.getSpec());
-		deploymentEClass.getESuperTypes().add(this.getSpec());
-		podEClass.getESuperTypes().add(this.getSpec());
 		podSpecEClass.getESuperTypes().add(this.getSpec());
 		deploymentSpecEClass.getESuperTypes().add(this.getSpec());
 
@@ -1790,32 +1729,16 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 		initEClass(manifestEClass, Manifest.class, "Manifest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getManifest_ApiVersion(), this.getApiVersion(), "apiVersion", null, 1, 1, Manifest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getManifest_Kind(), this.getKind(), "kind", null, 1, 1, Manifest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getManifest_Metadata(), this.getMetadata(), null, "metadata", null, 1, 1, Manifest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getManifest_Spec(), this.getSpec(), null, "spec", null, 1, 1, Manifest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getManifest_Metadata(), this.getMetadata(), null, "metadata", null, 0, 1, Manifest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getManifest_Spec(), this.getSpec(), null, "spec", null, 0, 1, Manifest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(metadataEClass, Metadata.class, "Metadata", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMetadata_Name(), ecorePackage.getEString(), "name", null, 1, 1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMetadata_Namespace(), ecorePackage.getEString(), "namespace", null, 1, 1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
-		EGenericType g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		initEAttribute(getMetadata_Labels(), g1, "labels", null, 0, 1, Metadata.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		initEAttribute(getMetadata_Annotations(), g1, "annotations", null, 0, 1, Metadata.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(specFactoryEClass, SpecFactory.class, "SpecFactory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMetadata_Labels(), this.getMymap(), null, "labels", null, 0, 1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMetadata_Annotations(), this.getMymap(), null, "annotations", null, 0, 1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(specEClass, Spec.class, "Spec", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(deploymentEClass, Deployment.class, "Deployment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(podEClass, Pod.class, "Pod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(podSpecEClass, PodSpec.class, "PodSpec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPodSpec_RestartPolicy(), ecorePackage.getEString(), "restartPolicy", null, 0, 1, PodSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1835,13 +1758,8 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 		initEReference(getDeploymentStrategy_RollingUpdate(), this.getRollingUpdateDeployment(), null, "rollingUpdate", null, 1, 1, DeploymentStrategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(selectorEClass, Selector.class, "Selector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		initEAttribute(getSelector_MatchLabels(), g1, "matchLabels", null, 1, 1, Selector.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSelector_MatchExpressions(), this.getMatchExpressions(), null, "matchExpressions", null, 0, -1, Selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSelector_MatchLabels(), this.getMymap(), null, "matchLabels", null, 0, 1, Selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(podTemplateEClass, PodTemplate.class, "PodTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPodTemplate_Metadata(), this.getMetadata(), null, "metadata", null, 1, 1, PodTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1879,13 +1797,8 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 		initEAttribute(getRollingUpdateDeployment_MaxSurge(), ecorePackage.getEInt(), "maxSurge", null, 1, 1, RollingUpdateDeployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(labelSelectorEClass, LabelSelector.class, "LabelSelector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		initEAttribute(getLabelSelector_MatchLabels(), g1, "matchLabels", null, 1, 1, LabelSelector.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLabelSelector_MatchExpressions(), this.getMatchExpressions(), null, "matchExpressions", null, 0, -1, LabelSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLabelSelector_MatchLabels(), this.getMymap(), null, "matchLabels", null, 0, 1, LabelSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(matchExpressionsEClass, MatchExpressions.class, "MatchExpressions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMatchExpressions_Key(), ecorePackage.getEString(), "key", null, 1, 1, MatchExpressions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1899,18 +1812,8 @@ public class K8sPackageImpl extends EPackageImpl implements K8sPackage {
 		initEAttribute(getContainerPort_ContainerPort(), ecorePackage.getEInt(), "containerPort", null, 1, 1, ContainerPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resourceRequirementsEClass, ResourceRequirements.class, "ResourceRequirements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		initEAttribute(getResourceRequirements_Limits(), g1, "limits", null, 1, 1, ResourceRequirements.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		initEAttribute(getResourceRequirements_Requests(), g1, "requests", null, 1, 1, ResourceRequirements.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getResourceRequirements_Limits(), this.getMymap(), null, "limits", null, 0, 1, ResourceRequirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getResourceRequirements_Requests(), this.getMymap(), null, "requests", null, 0, 1, ResourceRequirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(envVarEClass, EnvVar.class, "EnvVar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEnvVar_Name(), ecorePackage.getEString(), "name", null, 1, 1, EnvVar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

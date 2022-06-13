@@ -22,15 +22,6 @@ public interface K8sFactory extends EFactory {
 	K8sFactory eINSTANCE = k8s.impl.K8sFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Metadata</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Metadata</em>'.
-	 * @generated
-	 */
-	Metadata createMetadata();
-
-	/**
 	 * Returns a new object of class '<em>Manifest</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -40,31 +31,13 @@ public interface K8sFactory extends EFactory {
 	Manifest createManifest();
 
 	/**
-	 * Returns a new object of class '<em>Spec Factory</em>'.
+	 * Returns a new object of class '<em>Metadata</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Spec Factory</em>'.
+	 * @return a new object of class '<em>Metadata</em>'.
 	 * @generated
 	 */
-	SpecFactory createSpecFactory();
-
-	/**
-	 * Returns a new object of class '<em>Deployment</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Deployment</em>'.
-	 * @generated
-	 */
-	Deployment createDeployment();
-
-	/**
-	 * Returns a new object of class '<em>Pod</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Pod</em>'.
-	 * @generated
-	 */
-	Pod createPod();
+	Metadata createMetadata();
 
 	/**
 	 * Returns a new object of class '<em>Pod Spec</em>'.

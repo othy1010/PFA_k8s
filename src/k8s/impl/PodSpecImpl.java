@@ -3,6 +3,7 @@
 package k8s.impl;
 
 import java.util.Collection;
+
 import k8s.Affinity;
 import k8s.Containers;
 import k8s.K8sPackage;
@@ -11,8 +12,8 @@ import k8s.TopologySpreadConstraint;
 import k8s.Volume;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -20,6 +21,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -136,76 +138,6 @@ public class PodSpecImpl extends MinimalEObjectImpl.Container implements PodSpec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Containers> getContainers() {
-		if (containers == null) {
-			containers = new EObjectContainmentEList<Containers>(Containers.class, this, K8sPackage.POD_SPEC__CONTAINERS);
-		}
-		return containers;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<TopologySpreadConstraint> getTopologySpreadConstraints() {
-		if (topologySpreadConstraints == null) {
-			topologySpreadConstraints = new EObjectContainmentEList<TopologySpreadConstraint>(TopologySpreadConstraint.class, this, K8sPackage.POD_SPEC__TOPOLOGY_SPREAD_CONSTRAINTS);
-		}
-		return topologySpreadConstraints;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Containers> getInitContainers() {
-		if (initContainers == null) {
-			initContainers = new EObjectContainmentEList<Containers>(Containers.class, this, K8sPackage.POD_SPEC__INIT_CONTAINERS);
-		}
-		return initContainers;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case K8sPackage.POD_SPEC__AFFINITY:
-				return basicSetAffinity(null, msgs);
-			case K8sPackage.POD_SPEC__CONTAINERS:
-				return ((InternalEList<?>)getContainers()).basicRemove(otherEnd, msgs);
-			case K8sPackage.POD_SPEC__VOLUMES:
-				return ((InternalEList<?>)getVolumes()).basicRemove(otherEnd, msgs);
-			case K8sPackage.POD_SPEC__TOPOLOGY_SPREAD_CONSTRAINTS:
-				return ((InternalEList<?>)getTopologySpreadConstraints()).basicRemove(otherEnd, msgs);
-			case K8sPackage.POD_SPEC__INIT_CONTAINERS:
-				return ((InternalEList<?>)getInitContainers()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Volume> getVolumes() {
-		if (volumes == null) {
-			volumes = new EObjectContainmentEList<Volume>(Volume.class, this, K8sPackage.POD_SPEC__VOLUMES);
-		}
-		return volumes;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getRestartPolicy() {
 		return restartPolicy;
 	}
@@ -263,6 +195,76 @@ public class PodSpecImpl extends MinimalEObjectImpl.Container implements PodSpec
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.POD_SPEC__AFFINITY, newAffinity, newAffinity));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Containers> getContainers() {
+		if (containers == null) {
+			containers = new EObjectContainmentEList<Containers>(Containers.class, this, K8sPackage.POD_SPEC__CONTAINERS);
+		}
+		return containers;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Volume> getVolumes() {
+		if (volumes == null) {
+			volumes = new EObjectContainmentEList<Volume>(Volume.class, this, K8sPackage.POD_SPEC__VOLUMES);
+		}
+		return volumes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<TopologySpreadConstraint> getTopologySpreadConstraints() {
+		if (topologySpreadConstraints == null) {
+			topologySpreadConstraints = new EObjectContainmentEList<TopologySpreadConstraint>(TopologySpreadConstraint.class, this, K8sPackage.POD_SPEC__TOPOLOGY_SPREAD_CONSTRAINTS);
+		}
+		return topologySpreadConstraints;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Containers> getInitContainers() {
+		if (initContainers == null) {
+			initContainers = new EObjectContainmentEList<Containers>(Containers.class, this, K8sPackage.POD_SPEC__INIT_CONTAINERS);
+		}
+		return initContainers;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case K8sPackage.POD_SPEC__AFFINITY:
+				return basicSetAffinity(null, msgs);
+			case K8sPackage.POD_SPEC__CONTAINERS:
+				return ((InternalEList<?>)getContainers()).basicRemove(otherEnd, msgs);
+			case K8sPackage.POD_SPEC__VOLUMES:
+				return ((InternalEList<?>)getVolumes()).basicRemove(otherEnd, msgs);
+			case K8sPackage.POD_SPEC__TOPOLOGY_SPREAD_CONSTRAINTS:
+				return ((InternalEList<?>)getTopologySpreadConstraints()).basicRemove(otherEnd, msgs);
+			case K8sPackage.POD_SPEC__INIT_CONTAINERS:
+				return ((InternalEList<?>)getInitContainers()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

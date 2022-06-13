@@ -2,14 +2,15 @@
  */
 package k8s.impl;
 
-import java.util.Map;
-
 import k8s.K8sPackage;
+import k8s.Mymap;
 import k8s.ResourceRequirements;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -30,24 +31,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class ResourceRequirementsImpl extends MinimalEObjectImpl.Container implements ResourceRequirements {
 	/**
-	 * The cached value of the '{@link #getLimits() <em>Limits</em>}' attribute.
+	 * The cached value of the '{@link #getLimits() <em>Limits</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getLimits()
 	 * @generated
 	 * @ordered
 	 */
-	protected Map<String, String> limits;
+	protected Mymap limits;
 
 	/**
-	 * The cached value of the '{@link #getRequests() <em>Requests</em>}' attribute.
+	 * The cached value of the '{@link #getRequests() <em>Requests</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRequests()
 	 * @generated
 	 * @ordered
 	 */
-	protected Map<String, String> requests;
+	protected Mymap requests;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,7 +74,7 @@ public class ResourceRequirementsImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Map<String, String> getLimits() {
+	public Mymap getLimits() {
 		return limits;
 	}
 
@@ -82,11 +83,14 @@ public class ResourceRequirementsImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLimits(Map<String, String> newLimits) {
-		Map<String, String> oldLimits = limits;
+	public NotificationChain basicSetLimits(Mymap newLimits, NotificationChain msgs) {
+		Mymap oldLimits = limits;
 		limits = newLimits;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.RESOURCE_REQUIREMENTS__LIMITS, oldLimits, limits));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.RESOURCE_REQUIREMENTS__LIMITS, oldLimits, newLimits);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -94,7 +98,26 @@ public class ResourceRequirementsImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Map<String, String> getRequests() {
+	public void setLimits(Mymap newLimits) {
+		if (newLimits != limits) {
+			NotificationChain msgs = null;
+			if (limits != null)
+				msgs = ((InternalEObject)limits).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.RESOURCE_REQUIREMENTS__LIMITS, null, msgs);
+			if (newLimits != null)
+				msgs = ((InternalEObject)newLimits).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.RESOURCE_REQUIREMENTS__LIMITS, null, msgs);
+			msgs = basicSetLimits(newLimits, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.RESOURCE_REQUIREMENTS__LIMITS, newLimits, newLimits));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Mymap getRequests() {
 		return requests;
 	}
 
@@ -103,11 +126,49 @@ public class ResourceRequirementsImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRequests(Map<String, String> newRequests) {
-		Map<String, String> oldRequests = requests;
+	public NotificationChain basicSetRequests(Mymap newRequests, NotificationChain msgs) {
+		Mymap oldRequests = requests;
 		requests = newRequests;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.RESOURCE_REQUIREMENTS__REQUESTS, oldRequests, requests));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, K8sPackage.RESOURCE_REQUIREMENTS__REQUESTS, oldRequests, newRequests);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRequests(Mymap newRequests) {
+		if (newRequests != requests) {
+			NotificationChain msgs = null;
+			if (requests != null)
+				msgs = ((InternalEObject)requests).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - K8sPackage.RESOURCE_REQUIREMENTS__REQUESTS, null, msgs);
+			if (newRequests != null)
+				msgs = ((InternalEObject)newRequests).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - K8sPackage.RESOURCE_REQUIREMENTS__REQUESTS, null, msgs);
+			msgs = basicSetRequests(newRequests, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.RESOURCE_REQUIREMENTS__REQUESTS, newRequests, newRequests));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case K8sPackage.RESOURCE_REQUIREMENTS__LIMITS:
+				return basicSetLimits(null, msgs);
+			case K8sPackage.RESOURCE_REQUIREMENTS__REQUESTS:
+				return basicSetRequests(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -131,15 +192,14 @@ public class ResourceRequirementsImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case K8sPackage.RESOURCE_REQUIREMENTS__LIMITS:
-				setLimits((Map<String, String>)newValue);
+				setLimits((Mymap)newValue);
 				return;
 			case K8sPackage.RESOURCE_REQUIREMENTS__REQUESTS:
-				setRequests((Map<String, String>)newValue);
+				setRequests((Mymap)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -154,10 +214,10 @@ public class ResourceRequirementsImpl extends MinimalEObjectImpl.Container imple
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case K8sPackage.RESOURCE_REQUIREMENTS__LIMITS:
-				setLimits((Map<String, String>)null);
+				setLimits((Mymap)null);
 				return;
 			case K8sPackage.RESOURCE_REQUIREMENTS__REQUESTS:
-				setRequests((Map<String, String>)null);
+				setRequests((Mymap)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -177,24 +237,6 @@ public class ResourceRequirementsImpl extends MinimalEObjectImpl.Container imple
 				return requests != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (limits: ");
-		result.append(limits);
-		result.append(", requests: ");
-		result.append(requests);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ResourceRequirementsImpl

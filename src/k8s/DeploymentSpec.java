@@ -2,6 +2,7 @@
  */
 package k8s;
 
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Deployment Spec</b></em>'.

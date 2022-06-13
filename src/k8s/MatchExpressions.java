@@ -48,6 +48,18 @@ public interface MatchExpressions extends EObject {
 	void setKey(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Values</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Values</em>' attribute list.
+	 * @see k8s.K8sPackage#getMatchExpressions_Values()
+	 * @model required="true" transient="true"
+	 * @generated
+	 */
+	EList<String> getValues();
+
+	/**
 	 * Returns the value of the '<em><b>Operator</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -68,17 +80,5 @@ public interface MatchExpressions extends EObject {
 	 * @generated
 	 */
 	void setOperator(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Values</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Values</em>' attribute list.
-	 * @see k8s.K8sPackage#getMatchExpressions_Values()
-	 * @model required="true" transient="true"
-	 * @generated
-	 */
-	EList<String> getValues();
 
 } // MatchExpressions

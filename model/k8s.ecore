@@ -5,17 +5,16 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="apiVersion" lowerBound="1"
         eType="#//ApiVersion"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1" eType="#//Kind"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="metadata" lowerBound="1"
-        eType="#//Metadata" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="spec" lowerBound="1" eType="#//Spec"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metadata" eType="#//Metadata"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="spec" eType="#//Spec" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Metadata">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="namespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"
-        eType="#//Mymap" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="labels" upperBound="-1"
+        eType="#//Mymap" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"
         eType="#//Mymap" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Spec" abstract="true" interface="true"/>
@@ -35,31 +34,31 @@
   <eClassifiers xsi:type="ecore:EClass" name="DeploymentSpec" eSuperTypes="#//Spec">
     <eStructuralFeatures xsi:type="ecore:EReference" name="selector" eType="#//Selector"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="strategy" lowerBound="1"
-        eType="#//DeploymentStrategy" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="template" lowerBound="1"
-        eType="#//PodTemplate" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="strategy" eType="#//DeploymentStrategy"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="template" eType="#//PodTemplate"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DeploymentStrategy">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rollingUpdate" lowerBound="1"
-        eType="#//RollingUpdateDeployment" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rollingUpdate" eType="#//RollingUpdateDeployment"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Selector">
     <eStructuralFeatures xsi:type="ecore:EReference" name="matchExpressions" upperBound="-1"
         eType="#//MatchExpressions" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="matchLabels" lowerBound="1"
-        upperBound="-1" eType="#//Mymap" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="matchLabels" upperBound="-1"
+        eType="#//Mymap" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PodTemplate">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="metadata" lowerBound="1"
-        eType="#//Metadata" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="spec" lowerBound="1" eType="#//PodSpec"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metadata" eType="#//Metadata"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="spec" eType="#//PodSpec"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TopologySpreadConstraint">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="labelSelector" lowerBound="1"
-        eType="#//LabelSelector" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="labelSelector" eType="#//LabelSelector"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="topologyKey" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="whenUnsatisfiable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxSkew" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -92,8 +91,8 @@
         eType="#//HostPathVolumeSource" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Affinity">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nodeAffinity" lowerBound="1"
-        eType="#//NodeAffinity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodeAffinity" eType="#//NodeAffinity"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RollingUpdateDeployment">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxUnavailable" lowerBound="1"
@@ -104,15 +103,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="LabelSelector">
     <eStructuralFeatures xsi:type="ecore:EReference" name="matchExpressions" upperBound="-1"
         eType="#//MatchExpressions" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="matchLabels" lowerBound="1"
-        upperBound="-1" eType="#//Mymap" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="matchLabels" eType="#//Mymap"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MatchExpressions">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" lowerBound="1"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ContainerPort">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -124,22 +122,22 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ResourceRequirements">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requests" upperBound="-1"
-        eType="#//Mymap" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="limits" upperBound="-1"
-        eType="#//Mymap" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="limits" eType="#//Mymap"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requests" eType="#//Mymap"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EnvVar">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="valueFrom" lowerBound="1"
-        eType="#//EnvVarSource" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valueFrom" eType="#//EnvVarSource"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EnvVarSource">
     <eStructuralFeatures xsi:type="ecore:EReference" name="fieldRef" lowerBound="1"
         eType="#//SecretKeySelector" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="secretKeyRef" lowerBound="1"
-        eType="#//ObjectFieldSelector" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="secretKeyRef" eType="#//ObjectFieldSelector"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SecretKeySelector">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -153,7 +151,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HTTPHeader">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VolumeMount">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -259,7 +257,7 @@
     <eLiterals name="StatefulSet" value="32"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Mymap">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

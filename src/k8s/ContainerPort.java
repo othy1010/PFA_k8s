@@ -47,6 +47,28 @@ public interface ContainerPort extends EObject {
 	void setName(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Protocol</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Protocol</em>' attribute.
+	 * @see #setProtocol(String)
+	 * @see k8s.K8sPackage#getContainerPort_Protocol()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getProtocol();
+
+	/**
+	 * Sets the value of the '{@link k8s.ContainerPort#getProtocol <em>Protocol</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Protocol</em>' attribute.
+	 * @see #getProtocol()
+	 * @generated
+	 */
+	void setProtocol(String value);
+
+	/**
 	 * Returns the value of the '<em><b>Host Port</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -89,27 +111,5 @@ public interface ContainerPort extends EObject {
 	 * @generated
 	 */
 	void setContainerPort(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Protocol</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Protocol</em>' attribute.
-	 * @see #setProtocol(String)
-	 * @see k8s.K8sPackage#getContainerPort_Protocol()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getProtocol();
-
-	/**
-	 * Sets the value of the '{@link k8s.ContainerPort#getProtocol <em>Protocol</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Protocol</em>' attribute.
-	 * @see #getProtocol()
-	 * @generated
-	 */
-	void setProtocol(String value);
 
 } // ContainerPort

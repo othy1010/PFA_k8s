@@ -154,6 +154,27 @@ public class ContainerPortImpl extends MinimalEObjectImpl.Container implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getProtocol() {
+		return protocol;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setProtocol(String newProtocol) {
+		String oldProtocol = protocol;
+		protocol = newProtocol;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.CONTAINER_PORT__PROTOCOL, oldProtocol, protocol));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public int getHostPort() {
 		return hostPort;
 	}
@@ -189,27 +210,6 @@ public class ContainerPortImpl extends MinimalEObjectImpl.Container implements C
 		containerPort = newContainerPort;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.CONTAINER_PORT__CONTAINER_PORT, oldContainerPort, containerPort));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getProtocol() {
-		return protocol;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setProtocol(String newProtocol) {
-		String oldProtocol = protocol;
-		protocol = newProtocol;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, K8sPackage.CONTAINER_PORT__PROTOCOL, oldProtocol, protocol));
 	}
 
 	/**

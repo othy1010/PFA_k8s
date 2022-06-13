@@ -101,30 +101,6 @@ public interface Containers extends EObject {
 	void setLiveRestart(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Ports</b></em>' containment reference list.
-	 * The list contents are of type {@link k8s.ContainerPort}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ports</em>' containment reference list.
-	 * @see k8s.K8sPackage#getContainers_Ports()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<ContainerPort> getPorts();
-
-	/**
-	 * Returns the value of the '<em><b>Env</b></em>' containment reference list.
-	 * The list contents are of type {@link k8s.EnvVar}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Env</em>' containment reference list.
-	 * @see k8s.K8sPackage#getContainers_Env()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<EnvVar> getEnv();
-
-	/**
 	 * Returns the value of the '<em><b>Command</b></em>' attribute list.
 	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
@@ -147,18 +123,6 @@ public interface Containers extends EObject {
 	 * @generated
 	 */
 	EList<String> getArgs();
-
-	/**
-	 * Returns the value of the '<em><b>Volume Mounts</b></em>' containment reference list.
-	 * The list contents are of type {@link k8s.VolumeMount}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Volume Mounts</em>' containment reference list.
-	 * @see k8s.K8sPackage#getContainers_VolumeMounts()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<VolumeMount> getVolumeMounts();
 
 	/**
 	 * Returns the value of the '<em><b>Resources</b></em>' containment reference.
@@ -247,5 +211,41 @@ public interface Containers extends EObject {
 	 * @generated
 	 */
 	void setLifeCycle(LifeCycle value);
+
+	/**
+	 * Returns the value of the '<em><b>Volume Mounts</b></em>' containment reference list.
+	 * The list contents are of type {@link k8s.VolumeMount}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Volume Mounts</em>' containment reference list.
+	 * @see k8s.K8sPackage#getContainers_VolumeMounts()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<VolumeMount> getVolumeMounts();
+
+	/**
+	 * Returns the value of the '<em><b>Env</b></em>' containment reference list.
+	 * The list contents are of type {@link k8s.EnvVar}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Env</em>' containment reference list.
+	 * @see k8s.K8sPackage#getContainers_Env()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<EnvVar> getEnv();
+
+	/**
+	 * Returns the value of the '<em><b>Ports</b></em>' containment reference list.
+	 * The list contents are of type {@link k8s.ContainerPort}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ports</em>' containment reference list.
+	 * @see k8s.K8sPackage#getContainers_Ports()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ContainerPort> getPorts();
 
 } // Containers
